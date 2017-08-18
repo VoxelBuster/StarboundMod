@@ -1,0 +1,47 @@
+#Creative Tabs
+itemGroup.starboundmod=Starbound Mod
+
+#Items
+item.copper.name=Copper Bar
+item.silver.name=Silver Bar
+item.titanium.name=Titanium Bar
+item.tungsten.name=Tungsten Bar
+item.durasteel.name=Durasteel Bar
+item.aegisalt.name=Refined Aegisalt
+item.ferozium.name=Refined Ferozium
+item.violium.name=Refined Violium
+item.solarium.name=Solarium Star
+
+item.copperore.name=Copper Ore
+item.silverore.name=Silver Ore
+item.titaniumore.name=Titanium Ore
+item.tungstenore.name=Tungsten Ore
+item.durasteelore.name=Durasteel Ore
+item.aegisaltore.name=Aegisalt Ore
+item.feroziumore.name=Ferozium Ore
+item.violiumore.name=Violium Ore
+item.solariumore.name=Solarium Ore
+item.corefragmentore.name=Core Fragment
+
+item.supermatter.name=Erichius Crystal
+
+#Blocks
+tile.copperblock.name=Copper Block
+tile.silverblock.name=Silver Block
+tile.titaniumblock.name=Titanium Block
+tile.tungstenblock.name=Tungsten Block
+tile.durasteelblock.name=Durasteel Block
+tile.aegisaltblock.name=Aegisalt Block
+tile.feroziumblock.name=Ferozium Block
+tile.violiumblock.name=Violium Block
+tile.solariumblock.name=Solarium Block
+
+tile.copperoreblock.name=Copper Ore
+tile.silveroreblock.name=Silver Ore
+tile.titaniumoreblock.name=Titanium Ore
+tile.tungstenoreblock.name=Tungsten Ore
+tile.durasteeloreblock.name=Durasteel Ore
+tile.aegisaltoreblock.name=Aegisalt Ore
+tile.feroziumoreblock.name=Ferozium Ore
+tile.violiumoreblock.name=Violium Ore
+tile.solariumoreblock.name=Solarium Ore
