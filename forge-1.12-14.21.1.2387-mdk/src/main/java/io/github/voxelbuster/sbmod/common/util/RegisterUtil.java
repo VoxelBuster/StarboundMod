@@ -9,10 +9,15 @@ import io.github.voxelbuster.sbmod.common.item.ModItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = StarboundMod.MODID)
 @GameRegistry.ObjectHolder(StarboundMod.MODID)
@@ -58,6 +63,7 @@ public class RegisterUtil {
     private static final BlockOre ore_block_ferozium = new BlockOre(Material.ROCK, MaterialVariant.FEROZIUM);
     private static final BlockOre ore_block_violium = new BlockOre(Material.ROCK, MaterialVariant.VIOLIUM);
     private static final BlockOre ore_block_solarium = new BlockOre(Material.ROCK, MaterialVariant.SOLARIUM);
+    private ArrayList<ItemBlock> itemblocks = new ArrayList<>();
 
     public void registerItemModel(ModItem item) {
         StarboundMod.commonProxy.registerItemRender(item, 0, item.getName());
@@ -92,6 +98,9 @@ public class RegisterUtil {
                 supermatter
         };
         event.getRegistry().registerAll(items);
+        for (ItemBlock ib : itemblocks) {
+            event.getRegistry().register(ib);
+        }
 
         for (Item i : items) {
             registerItemModel((ModItem) i);
@@ -100,7 +109,7 @@ public class RegisterUtil {
 
     @SubscribeEvent
     public void registerBlocks(RegistryEvent.Register<Block> event) {
-        final Block[] blocks = {
+        final ModBlock[] blocks = {
             copper_block,
             silver_block,
             titanium_block,
@@ -122,7 +131,10 @@ public class RegisterUtil {
         };
         event.getRegistry().registerAll(blocks);
 
-        for (Block b: blocks) {
+        for (ModBlock b: blocks) {
+            ItemBlock itemBlock = (ItemBlock) new ItemBlock(b).setRegistryName(b.getRegistryName());
+            itemBlock.setCreativeTab(StarboundMod.creativeTab);
+            itemblocks.add(itemBlock);
             registerBlockModel((ModBlock) b);
         }
     }
