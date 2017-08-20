@@ -16,7 +16,6 @@ public class BlockOre extends ModBlock {
             this.setRegistryName(StarboundMod.MODID, "copperoreblock");
             this.setUnlocalizedName("copperoreblock");
             this.name = "copperoreblock";
-            //ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation("copper_bar", "inventory"));
         }
         else if (variant == MaterialVariant.SOLARIUM) {
             this.setRegistryName(StarboundMod.MODID, "solariumoreblock");

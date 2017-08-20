@@ -16,8 +16,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = StarboundMod.MODID)
 @GameRegistry.ObjectHolder(StarboundMod.MODID)
@@ -65,12 +63,8 @@ public class RegisterUtil {
     private static final BlockOre ore_block_solarium = new BlockOre(Material.ROCK, MaterialVariant.SOLARIUM);
     private ArrayList<ItemBlock> itemblocks = new ArrayList<>();
 
-    public void registerItemModel(ModItem item) {
-        StarboundMod.commonProxy.registerItemRender(item, 0, item.getName());
-    }
-
-    public void registerBlockModel(ModBlock block) {
-        StarboundMod.commonProxy.registerBlockRender(block, 0, block.getName());
+    public void registerItemModel(Item item) {
+        StarboundMod.commonProxy.registerItemRender(item, 0, item.getRegistryName().toString());
     }
 
     @SubscribeEvent
@@ -100,6 +94,7 @@ public class RegisterUtil {
         event.getRegistry().registerAll(items);
         for (ItemBlock ib : itemblocks) {
             event.getRegistry().register(ib);
+            registerItemModel(ib);
         }
 
         for (Item i : items) {
@@ -110,24 +105,24 @@ public class RegisterUtil {
     @SubscribeEvent
     public void registerBlocks(RegistryEvent.Register<Block> event) {
         final ModBlock[] blocks = {
-            copper_block,
-            silver_block,
-            titanium_block,
-            tungsten_block,
-            durasteel_block,
-            aegisalt_block,
-            ferozium_block,
-            violium_block,
-            solarium_block,
-            ore_block_copper,
-            ore_block_silver,
-            ore_block_titanium,
-            ore_block_tungsten,
-            ore_block_durasteel,
-            ore_block_aegisalt,
-            ore_block_ferozium,
-            ore_block_violium,
-            ore_block_solarium
+                ore_block_copper,
+                ore_block_silver,
+                ore_block_titanium,
+                ore_block_tungsten,
+                ore_block_durasteel,
+                ore_block_aegisalt,
+                ore_block_ferozium,
+                ore_block_violium,
+                ore_block_solarium,
+                copper_block,
+                silver_block,
+                titanium_block,
+                tungsten_block,
+                durasteel_block,
+                aegisalt_block,
+                ferozium_block,
+                violium_block,
+                solarium_block
         };
         event.getRegistry().registerAll(blocks);
 
@@ -135,7 +130,6 @@ public class RegisterUtil {
             ItemBlock itemBlock = (ItemBlock) new ItemBlock(b).setRegistryName(b.getRegistryName());
             itemBlock.setCreativeTab(StarboundMod.creativeTab);
             itemblocks.add(itemBlock);
-            registerBlockModel((ModBlock) b);
         }
     }
 }

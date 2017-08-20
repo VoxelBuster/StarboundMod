@@ -15,7 +15,4 @@ public class CommonProxy {
 
     }
 
-    public void registerBlockRender(ModBlock block, int i, String name) {
-
-    }
 }
