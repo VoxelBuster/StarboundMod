@@ -48,7 +48,7 @@
       <file leaf-file-name="IndustrialFurnaceTileEntity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/common/tileentity/IndustrialFurnaceTileEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3352">
+            <state relative-caret-position="-3418">
               <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -170,6 +170,7 @@
         <option value="$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/common/inventory/ContainerIndustrialFurnace.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/common/item/crafting/IndustrialFurnaceRecipes.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/common/tileentity/IndustrialFurnaceTileEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/starboundmod/recipes/industrialfurnace.json" />
       </list>
     </option>
   </component>
@@ -256,6 +257,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="textures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="items" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -930,14 +935,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/common/item/ItemOre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/proxy/CommonProxy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1103,13 +1100,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/starboundmod/recipes/aegisaltblock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/starboundmod/recipes/feroziumblock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
@@ -1319,9 +1309,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/starboundmod/recipes/feroziumblock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/starboundmod/recipes/industrialfurnace.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/common/tileentity/IndustrialFurnaceTileEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3352">
+        <state relative-caret-position="-3418">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />

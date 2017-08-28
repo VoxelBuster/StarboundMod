@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "GFG",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "starboundmod:tungsten"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "F" : {
+      "item": "minecraft:furnace"
+    }
+  },
+  "result": {
+    "item": "starboundmod:industrialfurnace",
+    "data": 0
+  }
+}
