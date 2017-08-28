@@ -13,6 +13,9 @@ public class ContainerIndustrialFurnace extends ContainerFurnace {
 
     public ContainerIndustrialFurnace(InventoryPlayer playerInventory, IInventory furnaceInventory) {
         super(playerInventory, furnaceInventory);
+        this.addSlotToContainer(new Slot(furnaceInventory, 0, 100, 100));
+        this.addSlotToContainer(new Slot(furnaceInventory, 1, 100, 150));
+        this.addSlotToContainer(new Slot(furnaceInventory, 2, 200, 125));
     }
 
     public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)

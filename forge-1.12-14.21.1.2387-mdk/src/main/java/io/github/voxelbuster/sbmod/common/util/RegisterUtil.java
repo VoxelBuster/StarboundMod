@@ -7,6 +7,7 @@ import io.github.voxelbuster.sbmod.common.block.IndustrialFurnaceBlock;
 import io.github.voxelbuster.sbmod.common.item.ItemMineral;
 import io.github.voxelbuster.sbmod.common.item.ItemOre;
 import io.github.voxelbuster.sbmod.common.item.ModItem;
+import io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity;
 import io.github.voxelbuster.sbmod.common.world.ModOreGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -146,5 +147,7 @@ public class RegisterUtil {
         }
 
         GameRegistry.registerWorldGenerator(new ModOreGen(), 3);
+
+        GameRegistry.registerTileEntity(IndustrialFurnaceTileEntity.class, "starboundmod:industrialfurnace");
     }
 }

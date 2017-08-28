@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
@@ -73,7 +74,7 @@ public class IndustrialFurnaceBlock extends BlockContainer {
 
             if (tileentity instanceof IndustrialFurnaceTileEntity)
             {
-                playerIn.displayGUIChest((IndustrialFurnaceTileEntity)tileentity);
+                playerIn.displayGUIChest((IndustrialFurnaceTileEntity) tileentity);
             }
 
             return true;

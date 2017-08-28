@@ -2,7 +2,6 @@ package io.github.voxelbuster.sbmod.common.tileentity;
 
 import io.github.voxelbuster.sbmod.common.inventory.ContainerIndustrialFurnace;
 import io.github.voxelbuster.sbmod.common.item.crafting.IndustrialFurnaceRecipes;
-import net.minecraft.block.BlockFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
@@ -111,7 +110,6 @@ public class IndustrialFurnaceTileEntity extends TileEntityFurnace implements IT
             if (flag != this.isBurning())
             {
                 flag1 = true;
-                BlockFurnace.setState(this.isBurning(), this.world, this.pos);
             }
         }
 
