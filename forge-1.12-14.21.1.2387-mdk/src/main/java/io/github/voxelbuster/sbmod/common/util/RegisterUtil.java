@@ -115,7 +115,7 @@ public class RegisterUtil {
 
     @SubscribeEvent
     public void registerBlocks(RegistryEvent.Register<Block> event) {
-        final ModBlock[] blocks = {
+        final Block[] blocks = {
                 ore_block_copper,
                 ore_block_silver,
                 ore_block_titanium,
@@ -138,7 +138,7 @@ public class RegisterUtil {
         };
         event.getRegistry().registerAll(blocks);
 
-        for (ModBlock b: blocks) {
+        for (Block b: blocks) {
             ItemBlock itemBlock = (ItemBlock) new ItemBlock(b).setRegistryName(b.getRegistryName());
             itemBlock.setCreativeTab(StarboundMod.creativeTab);
             itemblocks.add(itemBlock);
