@@ -7,6 +7,7 @@ import io.github.voxelbuster.sbmod.common.block.IndustrialFurnaceBlock;
 import io.github.voxelbuster.sbmod.common.item.ItemMineral;
 import io.github.voxelbuster.sbmod.common.item.ItemOre;
 import io.github.voxelbuster.sbmod.common.item.ModItem;
+import io.github.voxelbuster.sbmod.common.world.ModOreGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -143,5 +144,7 @@ public class RegisterUtil {
             itemBlock.setCreativeTab(StarboundMod.creativeTab);
             itemblocks.add(itemBlock);
         }
+
+        GameRegistry.registerWorldGenerator(new ModOreGen(), 3);
     }
 }

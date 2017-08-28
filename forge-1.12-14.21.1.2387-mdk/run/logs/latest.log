@@ -1,203 +1,176 @@
-[16:35:20] [main/INFO]: Extra: []
-[16:35:20] [main/INFO]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/galen/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
-[16:35:20] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[16:35:20] [main/INFO]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[16:35:20] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
-[16:35:20] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
-[16:35:20] [main/INFO]: Forge Mod Loader version 14.21.1.2387 for Minecraft 1.12 loading
-[16:35:20] [main/INFO]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_111, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jdk1.8.0_111\jre
-[16:35:20] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
-[16:35:21] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
-[16:35:21] [main/INFO]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
-[16:35:21] [main/INFO]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
-[16:35:21] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[16:35:21] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[16:35:21] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[16:35:21] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[16:35:21] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[16:35:21] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[16:35:21] [main/ERROR]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
-[16:35:23] [main/ERROR]: FML appears to be missing any signature data. This is not a good thing
-[16:35:23] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[16:35:23] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[16:35:24] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[16:35:24] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
-[16:35:24] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
-[16:35:24] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
-[16:35:25] [main/INFO]: Setting user: Player101
-[16:35:32] [main/WARN]: Skipping bad option: lastServer:
-[16:35:32] [main/INFO]: LWJGL Version: 2.9.4
-[16:35:34] [main/INFO]: -- System Details --
+[17:36:32] [main/INFO]: Extra: []
+[17:36:32] [main/INFO]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/galen/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[17:36:32] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[17:36:32] [main/INFO]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[17:36:32] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[17:36:32] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
+[17:36:32] [main/INFO]: Forge Mod Loader version 14.21.1.2387 for Minecraft 1.12 loading
+[17:36:32] [main/INFO]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_111, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jdk1.8.0_111\jre
+[17:36:32] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[17:36:32] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[17:36:32] [main/INFO]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[17:36:32] [main/INFO]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[17:36:32] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[17:36:32] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[17:36:32] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[17:36:32] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[17:36:32] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[17:36:32] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[17:36:33] [main/ERROR]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
+[17:36:35] [main/ERROR]: FML appears to be missing any signature data. This is not a good thing
+[17:36:35] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[17:36:35] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[17:36:35] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[17:36:35] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[17:36:35] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[17:36:35] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[17:36:36] [main/INFO]: Setting user: Player172
+[17:36:42] [main/WARN]: Skipping bad option: lastServer:
+[17:36:42] [main/INFO]: LWJGL Version: 2.9.4
+[17:36:45] [main/INFO]: -- System Details --
 Details:
 	Minecraft Version: 1.12
 	Operating System: Windows 10 (amd64) version 10.0
 	Java Version: 1.8.0_111, Oracle Corporation
 	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
-	Memory: 335805632 bytes (320 MB) / 499122176 bytes (476 MB) up to 1884815360 bytes (1797 MB)
+	Memory: 136770832 bytes (130 MB) / 644349952 bytes (614 MB) up to 1884815360 bytes (1797 MB)
 	JVM Flags: 0 total; 
 	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
 	FML: 
 	Loaded coremods (and transformers): 
 	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.5.0 NVIDIA 376.33' Renderer: 'GeForce GTX 950M/PCIe/SSE2'
-[16:35:34] [main/INFO]: MinecraftForge v14.21.1.2387 Initialized
-[16:35:34] [main/INFO]: Replaced 921 ore ingredients
-[16:35:35] [main/INFO]: Found 0 mods from the command line. Injecting into mod discoverer
-[16:35:35] [main/INFO]: Searching A:\GitHub\StarboundMod\forge-1.12-14.21.1.2387-mdk\run\mods for mods
-[16:35:37] [main/INFO]: Forge Mod Loader has identified 5 mods to load
-[16:35:37] [main/INFO]: Attempting connection with missing mods [minecraft, mcp, FML, forge, starboundmod] at CLIENT
-[16:35:37] [main/INFO]: Attempting connection with missing mods [minecraft, mcp, FML, forge, starboundmod] at SERVER
-[16:35:37] [Thread-3/INFO]: Using sync timing. 200 frames of Display.update took 422733372 nanos
-[16:35:38] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Starbound Mod
-[16:35:38] [main/INFO]: Processing ObjectHolder annotations
-[16:35:38] [main/INFO]: Found 1207 ObjectHolder annotations
-[16:35:38] [main/INFO]: Identifying ItemStackHolder annotations
-[16:35:38] [main/INFO]: Found 0 ItemStackHolder annotations
-[16:35:38] [main/INFO]: Configured a dormant chunk cache size of 0
-[16:35:38] [Forge Version Check/INFO]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
-[16:35:38] [main/INFO]: Applying holder lookups
-[16:35:38] [main/INFO]: Holder lookups applied
-[16:35:38] [Forge Version Check/INFO]: [forge] Found status: UP_TO_DATE Target: null
-[16:35:38] [main/INFO]: Applying holder lookups
-[16:35:38] [main/INFO]: Holder lookups applied
-[16:35:38] [main/INFO]: Applying holder lookups
-[16:35:38] [main/INFO]: Holder lookups applied
-[16:35:38] [main/INFO]: Applying holder lookups
-[16:35:38] [main/INFO]: Holder lookups applied
-[16:35:38] [main/INFO]: Injecting itemstacks
-[16:35:38] [main/INFO]: Itemstack injection complete
-[16:35:42] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[16:35:42] [Thread-5/INFO]: Initializing LWJGL OpenAL
-[16:35:42] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[16:35:42] [Thread-5/INFO]: [STDERR]: org.lwjgl.openal.OpenALException: Invalid Device
-[16:35:42] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.Util.checkALCError(Util.java:55)
-[16:35:42] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.ALC10.alcCreateContext(ALC10.java:251)
-[16:35:42] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.AL.init(AL.java:173)
-[16:35:42] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.AL.create(AL.java:143)
-[16:35:42] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.AL.create(AL.java:102)
-[16:35:42] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.AL.create(AL.java:206)
-[16:35:42] [Thread-5/INFO]: [STDERR]: 	at paulscode.sound.libraries.LibraryLWJGLOpenAL.init(LibraryLWJGLOpenAL.java:164)
-[16:35:42] [Thread-5/INFO]: [STDERR]: 	at paulscode.sound.SoundSystem.CommandNewLibrary(SoundSystem.java:1576)
-[16:35:42] [Thread-5/INFO]: [STDERR]: 	at paulscode.sound.SoundSystem.CommandQueue(SoundSystem.java:2572)
-[16:35:42] [Thread-5/INFO]: [STDERR]: 	at paulscode.sound.CommandThread.run(CommandThread.java:121)
-[16:35:48] [main/INFO]: Max texture size: 16384
-[16:35:49] [main/INFO]: Created: 512x512 textures-atlas
-[16:35:51] [main/INFO]: Injecting itemstacks
-[16:35:51] [main/INFO]: Itemstack injection complete
-[16:35:51] [main/INFO]: Forge Mod Loader has successfully loaded 5 mods
-[16:35:52] [main/WARN]: Skipping bad option: lastServer:
-[16:35:52] [main/INFO]: Narrator library for x64 successfully loaded
-[16:35:53] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[16:36:11] [Server thread/INFO]: Starting integrated minecraft server version 1.12
-[16:36:11] [Server thread/INFO]: Generating keypair
-[16:36:11] [Server thread/INFO]: Injecting existing registry data into this server instance
-[16:36:12] [Server thread/INFO]: Applying holder lookups
-[16:36:12] [Server thread/INFO]: Holder lookups applied
-[16:36:12] [Server thread/INFO]: Loading dimension 0 (Test) (net.minecraft.server.integrated.IntegratedServer@673df1d9)
-[16:36:12] [Server thread/INFO]: Loaded 488 advancements
-[16:36:12] [Server thread/INFO]: Loading dimension 1 (Test) (net.minecraft.server.integrated.IntegratedServer@673df1d9)
-[16:36:12] [Server thread/INFO]: Loading dimension -1 (Test) (net.minecraft.server.integrated.IntegratedServer@673df1d9)
-[16:36:12] [Server thread/INFO]: Preparing start region for level 0
-[16:36:13] [Server thread/INFO]: Changing view distance to 12, from 10
-[16:36:14] [Netty Local Client IO #0/INFO]: Server protocol version 2
-[16:36:14] [Netty Server IO #1/INFO]: Client protocol version 2
-[16:36:14] [Netty Server IO #1/INFO]: Client attempting to join with 5 mods : minecraft@1.12,starboundmod@1.0.0,FML@8.0.99.99,forge@14.21.1.2387,mcp@9.19
-[16:36:14] [Netty Local Client IO #0/INFO]: [Netty Local Client IO #0] Client side modded connection established
-[16:36:14] [Server thread/INFO]: [Server thread] Server side modded connection established
-[16:36:14] [Server thread/INFO]: Player101[local:E:50c7fd86] logged in with entity id 75 at (140.47608591799886, 4.0, -1831.6407414153584)
-[16:36:14] [Server thread/INFO]: Player101 joined the game
-[16:36:17] [Server thread/INFO]: Saving and pausing game...
-[16:36:17] [Server thread/INFO]: Saving chunks for level 'Test'/overworld
-[16:36:17] [Server thread/INFO]: Saving chunks for level 'Test'/the_nether
-[16:36:17] [Server thread/INFO]: Saving chunks for level 'Test'/the_end
-[16:36:18] [main/INFO]: Loaded 2 advancements
-[16:36:25] [Sound Library Loader/WARN]: ERROR MESSAGE:
-[16:36:25] [Sound Library Loader/INFO]: SoundSystem did not load after 30 seconds.
-[16:36:25] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[16:36:25] [Thread-12/INFO]: Switching to No Sound
-[16:36:25] [Thread-12/INFO]: (Silent Mode)
-[16:36:26] [Sound Library Loader/INFO]: Sound engine started
-[16:36:29] [Server thread/INFO]: Saving and pausing game...
-[16:36:29] [Server thread/INFO]: Saving chunks for level 'Test'/overworld
-[16:36:29] [Server thread/ERROR]: A TileEntity type io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity has throw an exception trying to write state. It will not persist. Report this to the mod author
-java.lang.RuntimeException: class io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity is missing a mapping! This is a bug!
-	at net.minecraft.tileentity.TileEntity.writeInternal(TileEntity.java:89) ~[TileEntity.class:?]
-	at net.minecraft.tileentity.TileEntity.writeToNBT(TileEntity.java:80) ~[TileEntity.class:?]
-	at net.minecraft.tileentity.TileEntityLockable.writeToNBT(TileEntityLockable.java:22) ~[TileEntityLockable.class:?]
-	at net.minecraft.tileentity.TileEntityFurnace.writeToNBT(TileEntityFurnace.java:161) ~[TileEntityFurnace.class:?]
-	at net.minecraft.world.chunk.storage.AnvilChunkLoader.writeChunkToNBT(AnvilChunkLoader.java:416) [AnvilChunkLoader.class:?]
-	at net.minecraft.world.chunk.storage.AnvilChunkLoader.saveChunk(AnvilChunkLoader.java:191) [AnvilChunkLoader.class:?]
-	at net.minecraft.world.gen.ChunkProviderServer.saveChunkData(ChunkProviderServer.java:214) [ChunkProviderServer.class:?]
-	at net.minecraft.world.gen.ChunkProviderServer.saveChunks(ChunkProviderServer.java:242) [ChunkProviderServer.class:?]
-	at net.minecraft.world.WorldServer.saveAllChunks(WorldServer.java:1062) [WorldServer.class:?]
-	at net.minecraft.server.MinecraftServer.saveAllWorlds(MinecraftServer.java:467) [MinecraftServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.saveAllWorlds(IntegratedServer.java:274) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:177) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:589) [MinecraftServer.class:?]
+[17:36:45] [main/INFO]: MinecraftForge v14.21.1.2387 Initialized
+[17:36:45] [main/INFO]: Replaced 921 ore ingredients
+[17:36:45] [main/INFO]: Found 0 mods from the command line. Injecting into mod discoverer
+[17:36:45] [main/INFO]: Searching A:\GitHub\StarboundMod\forge-1.12-14.21.1.2387-mdk\run\mods for mods
+[17:36:47] [main/INFO]: Forge Mod Loader has identified 5 mods to load
+[17:36:48] [main/INFO]: Attempting connection with missing mods [minecraft, mcp, FML, forge, starboundmod] at CLIENT
+[17:36:48] [main/INFO]: Attempting connection with missing mods [minecraft, mcp, FML, forge, starboundmod] at SERVER
+[17:36:48] [Thread-3/INFO]: Using sync timing. 200 frames of Display.update took 194456652 nanos
+[17:36:49] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Starbound Mod
+[17:36:49] [main/INFO]: Processing ObjectHolder annotations
+[17:36:49] [main/INFO]: Found 1207 ObjectHolder annotations
+[17:36:49] [main/INFO]: Identifying ItemStackHolder annotations
+[17:36:49] [main/INFO]: Found 0 ItemStackHolder annotations
+[17:36:49] [main/INFO]: Configured a dormant chunk cache size of 0
+[17:36:49] [Forge Version Check/INFO]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[17:36:49] [main/INFO]: Applying holder lookups
+[17:36:49] [main/INFO]: Holder lookups applied
+[17:36:49] [Forge Version Check/INFO]: [forge] Found status: UP_TO_DATE Target: null
+[17:36:49] [main/INFO]: Applying holder lookups
+[17:36:49] [main/INFO]: Holder lookups applied
+[17:36:49] [main/INFO]: Applying holder lookups
+[17:36:49] [main/INFO]: Holder lookups applied
+[17:36:49] [main/INFO]: Applying holder lookups
+[17:36:49] [main/INFO]: Holder lookups applied
+[17:36:49] [main/INFO]: Injecting itemstacks
+[17:36:49] [main/INFO]: Itemstack injection complete
+[17:36:52] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[17:36:53] [Thread-5/INFO]: Initializing LWJGL OpenAL
+[17:36:53] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[17:36:53] [Thread-5/INFO]: [STDERR]: org.lwjgl.openal.OpenALException: Invalid Device
+[17:36:53] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.Util.checkALCError(Util.java:55)
+[17:36:53] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.ALC10.alcCreateContext(ALC10.java:251)
+[17:36:53] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.AL.init(AL.java:173)
+[17:36:53] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.AL.create(AL.java:143)
+[17:36:53] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.AL.create(AL.java:102)
+[17:36:53] [Thread-5/INFO]: [STDERR]: 	at org.lwjgl.openal.AL.create(AL.java:206)
+[17:36:53] [Thread-5/INFO]: [STDERR]: 	at paulscode.sound.libraries.LibraryLWJGLOpenAL.init(LibraryLWJGLOpenAL.java:164)
+[17:36:53] [Thread-5/INFO]: [STDERR]: 	at paulscode.sound.SoundSystem.CommandNewLibrary(SoundSystem.java:1576)
+[17:36:53] [Thread-5/INFO]: [STDERR]: 	at paulscode.sound.SoundSystem.CommandQueue(SoundSystem.java:2572)
+[17:36:53] [Thread-5/INFO]: [STDERR]: 	at paulscode.sound.CommandThread.run(CommandThread.java:121)
+[17:36:59] [main/INFO]: Max texture size: 16384
+[17:37:00] [main/INFO]: Created: 512x512 textures-atlas
+[17:37:03] [main/INFO]: Injecting itemstacks
+[17:37:03] [main/INFO]: Itemstack injection complete
+[17:37:03] [main/INFO]: Forge Mod Loader has successfully loaded 5 mods
+[17:37:03] [main/WARN]: Skipping bad option: lastServer:
+[17:37:03] [main/INFO]: Narrator library for x64 successfully loaded
+[17:37:04] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[17:37:33] [Sound Library Loader/WARN]: ERROR MESSAGE:
+[17:37:33] [Sound Library Loader/INFO]: SoundSystem did not load after 30 seconds.
+[17:37:33] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[17:37:33] [Thread-8/INFO]: Switching to No Sound
+[17:37:33] [Thread-8/INFO]: (Silent Mode)
+[17:37:34] [Sound Library Loader/INFO]: Sound engine started
+[17:37:48] [main/INFO]: Deleting level World Gen Test
+[17:37:48] [main/INFO]: Attempt 1...
+[17:37:57] [Server thread/INFO]: Starting integrated minecraft server version 1.12
+[17:37:57] [Server thread/INFO]: Generating keypair
+[17:37:57] [Server thread/INFO]: Injecting existing registry data into this server instance
+[17:37:58] [Server thread/INFO]: Applying holder lookups
+[17:37:58] [Server thread/INFO]: Holder lookups applied
+[17:37:58] [Server thread/INFO]: Loading dimension 0 (World Gen Test 2) (net.minecraft.server.integrated.IntegratedServer@66f8656b)
+[17:37:59] [Server thread/INFO]: Loaded 488 advancements
+[17:37:59] [Server thread/WARN]: Unable to find spawn biome
+[17:38:00] [Server thread/INFO]: Loading dimension 1 (World Gen Test 2) (net.minecraft.server.integrated.IntegratedServer@66f8656b)
+[17:38:00] [Server thread/INFO]: Loading dimension -1 (World Gen Test 2) (net.minecraft.server.integrated.IntegratedServer@66f8656b)
+[17:38:01] [Server thread/INFO]: Preparing start region for level 0
+[17:38:02] [Server thread/INFO]: Preparing spawn area: 8%
+[17:38:03] [Server thread/INFO]: Preparing spawn area: 17%
+[17:38:04] [Server thread/INFO]: Preparing spawn area: 27%
+[17:38:05] [Server thread/INFO]: Preparing spawn area: 38%
+[17:38:06] [Server thread/INFO]: Preparing spawn area: 45%
+[17:38:07] [Server thread/INFO]: Preparing spawn area: 52%
+[17:38:08] [Server thread/INFO]: Preparing spawn area: 58%
+[17:38:09] [Server thread/INFO]: Preparing spawn area: 62%
+[17:38:10] [Server thread/INFO]: Preparing spawn area: 66%
+[17:38:11] [Server thread/INFO]: Preparing spawn area: 70%
+[17:38:12] [Server thread/INFO]: Preparing spawn area: 75%
+[17:38:13] [Server thread/INFO]: Preparing spawn area: 80%
+[17:38:14] [Server thread/INFO]: Preparing spawn area: 86%
+[17:38:15] [Server thread/INFO]: Preparing spawn area: 90%
+[17:38:16] [Server thread/INFO]: Preparing spawn area: 95%
+[17:38:17] [Server thread/INFO]: Changing view distance to 12, from 10
+[17:38:19] [Netty Local Client IO #0/INFO]: Server protocol version 2
+[17:38:19] [Netty Server IO #1/INFO]: Client protocol version 2
+[17:38:19] [Netty Server IO #1/INFO]: Client attempting to join with 5 mods : minecraft@1.12,starboundmod@1.0.0,FML@8.0.99.99,forge@14.21.1.2387,mcp@9.19
+[17:38:19] [Netty Local Client IO #0/INFO]: [Netty Local Client IO #0] Client side modded connection established
+[17:38:20] [Server thread/INFO]: [Server thread] Server side modded connection established
+[17:38:20] [Server thread/INFO]: Player172[local:E:d05b124a] logged in with entity id 1696 at (592.5, 68.0, -101.5)
+[17:38:20] [Server thread/INFO]: Player172 joined the game
+[17:38:22] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@7d1488a7[id=31a9aee6-8c2b-389d-b14e-b75d71479611,name=Player172,properties={},legacy=false]
+com.mojang.authlib.exceptions.AuthenticationException: The client has sent too many requests within a certain amount of time
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:79) ~[YggdrasilAuthenticationService.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:180) [YggdrasilMinecraftSessionService.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:60) [YggdrasilMinecraftSessionService$1.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:57) [YggdrasilMinecraftSessionService$1.class:?]
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3716) [guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2424) [guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2298) [guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2211) [guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache.get(LocalCache.java:4154) [guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:4158) [guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:5147) [guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:5153) [guava-21.0.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillProfileProperties(YggdrasilMinecraftSessionService.java:170) [YggdrasilMinecraftSessionService.class:?]
+	at net.minecraft.client.Minecraft.getProfileProperties(Minecraft.java:3156) [Minecraft.class:?]
+	at net.minecraft.client.resources.SkinManager$3.run(SkinManager.java:138) [SkinManager$3.class:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_111]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_111]
 	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_111]
-[16:36:29] [Server thread/INFO]: Saving chunks for level 'Test'/the_nether
-[16:36:29] [Server thread/INFO]: Saving chunks for level 'Test'/the_end
-[16:36:41] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 7787ms behind, skipping 155 tick(s)
-[16:36:42] [Server thread/INFO]: Saving and pausing game...
-[16:36:42] [Server thread/INFO]: Saving chunks for level 'Test'/overworld
-[16:36:42] [Server thread/INFO]: Saving chunks for level 'Test'/the_nether
-[16:36:42] [Server thread/INFO]: Saving chunks for level 'Test'/the_end
-[16:37:09] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 15325ms behind, skipping 306 tick(s)
-[16:37:26] [main/INFO]: Warning: Clientside chunk ticking took 14946 ms
-[16:38:18] [main/INFO]: Warning: Clientside chunk ticking took 809 ms
-[16:42:48] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 339701ms behind, skipping 6794 tick(s)
-[16:43:07] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 8463ms behind, skipping 169 tick(s)
-[16:45:10] [Server thread/ERROR]: A TileEntity type io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity has throw an exception trying to write state. It will not persist. Report this to the mod author
-java.lang.RuntimeException: class io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity is missing a mapping! This is a bug!
-	at net.minecraft.tileentity.TileEntity.writeInternal(TileEntity.java:89) ~[TileEntity.class:?]
-	at net.minecraft.tileentity.TileEntity.writeToNBT(TileEntity.java:80) ~[TileEntity.class:?]
-	at net.minecraft.tileentity.TileEntityLockable.writeToNBT(TileEntityLockable.java:22) ~[TileEntityLockable.class:?]
-	at net.minecraft.tileentity.TileEntityFurnace.writeToNBT(TileEntityFurnace.java:161) ~[TileEntityFurnace.class:?]
-	at net.minecraft.world.chunk.storage.AnvilChunkLoader.writeChunkToNBT(AnvilChunkLoader.java:416) [AnvilChunkLoader.class:?]
-	at net.minecraft.world.chunk.storage.AnvilChunkLoader.saveChunk(AnvilChunkLoader.java:191) [AnvilChunkLoader.class:?]
-	at net.minecraft.world.gen.ChunkProviderServer.saveChunkData(ChunkProviderServer.java:214) [ChunkProviderServer.class:?]
-	at net.minecraft.world.gen.ChunkProviderServer.saveChunks(ChunkProviderServer.java:242) [ChunkProviderServer.class:?]
-	at net.minecraft.world.WorldServer.saveAllChunks(WorldServer.java:1062) [WorldServer.class:?]
-	at net.minecraft.server.MinecraftServer.saveAllWorlds(MinecraftServer.java:467) [MinecraftServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.saveAllWorlds(IntegratedServer.java:274) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:763) [MinecraftServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:589) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_111]
-[16:45:16] [Server thread/INFO]: Saving and pausing game...
-[16:45:16] [Server thread/INFO]: Saving chunks for level 'Test'/overworld
-[16:45:16] [Server thread/ERROR]: A TileEntity type io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity has throw an exception trying to write state. It will not persist. Report this to the mod author
-java.lang.RuntimeException: class io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity is missing a mapping! This is a bug!
-	at net.minecraft.tileentity.TileEntity.writeInternal(TileEntity.java:89) ~[TileEntity.class:?]
-	at net.minecraft.tileentity.TileEntity.writeToNBT(TileEntity.java:80) ~[TileEntity.class:?]
-	at net.minecraft.tileentity.TileEntityLockable.writeToNBT(TileEntityLockable.java:22) ~[TileEntityLockable.class:?]
-	at net.minecraft.tileentity.TileEntityFurnace.writeToNBT(TileEntityFurnace.java:161) ~[TileEntityFurnace.class:?]
-	at net.minecraft.world.chunk.storage.AnvilChunkLoader.writeChunkToNBT(AnvilChunkLoader.java:416) [AnvilChunkLoader.class:?]
-	at net.minecraft.world.chunk.storage.AnvilChunkLoader.saveChunk(AnvilChunkLoader.java:191) [AnvilChunkLoader.class:?]
-	at net.minecraft.world.gen.ChunkProviderServer.saveChunkData(ChunkProviderServer.java:214) [ChunkProviderServer.class:?]
-	at net.minecraft.world.gen.ChunkProviderServer.saveChunks(ChunkProviderServer.java:242) [ChunkProviderServer.class:?]
-	at net.minecraft.world.WorldServer.saveAllChunks(WorldServer.java:1062) [WorldServer.class:?]
-	at net.minecraft.server.MinecraftServer.saveAllWorlds(MinecraftServer.java:467) [MinecraftServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.saveAllWorlds(IntegratedServer.java:274) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:177) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:589) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_111]
-[16:45:16] [Server thread/INFO]: Saving chunks for level 'Test'/the_nether
-[16:45:16] [Server thread/INFO]: Saving chunks for level 'Test'/the_end
-[16:45:16] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 6716ms behind, skipping 134 tick(s)
-[16:46:15] [Server thread/INFO]: Stopping server
-[16:46:15] [Server thread/INFO]: Saving players
-[16:46:15] [Server thread/INFO]: Player101 lost connection: Disconnected
-[16:46:15] [Server thread/INFO]: Player101 left the game
-[16:46:15] [Server thread/INFO]: Stopping singleplayer server as player logged out
-[16:46:15] [Server thread/INFO]: Saving worlds
-[16:46:15] [Server thread/INFO]: Saving chunks for level 'Test'/overworld
-[16:46:15] [Server thread/INFO]: Saving chunks for level 'Test'/the_nether
-[16:46:15] [Server thread/INFO]: Saving chunks for level 'Test'/the_end
-[16:46:15] [Server thread/INFO]: Unloading dimension 0
-[16:46:15] [Server thread/INFO]: Unloading dimension -1
-[16:46:15] [Server thread/INFO]: Unloading dimension 1
-[16:46:15] [Server thread/INFO]: Applying holder lookups
-[16:46:15] [Server thread/INFO]: Holder lookups applied
-[16:46:16] [main/INFO]: Stopping!
-[16:46:16] [main/INFO]: SoundSystem shutting down...
-[16:46:16] [main/WARN]: Author: Paul Lamb, www.paulscode.com
+[17:38:27] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 7918ms behind, skipping 158 tick(s)
+[17:38:45] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 8828ms behind, skipping 176 tick(s)
+[17:39:02] [main/INFO]: Loaded 7 advancements
+[17:39:04] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2673ms behind, skipping 53 tick(s)
+[17:39:22] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 4514ms behind, skipping 90 tick(s)
+[17:39:43] [Server thread/INFO]: Saving and pausing game...
+[17:39:43] [Server thread/INFO]: Saving chunks for level 'World Gen Test 2'/overworld
+[17:39:43] [Server thread/INFO]: Saving chunks for level 'World Gen Test 2'/the_nether
+[17:39:43] [Server thread/INFO]: Saving chunks for level 'World Gen Test 2'/the_end
+[17:39:44] [main/INFO]: Stopping!
+[17:39:44] [Server thread/INFO]: Stopping server
+[17:39:44] [Server thread/INFO]: Saving players
+[17:39:44] [Server thread/INFO]: Saving worlds
+[17:39:44] [Server thread/INFO]: Saving chunks for level 'World Gen Test 2'/overworld
+[17:39:44] [Server thread/INFO]: Saving chunks for level 'World Gen Test 2'/the_nether
+[17:39:44] [Server thread/INFO]: Saving chunks for level 'World Gen Test 2'/the_end
+[17:39:45] [Server thread/INFO]: Unloading dimension 0
+[17:39:45] [Server thread/INFO]: Unloading dimension -1
+[17:39:45] [Server thread/INFO]: Unloading dimension 1
+[17:39:45] [main/INFO]: SoundSystem shutting down...
+[17:39:45] [Server thread/INFO]: Applying holder lookups
+[17:39:45] [Server thread/INFO]: Holder lookups applied
+[17:39:45] [main/WARN]: Author: Paul Lamb, www.paulscode.com
