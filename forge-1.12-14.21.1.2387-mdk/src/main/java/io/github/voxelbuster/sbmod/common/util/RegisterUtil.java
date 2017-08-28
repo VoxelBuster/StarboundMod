@@ -3,6 +3,7 @@ package io.github.voxelbuster.sbmod.common.util;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.BlockMineral;
 import io.github.voxelbuster.sbmod.common.block.BlockOre;
+import io.github.voxelbuster.sbmod.common.block.IndustrialFurnaceBlock;
 import io.github.voxelbuster.sbmod.common.item.ItemMineral;
 import io.github.voxelbuster.sbmod.common.item.ItemOre;
 import io.github.voxelbuster.sbmod.common.item.ModItem;
@@ -11,6 +12,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -62,6 +65,8 @@ public class RegisterUtil {
     public static final BlockOre ore_block_ferozium = new BlockOre(Material.ROCK, MaterialVariant.FEROZIUM);
     public static final BlockOre ore_block_violium = new BlockOre(Material.ROCK, MaterialVariant.VIOLIUM);
     public static final BlockOre ore_block_solarium = new BlockOre(Material.ROCK, MaterialVariant.SOLARIUM);
+
+    public static final IndustrialFurnaceBlock industrialfurnace = new IndustrialFurnaceBlock(Material.IRON);
 
     private ArrayList<ItemBlock> itemblocks = new ArrayList<>();
 
@@ -128,7 +133,8 @@ public class RegisterUtil {
                 aegisalt_block,
                 ferozium_block,
                 violium_block,
-                solarium_block
+                solarium_block,
+                industrialfurnace
         };
         event.getRegistry().registerAll(blocks);
 

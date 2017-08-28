@@ -1,0 +1,12 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "normal": {
+      "model": "starboundmod:industrialfurnaceblock"
+    },
+    "inventory": {
+      "model": "starboundmod:industrialfurnaceblock",
+      "transform": "forge:default-block"
+    }
+  }
+}

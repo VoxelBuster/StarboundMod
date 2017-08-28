@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "starboundmod:violium"
+    }
+  },
+  "result": {
+    "item": "starboundmod:violiumblock",
+    "data": 0
+  }
+}
