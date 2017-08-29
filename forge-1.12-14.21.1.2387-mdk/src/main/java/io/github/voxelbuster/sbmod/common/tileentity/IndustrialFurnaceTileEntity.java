@@ -17,6 +17,8 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 
 public class IndustrialFurnaceTileEntity extends TileEntityFurnace implements ITickable, IInventory {
+    public static final int SIZE = 3;
+
     private NonNullList<ItemStack> furnaceItemStacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
     private int furnaceBurnTime;
     private int cookTime;

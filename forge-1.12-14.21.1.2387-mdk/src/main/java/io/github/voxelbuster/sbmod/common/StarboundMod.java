@@ -25,5 +25,6 @@ public class StarboundMod {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        commonProxy.init(event, this);
     }
 }
