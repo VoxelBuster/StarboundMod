@@ -47,3 +47,11 @@ tile.violiumoreblock.name=Violium Ore
 tile.solariumoreblock.name=Solarium Ore
 
 tile.industrialfurnace.name=Industrial Furnace
+
+tile.erichiusfuel.name=Erichius Fuel
+tile.oil.name=Oil
+tile.healingwater.name=Healing Water
+
+fluid.erichiusfuel=Erichius Fuel
+fluid.oil=Oil
+fluid.healingwater=Healing Water

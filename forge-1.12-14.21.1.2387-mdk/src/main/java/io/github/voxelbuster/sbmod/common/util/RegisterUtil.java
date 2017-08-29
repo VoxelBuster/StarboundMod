@@ -14,8 +14,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -70,14 +68,14 @@ public class RegisterUtil {
 
     public static final IndustrialFurnaceBlock industrialfurnace = new IndustrialFurnaceBlock(Material.IRON);
 
-    private ArrayList<ItemBlock> itemblocks = new ArrayList<>();
+    private static ArrayList<ItemBlock> itemblocks = new ArrayList<>();
 
-    public void registerItemModel(Item item) {
+    public static void registerItemModel(Item item) {
         StarboundMod.commonProxy.registerItemRender(item, 0, item.getRegistryName().toString());
     }
 
     @SubscribeEvent
-    public void registerItems(RegistryEvent.Register<Item> event) {
+    public static void registerItems(RegistryEvent.Register<Item> event) {
         final Item[] items = {
                 copper_ore,
                 silver_ore,
@@ -116,7 +114,7 @@ public class RegisterUtil {
     }
 
     @SubscribeEvent
-    public void registerBlocks(RegistryEvent.Register<Block> event) {
+    public static void registerBlocks(RegistryEvent.Register<Block> event) {
         final Block[] blocks = {
                 ore_block_copper,
                 ore_block_silver,

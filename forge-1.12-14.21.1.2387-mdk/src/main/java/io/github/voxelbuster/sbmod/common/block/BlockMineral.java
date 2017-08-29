@@ -2,8 +2,6 @@ package io.github.voxelbuster.sbmod.common.block;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.util.MaterialVariant;
-import io.github.voxelbuster.sbmod.common.util.ModBlock;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 public class BlockMineral extends ModBlock {

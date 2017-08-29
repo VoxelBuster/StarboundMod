@@ -1,9 +1,7 @@
 package io.github.voxelbuster.sbmod.common.block;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
-import io.github.voxelbuster.sbmod.common.item.ItemOre;
 import io.github.voxelbuster.sbmod.common.util.MaterialVariant;
-import io.github.voxelbuster.sbmod.common.util.ModBlock;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
