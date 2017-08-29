@@ -33,7 +33,7 @@ public class StarboundMod {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        ModFluids.renderFluids();
+
         commonProxy.init(event, this);
     }
 }

@@ -27,11 +27,11 @@ public class ModFluids {
 
     public static final Fluid oil = new Fluid("oil",
             new ResourceLocation(StarboundMod.MODID, "oilstill"), new ResourceLocation(StarboundMod.MODID, "oilflowing"))
-            .setDensity(1200).setLuminosity(10).setViscosity(400);
+            .setDensity(1200).setLuminosity(0).setViscosity(400);
 
     public static final Fluid healingwater = new Fluid("healingwater",
             new ResourceLocation(StarboundMod.MODID, "healingwaterstill"), new ResourceLocation(StarboundMod.MODID, "healingwaterflowing"))
-            .setDensity(1600).setLuminosity(50).setViscosity(20);
+            .setDensity(1600).setLuminosity(10).setViscosity(20);
 
     public static BlockFluidClassic fuelblock;
     public static BlockFluidClassic oilblock;
@@ -76,6 +76,8 @@ public class ModFluids {
         registry.register(fuelitem);
         registry.register(oilitem);
         registry.register(hwateritem);
+
+        renderFluids();
     }
 
     @SideOnly(Side.CLIENT)
