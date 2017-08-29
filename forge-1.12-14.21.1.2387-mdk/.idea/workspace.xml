@@ -2,38 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62d63d18-1691-487c-9590-3f5b21d64df9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-1.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-2.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-3.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-4.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-5.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-6.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-7.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-22-1.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-22-2.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-22-3.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-27-1.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-27-2.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-27-3.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-27-4.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-27-5.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-1.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-2.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-3.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-4.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-5.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-6.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-7.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-1.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-2.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-3.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-4.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-5.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-6.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-7.log.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/fml-client-latest.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/fml-junk-earlystartup.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/latest.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -544,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504049667363</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="clear logs">
+      <created>1504050044441</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1504050044441</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -587,7 +562,8 @@
     </ignored-roots>
     <MESSAGE value="removed forge_marker line and added VCS root to project" />
     <MESSAGE value="fluids work now" />
-    <option name="LAST_COMMIT_MESSAGE" value="fluids work now" />
+    <MESSAGE value="clear logs" />
+    <option name="LAST_COMMIT_MESSAGE" value="clear logs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
