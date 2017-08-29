@@ -2,35 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62d63d18-1691-487c-9590-3f5b21d64df9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/io/github/voxelbuster/sbmod/common/StarboundMod.class" afterPath="$PROJECT_DIR$/gradle/wrapper/io/github/voxelbuster/sbmod/common/StarboundMod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/io/github/voxelbuster/sbmod/common/block/ModFluids.class" afterPath="$PROJECT_DIR$/gradle/wrapper/io/github/voxelbuster/sbmod/common/block/ModFluids.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-1.log.gz" afterPath="$PROJECT_DIR$/run/logs/2017-08-29-1.log.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-2.log.gz" afterPath="$PROJECT_DIR$/run/logs/2017-08-29-2.log.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-3.log.gz" afterPath="$PROJECT_DIR$/run/logs/2017-08-29-3.log.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-4.log.gz" afterPath="$PROJECT_DIR$/run/logs/2017-08-29-4.log.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-5.log.gz" afterPath="$PROJECT_DIR$/run/logs/2017-08-29-5.log.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-6.log.gz" afterPath="$PROJECT_DIR$/run/logs/2017-08-29-6.log.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-7.log.gz" afterPath="$PROJECT_DIR$/run/logs/2017-08-29-7.log.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/saves/Test/DIM-1/data/villages_nether.dat" afterPath="$PROJECT_DIR$/run/saves/Test/DIM-1/data/villages_nether.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/saves/Test/DIM1/data/villages_end.dat" afterPath="$PROJECT_DIR$/run/saves/Test/DIM1/data/villages_end.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/saves/Test/data/villages.dat" afterPath="$PROJECT_DIR$/run/saves/Test/data/villages.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/saves/Test/level.dat" afterPath="$PROJECT_DIR$/run/saves/Test/level.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/saves/Test/level.dat_old" afterPath="$PROJECT_DIR$/run/saves/Test/level.dat_old" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/saves/Test/region/r.-1.-4.mca" afterPath="$PROJECT_DIR$/run/saves/Test/region/r.-1.-4.mca" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/saves/Test/region/r.0.-4.mca" afterPath="$PROJECT_DIR$/run/saves/Test/region/r.0.-4.mca" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/saves/Test/session.lock" afterPath="$PROJECT_DIR$/run/saves/Test/session.lock" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-1.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-2.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-3.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-4.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-5.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-6.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-20-7.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-22-1.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-22-2.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-22-3.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-27-1.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-27-2.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-27-3.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-27-4.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-27-5.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-1.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-2.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-3.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-4.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-5.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-6.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-28-7.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-1.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-2.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-3.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-4.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-5.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-6.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/2017-08-29-7.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/fml-client-latest.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/fml-junk-earlystartup.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/run/logs/latest.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/assets/starboundmod/blockstates/healingwater.json" afterPath="$PROJECT_DIR$/gradle/wrapper/assets/starboundmod/blockstates/healingwater.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/assets/starboundmod/blockstates/oil.json" afterPath="$PROJECT_DIR$/gradle/wrapper/assets/starboundmod/blockstates/oil.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/config/splash.properties" afterPath="$PROJECT_DIR$/run/config/splash.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/logs/latest.log" afterPath="$PROJECT_DIR$/run/logs/latest.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/usercache.json" afterPath="$PROJECT_DIR$/run/usercache.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run/usernamecache.json" afterPath="$PROJECT_DIR$/run/usernamecache.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/common/StarboundMod.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/common/StarboundMod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/common/block/ModFluids.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/voxelbuster/sbmod/common/block/ModFluids.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/starboundmod/blockstates/healingwater.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/starboundmod/blockstates/healingwater.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/starboundmod/blockstates/oil.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/starboundmod/blockstates/oil.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -341,6 +345,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forge-1.12-14.21.1.2387-mdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forge-1.12-14.21.1.2387-mdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="run" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -519,12 +537,19 @@
       <option name="project" value="LOCAL" />
       <updated>1504045017240</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fluids work now">
+      <created>1504049667363</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1504049667363</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -536,7 +561,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52030736" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -561,7 +586,8 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="removed forge_marker line and added VCS root to project" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed forge_marker line and added VCS root to project" />
+    <MESSAGE value="fluids work now" />
+    <option name="LAST_COMMIT_MESSAGE" value="fluids work now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
