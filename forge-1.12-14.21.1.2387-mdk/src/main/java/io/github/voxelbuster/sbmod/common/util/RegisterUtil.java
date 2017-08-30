@@ -8,16 +8,22 @@ import io.github.voxelbuster.sbmod.common.item.ItemMineral;
 import io.github.voxelbuster.sbmod.common.item.ItemOre;
 import io.github.voxelbuster.sbmod.common.item.ModItem;
 import io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity;
+import io.github.voxelbuster.sbmod.common.world.BiomeAncientGarden;
 import io.github.voxelbuster.sbmod.common.world.ModOreGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.ArrayList;
 
@@ -69,6 +75,9 @@ public class RegisterUtil {
     public static final IndustrialFurnaceBlock industrialfurnace = new IndustrialFurnaceBlock(Material.IRON);
 
     private static ArrayList<ItemBlock> itemblocks = new ArrayList<>();
+
+    public static final BiomeAncientGarden ancientGarden = new BiomeAncientGarden(new Biome.BiomeProperties("ancientgarden")
+            .setBaseBiome("mutated_forest").setTemperature(0.7f).setRainfall(0f));
 
     public static void registerItemModel(Item item) {
         StarboundMod.commonProxy.registerItemRender(item, 0, item.getRegistryName().toString());
@@ -144,8 +153,21 @@ public class RegisterUtil {
             itemblocks.add(itemBlock);
         }
 
-        GameRegistry.registerWorldGenerator(new ModOreGen(), 3);
-
         GameRegistry.registerTileEntity(IndustrialFurnaceTileEntity.class, "starboundmod:industrialfurnace");
+    }
+
+    public static void registerWorldGen() {
+        GameRegistry.registerWorldGenerator(new ModOreGen(), 3);
+    }
+
+    @SubscribeEvent
+    public static void registerBiomes(RegistryEvent.Register<Biome> event) {
+        IForgeRegistry<Biome> registry = event.getRegistry();
+
+        registry.register(ancientGarden);
+
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ancientGarden, 3));
+        
+        FMLLog.log.info("MY BIOME ID HERE: " + Biome.getIdForBiome(ancientGarden));
     }
 }

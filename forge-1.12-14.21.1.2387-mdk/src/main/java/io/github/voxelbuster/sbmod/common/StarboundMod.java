@@ -29,6 +29,7 @@ public class StarboundMod {
         MinecraftForge.EVENT_BUS.register(RegisterUtil.class);
         MinecraftForge.EVENT_BUS.register(ModFluids.class);
         ModFluids.registerFluids();
+        RegisterUtil.registerWorldGen();
     }
 
     @Mod.EventHandler
