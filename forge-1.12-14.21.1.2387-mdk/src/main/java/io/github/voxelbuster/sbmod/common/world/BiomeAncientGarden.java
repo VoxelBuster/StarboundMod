@@ -14,9 +14,10 @@ public class BiomeAncientGarden extends Biome {
     private static BiomeProperties properties = new Biome.BiomeProperties("ancientgarden");
 
     static {
-        properties.setBaseBiome("forest");
+        properties.setBaseBiome("plains");
         properties.setTemperature(0.7f);
         properties.setRainfall(0f);
+        properties.setHeightVariation(0.00001f);
     }
 
     public BiomeAncientGarden() {

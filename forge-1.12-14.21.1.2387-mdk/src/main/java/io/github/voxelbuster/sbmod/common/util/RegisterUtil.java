@@ -10,6 +10,7 @@ import io.github.voxelbuster.sbmod.common.item.ItemOre;
 import io.github.voxelbuster.sbmod.common.item.ModItem;
 import io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity;
 import io.github.voxelbuster.sbmod.common.world.ModOreGen;
+import io.github.voxelbuster.sbmod.common.world.WorldGenAncientGate;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -160,5 +161,6 @@ public class RegisterUtil {
 
     public static void registerWorldGen() {
         GameRegistry.registerWorldGenerator(new ModOreGen(), 3);
+        GameRegistry.registerWorldGenerator(new WorldGenAncientGate(), 1);
     }
 }

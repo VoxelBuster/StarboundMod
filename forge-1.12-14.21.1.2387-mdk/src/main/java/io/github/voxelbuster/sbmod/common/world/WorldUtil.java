@@ -22,7 +22,7 @@ public class WorldUtil {
 
         BiomeDictionary.addTypes(ancientGarden, BiomeDictionary.Type.FOREST);
 
-        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ancientGarden, 1000));
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ancientGarden, 100)); // it shouldn't be too hard to find a gate
         BiomeManager.addSpawnBiome(ancientGarden);
         BiomeProvider.allowedBiomes.add(ancientGarden);
     }

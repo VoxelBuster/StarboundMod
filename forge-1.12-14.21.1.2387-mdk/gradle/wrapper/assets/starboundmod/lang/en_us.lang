@@ -46,6 +46,10 @@ tile.feroziumoreblock.name=Ferozium Ore
 tile.violiumoreblock.name=Violium Ore
 tile.solariumoreblock.name=Solarium Ore
 
+tile.meteoriteblock.name=Meteorite Rock
+tile.ancientstone.name=Ancient Stone
+tile.corecrystal.name=Core Crystal
+
 tile.industrialfurnace.name=Industrial Furnace
 
 tile.erichiusfuel.name=Erichius Fuel

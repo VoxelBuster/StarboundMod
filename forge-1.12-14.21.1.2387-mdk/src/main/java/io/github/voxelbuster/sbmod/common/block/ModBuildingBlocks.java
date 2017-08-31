@@ -15,7 +15,6 @@ public class ModBuildingBlocks {
         .setRegistryName(new ResourceLocation(StarboundMod.MODID, "meteoriteblock")).setCreativeTab(StarboundMod.creativeTab));
         blockSet.add(new ModBlock(Material.ROCK, "ancientstone").setHardness(10f).setResistance(30f).setUnlocalizedName("ancientstone")
                 .setRegistryName(new ResourceLocation(StarboundMod.MODID, "ancientstone")).setCreativeTab(StarboundMod.creativeTab));
-        blockSet.add(new ModBlock(Material.ROCK, "corecrystal").setHardness(10f).setResistance(30f).setUnlocalizedName("corecrystal")
-                .setRegistryName(new ResourceLocation(StarboundMod.MODID, "corecrystal")).setCreativeTab(StarboundMod.creativeTab));
+        blockSet.add(new CoreCrystal());
     }
 }
