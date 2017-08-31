@@ -4,28 +4,24 @@ import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.BlockMineral;
 import io.github.voxelbuster.sbmod.common.block.BlockOre;
 import io.github.voxelbuster.sbmod.common.block.IndustrialFurnaceBlock;
+import io.github.voxelbuster.sbmod.common.block.ModBuildingBlocks;
 import io.github.voxelbuster.sbmod.common.item.ItemMineral;
 import io.github.voxelbuster.sbmod.common.item.ItemOre;
 import io.github.voxelbuster.sbmod.common.item.ModItem;
 import io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity;
-import io.github.voxelbuster.sbmod.common.world.BiomeAncientGarden;
 import io.github.voxelbuster.sbmod.common.world.ModOreGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.biome.Biome;
-import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 @Mod.EventBusSubscriber(modid = StarboundMod.MODID)
 @GameRegistry.ObjectHolder(StarboundMod.MODID)
@@ -76,9 +72,6 @@ public class RegisterUtil {
 
     private static ArrayList<ItemBlock> itemblocks = new ArrayList<>();
 
-    public static final BiomeAncientGarden ancientGarden = new BiomeAncientGarden(new Biome.BiomeProperties("ancientgarden")
-            .setBaseBiome("mutated_forest").setTemperature(0.7f).setRainfall(0f));
-
     public static void registerItemModel(Item item) {
         StarboundMod.commonProxy.registerItemRender(item, 0, item.getRegistryName().toString());
     }
@@ -124,7 +117,8 @@ public class RegisterUtil {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        final Block[] blocks = {
+        final ArrayList<Block> blocks = new ArrayList<>();
+        Block[] bTemp = {
                 ore_block_copper,
                 ore_block_silver,
                 ore_block_titanium,
@@ -145,7 +139,15 @@ public class RegisterUtil {
                 solarium_block,
                 industrialfurnace
         };
-        event.getRegistry().registerAll(blocks);
+        for (Block b : bTemp) {
+            event.getRegistry().register(b);
+            blocks.add(b);
+        }
+        ModBuildingBlocks.addAll();
+        for (Block b : ModBuildingBlocks.blockSet) {
+            event.getRegistry().register(b);
+            blocks.add(b);
+        }
 
         for (Block b: blocks) {
             ItemBlock itemBlock = (ItemBlock) new ItemBlock(b).setRegistryName(b.getRegistryName());
@@ -158,16 +160,5 @@ public class RegisterUtil {
 
     public static void registerWorldGen() {
         GameRegistry.registerWorldGenerator(new ModOreGen(), 3);
-    }
-
-    @SubscribeEvent
-    public static void registerBiomes(RegistryEvent.Register<Biome> event) {
-        IForgeRegistry<Biome> registry = event.getRegistry();
-
-        registry.register(ancientGarden);
-
-        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(ancientGarden, 3));
-        
-        FMLLog.log.info("MY BIOME ID HERE: " + Biome.getIdForBiome(ancientGarden));
     }
 }

@@ -8,11 +8,12 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public abstract class ModBlock extends Block {
+public class ModBlock extends Block {
     private String name;
 
-    public ModBlock(Material materialIn) {
+    public ModBlock(Material materialIn, String name) {
         super(materialIn);
+        this.name = name;
     }
 
     public String getName() {

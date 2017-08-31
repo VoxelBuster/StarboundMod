@@ -2,6 +2,7 @@ package io.github.voxelbuster.sbmod.common;
 
 import io.github.voxelbuster.sbmod.common.block.ModFluids;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
+import io.github.voxelbuster.sbmod.common.world.WorldUtil;
 import io.github.voxelbuster.sbmod.proxy.CommonProxy;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -27,6 +28,7 @@ public class StarboundMod {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(RegisterUtil.class);
+        MinecraftForge.TERRAIN_GEN_BUS.register(WorldUtil.class);
         MinecraftForge.EVENT_BUS.register(ModFluids.class);
         ModFluids.registerFluids();
         RegisterUtil.registerWorldGen();
