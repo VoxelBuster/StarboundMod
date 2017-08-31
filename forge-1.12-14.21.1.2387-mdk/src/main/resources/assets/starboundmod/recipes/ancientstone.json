@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#S#",
+    "SCS",
+    "#S#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    },
+    "C": {
+      "item": "starboundmod:copper"
+    }
+  },
+  "result": {
+    "item": "starboundmod:ancientstone",
+    "count": 4,
+    "data": 0
+  }
+}

@@ -17,7 +17,7 @@ public class ModOreGen implements IWorldGenerator {
     private WorldGenerator genSilverOre;
     private WorldGenerator genTungstenOre;
     private WorldGenerator genTitaniumOre;
-    private WorldGenerator genDurasteelOre;
+    //private WorldGenerator genDurasteelOre;
     private WorldGenerator genAegisaltOre;
     private WorldGenerator genFeroziumOre;
     private WorldGenerator genVioliumOre;
@@ -28,7 +28,7 @@ public class ModOreGen implements IWorldGenerator {
         this.genSilverOre = new WorldGenMinable(RegisterUtil.ore_block_silver.getDefaultState(), 10);
         this.genTitaniumOre = new WorldGenMinable(RegisterUtil.ore_block_titanium.getDefaultState(), 16);
         this.genTungstenOre = new WorldGenMinable(RegisterUtil.ore_block_tungsten.getDefaultState(), 8);
-        this.genDurasteelOre = new WorldGenMinable(RegisterUtil.ore_block_durasteel.getDefaultState(), 1);
+        //this.genDurasteelOre = new WorldGenMinable(RegisterUtil.ore_block_durasteel.getDefaultState(), 1);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ModOreGen implements IWorldGenerator {
                 this.runGenerator(random, genSilverOre, world, chunkX, chunkZ, 2, 5, 40);
                 this.runGenerator(random, genTitaniumOre, world, chunkX, chunkZ, 4, 5, 70);
                 this.runGenerator(random, genTungstenOre, world, chunkX, chunkZ, 1, 5, 20);
-                this.runGenerator(random, genDurasteelOre, world, chunkX, chunkZ, 1, 5, 20);
+                //this.runGenerator(random, genDurasteelOre, world, chunkX, chunkZ, 1, 5, 20);
                 break;
             case -1: //Nether
 
