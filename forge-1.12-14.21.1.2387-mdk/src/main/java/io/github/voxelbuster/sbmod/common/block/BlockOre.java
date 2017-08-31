@@ -3,13 +3,14 @@ package io.github.voxelbuster.sbmod.common.block;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.util.MaterialVariant;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
 import java.util.Random;
 
-public class BlockOre extends ModBlock {
+public class BlockOre extends Block {
     private MaterialVariant materialVariant;
     private Item dropItem;
 
