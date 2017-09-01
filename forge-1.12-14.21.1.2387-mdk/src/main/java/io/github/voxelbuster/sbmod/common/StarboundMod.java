@@ -16,6 +16,9 @@ public class StarboundMod {
     public static final String MODID = "starboundmod";
     public static final String VERSION = "1.0.0";
 
+    @Mod.Instance(MODID)
+    public static StarboundMod instance;
+
     public static final StarboundModCreativeTab creativeTab = new StarboundModCreativeTab();
 
     @SidedProxy(serverSide = "io.github.voxelbuster.sbmod.proxy.CommonProxy", clientSide = "io.github.voxelbuster.sbmod.proxy.ClientProxy")
@@ -31,12 +34,12 @@ public class StarboundMod {
         MinecraftForge.TERRAIN_GEN_BUS.register(WorldUtil.class);
         MinecraftForge.EVENT_BUS.register(ModFluids.class);
         ModFluids.registerFluids();
+        RegisterUtil.registerFurnaceRecipes();
         RegisterUtil.registerWorldGen();
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-
         commonProxy.init(event, this);
     }
 }

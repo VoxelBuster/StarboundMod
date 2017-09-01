@@ -3,14 +3,13 @@ package io.github.voxelbuster.sbmod.common.util;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.BlockMineral;
 import io.github.voxelbuster.sbmod.common.block.BlockOre;
-import io.github.voxelbuster.sbmod.common.block.IndustrialFurnaceBlock;
 import io.github.voxelbuster.sbmod.common.block.ModBuildingBlocks;
 import io.github.voxelbuster.sbmod.common.item.ItemMineral;
 import io.github.voxelbuster.sbmod.common.item.ItemOre;
 import io.github.voxelbuster.sbmod.common.item.ModItem;
-import io.github.voxelbuster.sbmod.common.tileentity.IndustrialFurnaceTileEntity;
 import io.github.voxelbuster.sbmod.common.world.ModOreGen;
 import io.github.voxelbuster.sbmod.common.world.WorldGenAncientGate;
+import io.github.voxelbuster.sbmod.common.world.WorldGenOilPool;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -22,7 +21,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 @Mod.EventBusSubscriber(modid = StarboundMod.MODID)
 @GameRegistry.ObjectHolder(StarboundMod.MODID)
@@ -111,9 +109,6 @@ public class RegisterUtil {
             registerItemModel((ModItem) i);
         }
 
-        GameRegistry.addSmelting(new ItemStack(copper_ore, 2), new ItemStack(copper, 1), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(silver_ore, 2), new ItemStack(silver, 1), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(tungsten_ore, 2), new ItemStack(tungsten, 1), 0.5f);
     }
 
     @SubscribeEvent
@@ -137,8 +132,8 @@ public class RegisterUtil {
                 aegisalt_block,
                 ferozium_block,
                 violium_block,
-                solarium_block,
-                industrialfurnace
+                solarium_block
+                //industrialfurnace
         };
         for (Block b : bTemp) {
             event.getRegistry().register(b);
@@ -162,5 +157,18 @@ public class RegisterUtil {
     public static void registerWorldGen() {
         GameRegistry.registerWorldGenerator(new ModOreGen(), 3);
         GameRegistry.registerWorldGenerator(new WorldGenAncientGate(), 1);
+        GameRegistry.registerWorldGenerator(new WorldGenOilPool(), 2);
+    }
+
+    public static void registerFurnaceRecipes() {
+        GameRegistry.addSmelting(new ItemStack(copper_ore), new ItemStack(copper, 1), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(silver_ore), new ItemStack(silver, 1), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(tungsten_ore), new ItemStack(tungsten, 1), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(titanium_ore), new ItemStack(titanium, 1), 0.7f);
+        GameRegistry.addSmelting(new ItemStack(durasteel_ore), new ItemStack(durasteel, 1), 0.7f);
+        GameRegistry.addSmelting(new ItemStack(aegisalt_ore), new ItemStack(aegisalt, 1), 1f);
+        GameRegistry.addSmelting(new ItemStack(ferozium_ore), new ItemStack(ferozium, 1), 1f);
+        GameRegistry.addSmelting(new ItemStack(violium_ore), new ItemStack(violium, 1), 1f);
+        GameRegistry.addSmelting(new ItemStack(solarium_ore), new ItemStack(solarium, 1), 1.5f);
     }
 }
