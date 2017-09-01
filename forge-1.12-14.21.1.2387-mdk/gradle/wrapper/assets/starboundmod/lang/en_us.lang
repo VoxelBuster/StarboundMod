@@ -50,6 +50,8 @@ tile.meteoriteblock.name=Meteorite Rock
 tile.ancientstone.name=Ancient Stone
 tile.corecrystal.name=Core Crystal
 
+tile.gateportal.name=Unstable Gate Portal Block
+
 tile.industrialfurnace.name=Industrial Furnace
 
 tile.erichiusfuel.name=Erichius Fuel

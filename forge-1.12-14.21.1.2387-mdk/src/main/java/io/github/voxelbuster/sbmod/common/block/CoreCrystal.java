@@ -39,23 +39,23 @@ public class CoreCrystal extends ModBlock {
                             currentPos = currentPos.down();
                             if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                 currentPos = currentPos.offset(initialDirection.getOpposite()).down();
-                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                     currentPos = currentPos.offset(initialDirection.getOpposite());
-                                    if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                    if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                         currentPos = currentPos.offset(initialDirection.getOpposite());
-                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                        if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                             currentPos = currentPos.offset(initialDirection.getOpposite());
-                                            if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                            if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                 currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                     currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                    if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                    if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                         currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                        if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                             currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                            if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                            if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                                 currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                                     currentPos = currentPos.offset(initialDirection.getOpposite()).up();
                                                                     if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                                                         currentPos = currentPos.up();
@@ -67,7 +67,8 @@ public class CoreCrystal extends ModBlock {
                                                                                     currentPos = currentPos.up().offset(initialDirection);
                                                                                     if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                                                                         currentPos = currentPos.up().offset(initialDirection);
-                                                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState() &&
+                                                                                                world.getBlockState(pos.offset(initialDirection.getOpposite(), 4)) == this.getDefaultState()) {
                                                                                             world.setBlockState(pos.down(), Blocks.GOLD_BLOCK.getDefaultState());
                                                                                             return true;
                                                                                         }
@@ -103,23 +104,23 @@ public class CoreCrystal extends ModBlock {
                             currentPos = currentPos.down();
                             if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                 currentPos = currentPos.offset(initialDirection.getOpposite()).down();
-                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                     currentPos = currentPos.offset(initialDirection.getOpposite());
-                                    if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                    if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                         currentPos = currentPos.offset(initialDirection.getOpposite());
-                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                        if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                             currentPos = currentPos.offset(initialDirection.getOpposite());
-                                            if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                            if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                 currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                     currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                    if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                    if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                         currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                        if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                             currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                            if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                            if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                                 currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                                     currentPos = currentPos.offset(initialDirection.getOpposite()).up();
                                                                     if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                                                         currentPos = currentPos.up();
@@ -131,7 +132,8 @@ public class CoreCrystal extends ModBlock {
                                                                                     currentPos = currentPos.up().offset(initialDirection);
                                                                                     if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                                                                         currentPos = currentPos.up().offset(initialDirection);
-                                                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState() &&
+                                                                                                world.getBlockState(pos.offset(initialDirection.getOpposite(), 4)) == this.getDefaultState()) {
                                                                                             world.setBlockState(pos.down(), Blocks.GOLD_BLOCK.getDefaultState());
                                                                                             return true;
                                                                                         }
@@ -167,23 +169,23 @@ public class CoreCrystal extends ModBlock {
                             currentPos = currentPos.down();
                             if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                 currentPos = currentPos.offset(initialDirection.getOpposite()).down();
-                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                     currentPos = currentPos.offset(initialDirection.getOpposite());
-                                    if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                    if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                         currentPos = currentPos.offset(initialDirection.getOpposite());
-                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                        if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                             currentPos = currentPos.offset(initialDirection.getOpposite());
-                                            if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                            if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                 currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                     currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                    if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                    if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                         currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                        if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                             currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                            if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                            if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                                 currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                                     currentPos = currentPos.offset(initialDirection.getOpposite()).up();
                                                                     if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                                                         currentPos = currentPos.up();
@@ -195,7 +197,8 @@ public class CoreCrystal extends ModBlock {
                                                                                     currentPos = currentPos.up().offset(initialDirection);
                                                                                     if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                                                                         currentPos = currentPos.up().offset(initialDirection);
-                                                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState() &&
+                                                                                                world.getBlockState(pos.offset(initialDirection.getOpposite(), 4)) == this.getDefaultState()) {
                                                                                             world.setBlockState(pos.down(), Blocks.GOLD_BLOCK.getDefaultState());
                                                                                             return true;
                                                                                         }
@@ -231,23 +234,23 @@ public class CoreCrystal extends ModBlock {
                             currentPos = currentPos.down();
                             if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                 currentPos = currentPos.offset(initialDirection.getOpposite()).down();
-                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                     currentPos = currentPos.offset(initialDirection.getOpposite());
-                                    if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                    if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                         currentPos = currentPos.offset(initialDirection.getOpposite());
-                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                        if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                             currentPos = currentPos.offset(initialDirection.getOpposite());
-                                            if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                            if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                 currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                     currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                    if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                    if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                         currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                        if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                             currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                            if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                            if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                                 currentPos = currentPos.offset(initialDirection.getOpposite());
-                                                                if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                                if(world.getBlockState(currentPos) == ModBuildingBlocks.ancientstone.getDefaultState()) {
                                                                     currentPos = currentPos.offset(initialDirection.getOpposite()).up();
                                                                     if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                                                         currentPos = currentPos.up();
@@ -259,7 +262,8 @@ public class CoreCrystal extends ModBlock {
                                                                                     currentPos = currentPos.up().offset(initialDirection);
                                                                                     if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
                                                                                         currentPos = currentPos.up().offset(initialDirection);
-                                                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState()) {
+                                                                                        if(world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState() &&
+                                                                                                world.getBlockState(pos.offset(initialDirection.getOpposite(), 4)) == this.getDefaultState()) {
                                                                                             world.setBlockState(pos.down(), Blocks.GOLD_BLOCK.getDefaultState());
                                                                                             return true;
                                                                                         }
