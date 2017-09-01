@@ -4,7 +4,6 @@ import io.github.voxelbuster.sbmod.common.StarboundMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -12,9 +11,10 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLLog;
 
 public class GatePortalBlock extends ModBlock {
-    public static boolean freezeEvents = false;
+    public static boolean freezeEvent = false;
 
     public GatePortalBlock() {
         super(Material.PORTAL, "gateportal");
@@ -29,7 +29,7 @@ public class GatePortalBlock extends ModBlock {
 
     @Override
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos neighbor) {
-        if (freezeEvents) return;
+        if (freezeEvent) {return;}
         if(world.getBlockState(pos.down()) != ModBuildingBlocks.ancientstone.getDefaultState() && world.getBlockState(pos.down()) != this.getDefaultState()) {
             world.setBlockState(pos, Blocks.AIR.getDefaultState());
         }
@@ -39,11 +39,13 @@ public class GatePortalBlock extends ModBlock {
             if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
                 continue;
             } else {
-                if (world.getBlockState(pos.offset(facing)) == Blocks.OBSIDIAN.getDefaultState() || world.getBlockState(pos.offset(facing)) == ModBuildingBlocks.ancientstone.getDefaultState()) {
-                    okayNeigbor ++;
+                if (world.getBlockState(pos.offset(facing)) == Blocks.OBSIDIAN.getDefaultState() || world.getBlockState(pos.offset(facing)) == ModBuildingBlocks.gateportal.getDefaultState()) {
+                    okayNeigbor++;
                 }
             }
         }
+
+        FMLLog.log.info(okayNeigbor);
 
         if (okayNeigbor < 2) {
             world.setBlockState(pos, Blocks.AIR.getDefaultState());

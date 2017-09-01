@@ -14,7 +14,6 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
 import net.minecraft.world.gen.structure.template.TemplateManager;
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
