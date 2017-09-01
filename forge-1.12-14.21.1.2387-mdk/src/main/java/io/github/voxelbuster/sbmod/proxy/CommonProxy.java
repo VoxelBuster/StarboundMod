@@ -11,7 +11,7 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent event, StarboundMod parent) {
-        NetworkRegistry.INSTANCE.registerGuiHandler(StarboundMod.instance, new GuiHandler());
+        //NetworkRegistry.INSTANCE.registerGuiHandler(StarboundMod.instance, new GuiHandler());
     }
 
     public void registerItemRender(Item item, int i, String s) {}

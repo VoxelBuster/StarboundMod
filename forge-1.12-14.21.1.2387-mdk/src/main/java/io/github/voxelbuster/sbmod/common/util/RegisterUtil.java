@@ -67,7 +67,7 @@ public class RegisterUtil {
     public static final BlockOre ore_block_violium = new BlockOre(Material.ROCK, MaterialVariant.VIOLIUM);
     public static final BlockOre ore_block_solarium = new BlockOre(Material.ROCK, MaterialVariant.SOLARIUM);
 
-    public static final IndustrialFurnaceBlock industrialfurnace = new IndustrialFurnaceBlock(Material.IRON);
+    //public static final IndustrialFurnaceBlock industrialfurnace = new IndustrialFurnaceBlock(Material.IRON);
 
     private static ArrayList<ItemBlock> itemblocks = new ArrayList<>();
 
@@ -151,7 +151,7 @@ public class RegisterUtil {
             itemblocks.add(itemBlock);
         }
 
-        GameRegistry.registerTileEntity(IndustrialFurnaceTileEntity.class, "starboundmod:industrialfurnace");
+        //GameRegistry.registerTileEntity(IndustrialFurnaceTileEntity.class, "starboundmod:industrialfurnace");
     }
 
     public static void registerWorldGen() {
