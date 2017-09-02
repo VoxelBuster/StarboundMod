@@ -25,10 +25,18 @@ public class WorldGenOilPool implements IWorldGenerator {
 
         int heightDiff = maxHeight - minHeight + 1;
         for (int i = 0; i < chancesToSpawn; i ++) {
-            int x = chunk_X * 16 + random.nextInt(16);
-            int y = minHeight + random.nextInt(heightDiff);
-            int z = chunk_Z * 16 + random.nextInt(16);
-            generator.generate(world, random, new BlockPos(x,y,z));
+            if (random.nextInt(15) != 8) return;
+            if (world.getBiome(new BlockPos(chunk_X * 16, 64, chunk_Z * 16)) == Biomes.DESERT ||
+                    world.getBiome(new BlockPos(chunk_X * 16, 64, chunk_Z * 16)) == Biomes.JUNGLE ||
+                    world.getBiome(new BlockPos(chunk_X * 16, 64, chunk_Z * 16)) == Biomes.MUTATED_DESERT ||
+                    world.getBiome(new BlockPos(chunk_X * 16, 64, chunk_Z * 16)) == Biomes.BEACH ||
+                    world.getBiome(new BlockPos(chunk_X * 16, 64, chunk_Z * 16)) == Biomes.PLAINS ||
+                    world.getBiome(new BlockPos(chunk_X * 16, 64, chunk_Z * 16)) == Biomes.MESA) {
+                int x = chunk_X * 16 + random.nextInt(16);
+                int y = minHeight + random.nextInt(heightDiff);
+                int z = chunk_Z * 16 + random.nextInt(16);
+                generator.generate(world, random, new BlockPos(x, y, z));
+            }
         }
     }
 

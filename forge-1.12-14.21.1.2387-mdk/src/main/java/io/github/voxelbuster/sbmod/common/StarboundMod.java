@@ -35,11 +35,11 @@ public class StarboundMod {
         MinecraftForge.EVENT_BUS.register(ModFluids.class);
         ModFluids.registerFluids();
         RegisterUtil.registerFurnaceRecipes();
-        RegisterUtil.registerWorldGen();
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        RegisterUtil.registerWorldGen();
         commonProxy.init(event, this);
     }
 }
