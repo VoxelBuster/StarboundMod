@@ -48,6 +48,7 @@ tile.solariumoreblock.name=Solarium Ore
 
 tile.meteoriteblock.name=Meteorite Rock
 tile.ancientstone.name=Ancient Stone
+tile.ancientbrick.name=Ancient Brick
 tile.corecrystal.name=Core Crystal
 
 tile.gateportal.name=Unstable Gate Portal Block

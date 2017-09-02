@@ -122,7 +122,7 @@ public class WorldProviderOutpost extends WorldProvider {
     @Override
     public int getActualHeight()
     {
-        return 256;
+        return 0;
     }
 
     public long getSeed() {

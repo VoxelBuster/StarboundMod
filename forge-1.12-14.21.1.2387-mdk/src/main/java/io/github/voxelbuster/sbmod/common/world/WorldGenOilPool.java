@@ -7,20 +7,41 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenLakes;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
-public class WorldGenOilPool extends WorldGenLakes implements IWorldGenerator{
+public class WorldGenOilPool implements IWorldGenerator {
+    private WorldGenLakes oilPool;
+
     public WorldGenOilPool() {
-        super(ModFluids.oilblock);
+        this.oilPool = new WorldGenLakes(ModFluids.oilblock);
+    }
+
+    private void runGenerator(Random random, WorldGenerator generator, World world, int chunk_X, int chunk_Z, int chancesToSpawn, int minHeight, int maxHeight) {
+        if (minHeight < 0 || maxHeight > 256 || minHeight > maxHeight)
+            throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");
+
+        int heightDiff = maxHeight - minHeight + 1;
+        for (int i = 0; i < chancesToSpawn; i ++) {
+            int x = chunk_X * 16 + random.nextInt(16);
+            int y = minHeight + random.nextInt(heightDiff);
+            int z = chunk_Z * 16 + random.nextInt(16);
+            generator.generate(world, random, new BlockPos(x,y,z));
+        }
     }
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-        if (world.getBiome(new BlockPos(chunkX * 16,64 , chunkZ * 16)) == Biomes.DESERT || world.getBiome(new BlockPos(chunkX * 16, 64, chunkZ * 16)) == Biomes.MUTATED_DESERT
-             || world.getBiome(new BlockPos(chunkX * 16, 64, chunkZ * 16)) == Biomes.JUNGLE  || world.getBiome(new BlockPos(chunkX * 16, 64, chunkZ * 16)) == Biomes.PLAINS) {
-            if (random.nextInt(40) == 25) super.generate(world, random, new BlockPos(chunkX * 16 - random.nextInt(16), random.nextInt(90), chunkZ * 16 - random.nextInt(16)));
+        switch (world.provider.getDimension()) {
+            case 0: //Overworld
+                this.runGenerator(random, oilPool, world, chunkX, chunkZ, 1, 40, 90);
+                break;
+            case -1: //Nether
+                break;
+            case 1: //End
+                break;
         }
     }
 }

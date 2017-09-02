@@ -34,8 +34,8 @@ public class WorldGenAncientGate implements IWorldGenerator {
             world.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
             PlacementSettings placementsettings = new PlacementSettings().setMirror(Mirror.NONE)
                     .setRotation(facing).setIgnoreEntities(true).setIgnoreStructureBlock(true);
-            int genCheck = rand.nextInt(50);
-            if (world.provider.getDimension() == 0 && genCheck == 10 &&
+            int genCheck = rand.nextInt(10);
+            if (world.provider.getDimension() == 0 && genCheck == 5 &&
                     (world.getBlockState(pos) == Blocks.GRASS.getDefaultState() || world.getBlockState(pos) == Blocks.DIRT.getDefaultState()) &&
                     world.getBiome(pos).toString().contains("BiomeAncientGarden")) {
                 BlockPos correctedPos = new BlockPos(pos.getX(), pos.getY() - 9, pos.getZ());

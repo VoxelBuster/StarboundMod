@@ -1,6 +1,9 @@
 package io.github.voxelbuster.sbmod.common.world;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.profiler.Profiler;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.storage.WorldInfo;
@@ -21,4 +24,19 @@ public class OutpostDimension extends World {
     protected boolean isChunkLoaded(int x, int z, boolean allowEmpty) {
         return false;
     }
+
+    @Override
+     public void onEntityAdded(Entity entity) {
+        if (entity instanceof EntityPlayer) {
+            ((EntityPlayer) entity).setGameType(GameType.ADVENTURE);
+            entity.move(null, 0, 10, 0);
+        }
+     }
+
+     @Override
+    public void onEntityRemoved(Entity entity) {
+        if (entity instanceof EntityPlayer) {
+            ((EntityPlayer) entity).setGameType(GameType.SURVIVAL);
+        }
+     }
 }
