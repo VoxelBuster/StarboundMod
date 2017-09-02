@@ -1,6 +1,7 @@
 package io.github.voxelbuster.sbmod.common.world;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
+import net.minecraft.world.DimensionType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeProvider;
 import net.minecraftforge.common.BiomeDictionary;
@@ -13,6 +14,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber(modid = StarboundMod.MODID)
 public class WorldUtil {
     public static final BiomeAncientGarden ancientGarden = new BiomeAncientGarden();
+    public static DimensionType dim_outpost = DimensionType.register("outpost","_dim", 111117116, WorldProviderOutpost.class, false);
 
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event) {

@@ -1,9 +1,12 @@
 package io.github.voxelbuster.sbmod.common.block;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
+import io.github.voxelbuster.sbmod.common.world.WorldUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -45,8 +48,6 @@ public class GatePortalBlock extends ModBlock {
             }
         }
 
-        FMLLog.log.info(okayNeigbor);
-
         if (okayNeigbor < 2) {
             world.setBlockState(pos, Blocks.AIR.getDefaultState());
         }
@@ -62,6 +63,13 @@ public class GatePortalBlock extends ModBlock {
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {
         return NULL_AABB;
+    }
+
+    @Override
+    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+        if (entityIn instanceof EntityPlayer) {
+            ((EntityPlayer)entityIn).changeDimension(WorldUtil.dim_outpost.getId());
+        }
     }
 
 }

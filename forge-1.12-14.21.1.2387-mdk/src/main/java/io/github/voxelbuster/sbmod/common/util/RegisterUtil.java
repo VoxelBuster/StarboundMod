@@ -10,16 +10,19 @@ import io.github.voxelbuster.sbmod.common.item.ModItem;
 import io.github.voxelbuster.sbmod.common.world.ModOreGen;
 import io.github.voxelbuster.sbmod.common.world.WorldGenAncientGate;
 import io.github.voxelbuster.sbmod.common.world.WorldGenOilPool;
+import io.github.voxelbuster.sbmod.common.world.WorldUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(modid = StarboundMod.MODID)
@@ -158,6 +161,8 @@ public class RegisterUtil {
         GameRegistry.registerWorldGenerator(new ModOreGen(), 3);
         GameRegistry.registerWorldGenerator(new WorldGenAncientGate(), 1);
         GameRegistry.registerWorldGenerator(new WorldGenOilPool(), 2);
+
+        DimensionManager.registerDimension(WorldUtil.dim_outpost.getId(), WorldUtil.dim_outpost);
     }
 
     public static void registerFurnaceRecipes() {
