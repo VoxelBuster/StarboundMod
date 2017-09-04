@@ -3,6 +3,7 @@ package io.github.voxelbuster.sbmod.common.util;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.BlockMineral;
 import io.github.voxelbuster.sbmod.common.block.BlockOre;
+import io.github.voxelbuster.sbmod.common.block.IndustrialFurnace;
 import io.github.voxelbuster.sbmod.common.block.ModBuildingBlocks;
 import io.github.voxelbuster.sbmod.common.item.ItemMineral;
 import io.github.voxelbuster.sbmod.common.item.ItemOre;
@@ -13,14 +14,18 @@ import io.github.voxelbuster.sbmod.common.world.WorldGenOilPool;
 import io.github.voxelbuster.sbmod.common.world.WorldUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -70,7 +75,7 @@ public class RegisterUtil {
     public static final BlockOre ore_block_violium = new BlockOre(Material.ROCK, MaterialVariant.VIOLIUM);
     public static final BlockOre ore_block_solarium = new BlockOre(Material.ROCK, MaterialVariant.SOLARIUM);
 
-    //public static final IndustrialFurnaceBlock industrialfurnace = new IndustrialFurnaceBlock(Material.IRON);
+    public static final IndustrialFurnace industrialfurnace = new IndustrialFurnace();
 
     private static ArrayList<ItemBlock> itemblocks = new ArrayList<>();
 
@@ -135,8 +140,8 @@ public class RegisterUtil {
                 aegisalt_block,
                 ferozium_block,
                 violium_block,
-                solarium_block
-                //industrialfurnace
+                solarium_block,
+                industrialfurnace
         };
         for (Block b : bTemp) {
             event.getRegistry().register(b);
@@ -153,8 +158,15 @@ public class RegisterUtil {
             itemBlock.setCreativeTab(StarboundMod.creativeTab);
             itemblocks.add(itemBlock);
         }
+    }
 
-        //GameRegistry.registerTileEntity(IndustrialFurnaceTileEntity.class, "starboundmod:industrialfurnace");
+    public static void init(FMLInitializationEvent event) {
+        GameRegistry.registerTileEntity(IndustrialFurnace.TileEntityCustom.class, "TileEntityindustrialFurnace");
+        if (event.getSide() == Side.CLIENT) {
+            Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
+                    .register(Item.getItemFromBlock(industrialfurnace), 0, new ModelResourceLocation("starboundmod:industrialfurnace", "inventory"));
+
+        }
     }
 
     public static void registerWorldGen() {

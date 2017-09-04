@@ -1,6 +1,7 @@
 package io.github.voxelbuster.sbmod.common;
 
 import io.github.voxelbuster.sbmod.common.block.ModFluids;
+import io.github.voxelbuster.sbmod.common.util.GuiHandler;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
 import io.github.voxelbuster.sbmod.common.world.WorldUtil;
 import io.github.voxelbuster.sbmod.proxy.CommonProxy;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 @Mod(modid = StarboundMod.MODID, version = StarboundMod.VERSION)
 public class StarboundMod {
@@ -39,6 +41,8 @@ public class StarboundMod {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        RegisterUtil.init(event);
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         RegisterUtil.registerWorldGen();
         commonProxy.init(event, this);
     }
