@@ -1,5 +1,6 @@
 package io.github.voxelbuster.sbmod.common.inventory;
 
+import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.IndustrialFurnace;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -175,7 +176,7 @@ public class IndustrialFurnaceGUI {
             this.ySize = 166;
         }
 
-        private static final ResourceLocation texture = new ResourceLocation("industrialfurnacegui.png");
+        private static final ResourceLocation texture = new ResourceLocation(StarboundMod.MODID, "textures/gui/industrialfurnacegui.png");
 
         protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3) {
             int posX = (this.width) / 2;
