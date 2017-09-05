@@ -206,7 +206,6 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
 
         @Override
         public void update() {
-            boolean flag = this.isBurning();
             boolean flag1 = false;
 
             if (this.isBurning())
@@ -246,6 +245,8 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
                     if (this.isBurning() && this.canSmelt())
                     {
                         ++this.cookTime;
+
+                        if (totalCookTime == 0) this.totalCookTime = IndustrialFurnaceRecipes.getCookTime(this.getItems().get(0));
 
                         if (this.cookTime == this.totalCookTime)
                         {
