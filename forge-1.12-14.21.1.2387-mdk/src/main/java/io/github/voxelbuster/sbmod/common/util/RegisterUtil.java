@@ -19,6 +19,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -114,7 +115,7 @@ public class RegisterUtil {
         }
 
         for (Item i : items) {
-            registerItemModel((ModItem) i);
+            registerItemModel(i);
         }
 
     }
@@ -162,11 +163,6 @@ public class RegisterUtil {
 
     public static void init(FMLInitializationEvent event) {
         GameRegistry.registerTileEntity(IndustrialFurnace.TileEntityCustom.class, "TileEntityindustrialFurnace");
-        if (event.getSide() == Side.CLIENT) {
-            Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-                    .register(Item.getItemFromBlock(industrialfurnace), 0, new ModelResourceLocation("starboundmod:industrialfurnace", "inventory"));
-
-        }
     }
 
     public static void registerWorldGen() {
@@ -175,17 +171,5 @@ public class RegisterUtil {
         GameRegistry.registerWorldGenerator(new WorldGenOilPool(), 2);
 
         DimensionManager.registerDimension(WorldUtil.dim_outpost.getId(), WorldUtil.dim_outpost);
-    }
-
-    public static void registerFurnaceRecipes() {
-        GameRegistry.addSmelting(new ItemStack(copper_ore), new ItemStack(copper, 1), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(silver_ore), new ItemStack(silver, 1), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(tungsten_ore), new ItemStack(tungsten, 1), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(titanium_ore), new ItemStack(titanium, 1), 0.7f);
-        GameRegistry.addSmelting(new ItemStack(durasteel_ore), new ItemStack(durasteel, 1), 0.7f);
-        GameRegistry.addSmelting(new ItemStack(aegisalt_ore), new ItemStack(aegisalt, 1), 1f);
-        GameRegistry.addSmelting(new ItemStack(ferozium_ore), new ItemStack(ferozium, 1), 1f);
-        GameRegistry.addSmelting(new ItemStack(violium_ore), new ItemStack(violium, 1), 1f);
-        GameRegistry.addSmelting(new ItemStack(solarium_ore), new ItemStack(solarium, 1), 1.5f);
     }
 }

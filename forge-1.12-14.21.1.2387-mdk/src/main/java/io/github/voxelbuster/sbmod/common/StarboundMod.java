@@ -36,7 +36,6 @@ public class StarboundMod {
         MinecraftForge.TERRAIN_GEN_BUS.register(WorldUtil.class);
         MinecraftForge.EVENT_BUS.register(ModFluids.class);
         ModFluids.registerFluids();
-        RegisterUtil.registerFurnaceRecipes();
     }
 
     @Mod.EventHandler
