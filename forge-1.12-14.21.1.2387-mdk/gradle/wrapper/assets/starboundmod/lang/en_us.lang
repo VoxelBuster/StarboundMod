@@ -11,6 +11,10 @@ item.aegisalt.name=Refined Aegisalt
 item.ferozium.name=Refined Ferozium
 item.violium.name=Refined Violium
 item.solarium.name=Solarium Star
+item.platinum.name=Platinum Bar
+item.plutonium.name=Refined Plutonium Rod
+item.uranium.name=Refined Uranium Rod
+item.flawlessdia.name=Flawless Diamond
 
 item.copperore.name=Copper Ore
 item.silverore.name=Silver Ore
@@ -22,6 +26,9 @@ item.feroziumore.name=Ferozium Ore
 item.violiumore.name=Violium Ore
 item.solariumore.name=Solarium Ore
 item.corefragmentore.name=Core Fragment
+item.platinumore.name=Platinum Ore
+item.plutoniumore.name=Plutonium Ore
+item.uraniumore.name=Uranium Ore
 
 item.supermatter.name=Erichius Crystal
 
@@ -50,6 +57,10 @@ tile.meteoriteblock.name=Meteorite Rock
 tile.ancientstone.name=Ancient Stone
 tile.ancientbrick.name=Ancient Brick
 tile.corecrystal.name=Core Crystal
+
+tile.outpostpanel.name=Outpost Panel
+tile.outpostpillar.name=Outpost Pillar
+tile.outpostsupport.name=Outpost Support
 
 tile.gateportal.name=Unstable Gate Portal Block
 

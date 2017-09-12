@@ -33,7 +33,6 @@ public class BlockOre extends Block {
             this.setHardness(10.0f);
             this.setResistance(15.0f);
             this.dropItem = RegisterUtil.solarium_ore;
-            //ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation("solarium_star", "inventory"));
         } else if (variant == MaterialVariant.SILVER) {
             this.setRegistryName(StarboundMod.MODID, "silveroreblock");
             this.setUnlocalizedName("silveroreblock");
@@ -41,7 +40,6 @@ public class BlockOre extends Block {
             this.setHardness(10.0f);
             this.setResistance(15.0f);
             this.dropItem = RegisterUtil.silver_ore;
-            //ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation("solarium_star", "inventory"));
         } else if (variant == MaterialVariant.TITANIUM) {
             this.setRegistryName(StarboundMod.MODID, "titaniumoreblock");
             this.setUnlocalizedName("titaniumoreblock");
@@ -49,14 +47,12 @@ public class BlockOre extends Block {
             this.setHardness(10.0f);
             this.setResistance(15.0f);
             this.dropItem = RegisterUtil.titanium_ore;
-            //ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation("solarium_star", "inventory"));
         } else if (variant == MaterialVariant.TUNGSTEN) {
             this.setRegistryName(StarboundMod.MODID, "tungstenoreblock");
             this.setUnlocalizedName("tungstenoreblock");
             this.setHarvestLevel("pickaxe", 2);
             this.setHardness(10.0f);
             this.setResistance(15.0f);
-            //ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation("solarium_star", "inventory"));
         } else if (variant == MaterialVariant.DURASTEEL) {
             this.setRegistryName(StarboundMod.MODID, "durasteeloreblock");
             this.setUnlocalizedName("durasteeloreblock");
@@ -64,7 +60,6 @@ public class BlockOre extends Block {
             this.setHardness(10.0f);
             this.setResistance(15.0f);
             this.dropItem = RegisterUtil.durasteel_ore;
-            //ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation("solarium_star", "inventory"));
         } else if (variant == MaterialVariant.AEGISALT) {
             this.setRegistryName(StarboundMod.MODID, "aegisaltoreblock");
             this.setUnlocalizedName("aegisaltoreblock");
@@ -72,7 +67,6 @@ public class BlockOre extends Block {
             this.setHardness(10.0f);
             this.setResistance(15.0f);
             this.dropItem = RegisterUtil.aegisalt_ore;
-            //ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation("solarium_star", "inventory"));
         } else if (variant == MaterialVariant.FEROZIUM) {
             this.setRegistryName(StarboundMod.MODID, "feroziumoreblock");
             this.setUnlocalizedName("feroziumoreblock");
@@ -80,7 +74,6 @@ public class BlockOre extends Block {
             this.setHardness(10.0f);
             this.setResistance(15.0f);
             this.dropItem = RegisterUtil.ferozium_ore;
-            //ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation("solarium_star", "inventory"));
         } else if (variant == MaterialVariant.VIOLIUM) {
             this.setRegistryName(StarboundMod.MODID, "violiumoreblock");
             this.setUnlocalizedName("violiumoreblock");
@@ -88,7 +81,27 @@ public class BlockOre extends Block {
             this.setHardness(10.0f);
             this.setResistance(15.0f);
             this.dropItem = RegisterUtil.violium_ore;
-            //ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation("solarium_star", "inventory"));
+        } else if (variant == MaterialVariant.URANIUM) {
+            this.setRegistryName(StarboundMod.MODID, "uraniumoreblock");
+            this.setUnlocalizedName("uraniumoreblock");
+            this.setHarvestLevel("pickaxe", 2);
+            this.setHardness(10.0f);
+            this.setResistance(15.0f);
+            this.dropItem = RegisterUtil.uraniumore;
+        } else if (variant == MaterialVariant.PLUTONIUM) {
+            this.setRegistryName(StarboundMod.MODID, "plutoniumoreblock");
+            this.setUnlocalizedName("plutoniumoreblock");
+            this.setHarvestLevel("pickaxe", 2);
+            this.setHardness(10.0f);
+            this.setResistance(15.0f);
+            this.dropItem = RegisterUtil.plutoniumore;
+        } else if (variant == MaterialVariant.PLATINUM) {
+            this.setRegistryName(StarboundMod.MODID, "platinumoreblock");
+            this.setUnlocalizedName("platinumoreblock");
+            this.setHarvestLevel("pickaxe", 2);
+            this.setHardness(10.0f);
+            this.setResistance(15.0f);
+            this.dropItem = RegisterUtil.platinumore;
         } else {
             this.setRegistryName(StarboundMod.MODID, "genericblockore");
         }

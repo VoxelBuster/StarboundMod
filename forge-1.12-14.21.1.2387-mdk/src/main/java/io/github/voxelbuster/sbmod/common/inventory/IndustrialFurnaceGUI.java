@@ -2,6 +2,7 @@ package io.github.voxelbuster.sbmod.common.inventory;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.IndustrialFurnace;
+import io.github.voxelbuster.sbmod.common.item.crafting.IndustrialFurnaceRecipes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -21,7 +22,6 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
-@SuppressWarnings("unchecked")
 public class IndustrialFurnaceGUI {
 
     public static IInventory inherited;
@@ -33,6 +33,8 @@ public class IndustrialFurnaceGUI {
         World world = null;
         EntityPlayer entity = null;
         int i, j, k;
+
+        public static final int INPUT = 0, FUEL = 1, OUTPUT = 2;
 
         public GuiContainerMod(World world, int i, int j, int k, EntityPlayer player) {
 
@@ -81,18 +83,6 @@ public class IndustrialFurnaceGUI {
                     return false;
                 }
 
-                public void onSlotChanged() {
-                    super.onSlotChanged();
-                    if (getHasStack()) {
-                        EntityPlayer entity = Minecraft.getMinecraft().player;
-                        int i = (int) entity.posX;
-                        int j = (int) entity.posY;
-                        int k = (int) entity.posZ;
-                        MinecraftServer server = FMLCommonHandler.instance().getMinecraftServerInstance();
-                        World world = server.worlds[0];
-
-                    }
-                }
             });
             bindPlayerInventory(player.inventory);
 
@@ -118,45 +108,92 @@ public class IndustrialFurnaceGUI {
             }
         }
 
-        @Override
-        public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
+        public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
+        {
             ItemStack itemstack = null;
-            Slot slot = (Slot) this.inventorySlots.get(index);
+            Slot slot = this.inventorySlots.get(par2);
 
-            if (slot != null && slot.getHasStack()) {
+            if (slot != null && slot.getHasStack())
+            {
                 ItemStack itemstack1 = slot.getStack();
                 itemstack = itemstack1.copy();
 
-                if (index < 9) {
-                    if (!this.mergeItemStack(itemstack1, 9, (45 - 9), true)) {// fixes
-                        // shiftclick
-                        // error
+                // If itemstack is in Output stack
+                if (par2 == OUTPUT)
+                {
+                    // try to place in player inventory / action bar; add 36+1 because mergeItemStack uses < index,
+                    // so the last slot in the inventory won't get checked if you don't add 1
+                    if (!this.mergeItemStack(itemstack1, OUTPUT+1, OUTPUT+36+1, true))
+                    {
                         return null;
                     }
-                } else if (!this.mergeItemStack(itemstack1, 0, 9, false)) {
+
+                    slot.onSlotChange(itemstack1, itemstack);
+                }
+                // itemstack is in player inventory, try to place in appropriate furnace slot
+                else if (par2 != FUEL && par2 != INPUT)
+                {
+                    // if it can be smelted, place in the input slots
+                    if (IndustrialFurnaceRecipes.isSmeltable(itemstack1))
+                    {
+                        // try to place in either Input slot; add 1 to final input slot because mergeItemStack uses < index
+                        if (!this.mergeItemStack(itemstack1, INPUT, INPUT+1, false))
+                        {
+                            return null;
+                        }
+                    }
+                    // if it's an energy source, place in Fuel slot
+                    else if (IndustrialFurnace.TileEntityCustom.isItemFuel(itemstack1))
+                    {
+                        if (!this.mergeItemStack(itemstack1, FUEL, FUEL+1, false))
+                        {
+                            return null;
+                        }
+                    }
+                    // item in player's inventory, but not in action bar
+                    else if (par2 >= OUTPUT+1 && par2 < OUTPUT+28)
+                    {
+                        // place in action bar
+                        if (!this.mergeItemStack(itemstack1, OUTPUT+28, OUTPUT+37, false))
+                        {
+                            return null;
+                        }
+                    }
+                    // item in action bar - place in player inventory
+                    else if (par2 >= OUTPUT+28 && par2 < OUTPUT+37 && !this.mergeItemStack(itemstack1, OUTPUT+1, OUTPUT+28, false))
+                    {
+                        return null;
+                    }
+                }
+                // In one of the infuser slots; try to place in player inventory / action bar
+                else if (!this.mergeItemStack(itemstack1, OUTPUT+1, OUTPUT+37, false))
+                {
                     return null;
                 }
 
-                if (itemstack1.getCount() == 0) {
-                    slot.putStack((ItemStack) null);
-                } else {
+                if (itemstack1.getCount() == 0)
+                {
+                    slot.putStack((ItemStack)null);
+                }
+                else
+                {
                     slot.onSlotChanged();
                 }
 
-                if (itemstack1.getCount() == itemstack.getCount()) {
+                if (itemstack1.getCount() == itemstack.getCount())
+                {
                     return null;
                 }
 
-                slot.onTake(playerIn, itemstack1);
+                slot.onTake(par1EntityPlayer, itemstack1);
             }
-
             return itemstack;
         }
 
         public void onContainerClosed(EntityPlayer playerIn) {
             super.onContainerClosed(playerIn);
-
         }
+
     }
 
     public static class GuiWindow extends GuiContainer {

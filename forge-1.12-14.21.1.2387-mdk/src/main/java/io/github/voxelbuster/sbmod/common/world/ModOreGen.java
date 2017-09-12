@@ -17,18 +17,18 @@ public class ModOreGen implements IWorldGenerator {
     private WorldGenerator genSilverOre;
     private WorldGenerator genTungstenOre;
     private WorldGenerator genTitaniumOre;
-    //private WorldGenerator genDurasteelOre;
-    private WorldGenerator genAegisaltOre;
-    private WorldGenerator genFeroziumOre;
-    private WorldGenerator genVioliumOre;
-    private WorldGenerator genSolariumOre;
+    private WorldGenerator genUraniumOre;
+    private WorldGenerator genPlutoniumOre;
+    private WorldGenerator genPlatinumOre;
 
     public ModOreGen() {
         this.genCopperOre = new WorldGenMinable(RegisterUtil.ore_block_copper.getDefaultState(), 12);
         this.genSilverOre = new WorldGenMinable(RegisterUtil.ore_block_silver.getDefaultState(), 10);
         this.genTitaniumOre = new WorldGenMinable(RegisterUtil.ore_block_titanium.getDefaultState(), 16);
         this.genTungstenOre = new WorldGenMinable(RegisterUtil.ore_block_tungsten.getDefaultState(), 8);
-        //this.genDurasteelOre = new WorldGenMinable(RegisterUtil.ore_block_durasteel.getDefaultState(), 1);
+        this.genUraniumOre = new WorldGenMinable(RegisterUtil.ore_block_uranium.getDefaultState(), 12);
+        this.genPlutoniumOre = new WorldGenMinable(RegisterUtil.ore_block_plutonium.getDefaultState(), 12);
+        this.genPlatinumOre = new WorldGenMinable(RegisterUtil.ore_block_platinum.getDefaultState(), 8);
     }
 
     @Override
@@ -39,7 +39,9 @@ public class ModOreGen implements IWorldGenerator {
                 this.runGenerator(random, genSilverOre, world, chunkX, chunkZ, 2, 5, 40);
                 this.runGenerator(random, genTitaniumOre, world, chunkX, chunkZ, 4, 5, 70);
                 this.runGenerator(random, genTungstenOre, world, chunkX, chunkZ, 1, 5, 20);
-                //this.runGenerator(random, genDurasteelOre, world, chunkX, chunkZ, 1, 5, 20);
+                this.runGenerator(random, genUraniumOre, world, chunkX, chunkZ, 2, 0, 40);
+                this.runGenerator(random, genPlutoniumOre, world, chunkX, chunkZ, 2, 0, 30);
+                this.runGenerator(random, genPlatinumOre, world, chunkX, chunkZ, 1, 5, 20);
                 break;
             case -1: //Nether
 

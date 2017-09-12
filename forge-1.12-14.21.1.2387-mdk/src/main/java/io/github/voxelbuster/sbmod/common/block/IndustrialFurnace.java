@@ -2,26 +2,28 @@ package io.github.voxelbuster.sbmod.common.block;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.inventory.IndustrialFurnaceGUI;
+import io.github.voxelbuster.sbmod.common.item.crafting.IndustrialFurnaceRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ContainerDispenser;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -40,7 +42,6 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
 
     @Override
     public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random random) {
-        EntityPlayer entity = Minecraft.getMinecraft().player;
         int i = pos.getX();
         int j = pos.getY();
         int k = pos.getZ();
@@ -49,7 +50,7 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
         int par3 = j;
         int par4 = k;
         Random par5Random = random;
-        if (true)
+        if (((TileEntityCustom) world.getTileEntity(pos)).isBurning()) {
             for (int la = 0; la < 4; ++la) {
                 double d0 = (double) ((float) par2 + 0.5F) + (double) (par5Random.nextFloat() - 0.5F) * 0.5D;
                 double d1 = ((double) ((float) par3 + 0.7F) + (double) (par5Random.nextFloat() - 0.5F) * 0.5D) + 0.5D;
@@ -58,7 +59,7 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
                 double d4 = 0.27000001072883606D;
                 par1World.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - d4, d1 + d3, d2, 0.0D, 0.0D, 0.0D);
             }
-
+        }
     }
 
     @Override
@@ -86,20 +87,6 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
     }
 
     @Override
-    public boolean hasComparatorInputOverride(IBlockState state) {
-        return true;
-    }
-
-    @Override
-    public int getComparatorInputOverride(IBlockState blockState, World worldIn, BlockPos pos) {
-        TileEntity tileentity = worldIn.getTileEntity(pos);
-        if (tileentity instanceof IndustrialFurnace.TileEntityCustom)
-            return Container.calcRedstoneFromInventory((TileEntityCustom) tileentity);
-        else
-            return 0;
-    }
-
-    @Override
     public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
         int i = pos.getX();
         int j = pos.getY();
@@ -115,11 +102,6 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
     }
 
     @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-    }
-
-    @Override
     public int tickRate(World world) {
         return 10;
     }
@@ -129,9 +111,13 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
         return 1;
     }
 
-    public static class TileEntityCustom extends TileEntityLockableLoot {
+    public static class TileEntityCustom extends TileEntityLockableLoot implements ITickable {
 
         private NonNullList<ItemStack> stacks = NonNullList.<ItemStack> withSize(3, ItemStack.EMPTY);
+        private int furnaceBurnTime;
+        private int currentItemBurnTime;
+        private int cookTime;
+        private double totalCookTime;
 
         public int getSizeInventory() {
             return 3;
@@ -191,9 +177,164 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
             return new ContainerDispenser(playerInventory, this);
         }
 
+        @Override
+        public boolean isItemValidForSlot(int slot, ItemStack stack) {
+            if (slot == 0) {
+                return true;
+            } else if (slot == 1) {
+                return isItemFuel(stack);
+            } else {
+                return false;
+            }
+        }
+
+        public static boolean isItemFuel(ItemStack stack) {
+            return getBurnTime(stack) > 0;
+        }
+
+        public static int getBurnTime(ItemStack stack) {
+            if (stack.getItem() == Items.COAL) return 400;
+            else if (stack.getItem() == Item.getItemFromBlock(Blocks.COAL_BLOCK)) return 4000;
+            else if (stack.getItem() == Items.LAVA_BUCKET) return 5000;
+            else if (stack.getItem() == Items.BLAZE_ROD) return 600;
+            else return 0;
+        }
+
         protected NonNullList<ItemStack> getItems() {
             return this.stacks;
         }
 
+        @Override
+        public void update() {
+            boolean flag1 = false;
+
+            if (this.isBurning())
+            {
+                --this.furnaceBurnTime;
+            }
+
+            if (!this.world.isRemote)
+            {
+                ItemStack itemstack = this.getItems().get(1);
+
+                if (this.isBurning() || !itemstack.isEmpty() && !(this.getItems().get(0)).isEmpty())
+                {
+                    if (!this.isBurning() && this.canSmelt())
+                    {
+                        this.furnaceBurnTime = getBurnTime(itemstack);
+                        this.currentItemBurnTime = this.furnaceBurnTime;
+
+                        if (this.isBurning())
+                        {
+                            flag1 = true;
+
+                            if (!itemstack.isEmpty())
+                            {
+                                Item item = itemstack.getItem();
+                                itemstack.shrink(1);
+
+                                if (itemstack.isEmpty())
+                                {
+                                    ItemStack item1 = item.getContainerItem(itemstack);
+                                    this.getItems().set(1, item1);
+                                }
+                            }
+                        }
+                    }
+
+                    if (this.isBurning() && this.canSmelt())
+                    {
+                        ++this.cookTime;
+
+                        if (totalCookTime == 0) this.totalCookTime = IndustrialFurnaceRecipes.getCookTime(this.getItems().get(0));
+
+                        if (this.cookTime == this.totalCookTime)
+                        {
+                            this.cookTime = 0;
+                            this.totalCookTime = IndustrialFurnaceRecipes.getCookTime(this.getItems().get(0));
+                            this.smeltItem();
+                            flag1 = true;
+                        }
+                    }
+                    else
+                    {
+                        this.cookTime = 0;
+                    }
+                }
+                else if (!this.isBurning() && this.cookTime > 0)
+                {
+                    this.cookTime = (int) MathHelper.clamp(this.cookTime - 2, 0, this.totalCookTime);
+                }
+            }
+
+            if (flag1)
+            {
+                this.markDirty();
+            }
+        }
+
+        public boolean isBurning()
+        {
+            return this.furnaceBurnTime > 0;
+        }
+
+        private boolean canSmelt()
+        {
+            if ((this.getItems().get(0)).isEmpty())
+            {
+                return false;
+            }
+            else
+            {
+                ItemStack itemstack = IndustrialFurnaceRecipes.getProduct(this.getItems().get(0));
+
+                if (itemstack.isEmpty())
+                {
+                    return false;
+                }
+                else
+                {
+                    ItemStack itemstack1 = this.getItems().get(2);
+
+                    if (itemstack1.isEmpty())
+                    {
+                        return true;
+                    }
+                    else if (!itemstack1.isItemEqual(itemstack))
+                    {
+                        return false;
+                    }
+                    else if (itemstack1.getCount() + itemstack.getCount() <= this.getInventoryStackLimit() && itemstack1.getCount() + itemstack.getCount() <= itemstack1.getMaxStackSize())  // Forge fix: make furnace respect stack sizes in furnace recipes
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return itemstack1.getCount() + itemstack.getCount() <= itemstack.getMaxStackSize(); // Forge fix: make furnace respect stack sizes in furnace recipes
+                    }
+                }
+            }
+        }
+
+        public void smeltItem()
+        {
+            if (this.canSmelt())
+            {
+                ItemStack itemstack = this.getItems().get(0);
+                ItemStack itemstack1 = IndustrialFurnaceRecipes.getProduct(itemstack);
+                ItemStack itemstack2 = this.getItems().get(2);
+
+                if (itemstack2.isEmpty())
+                {
+                    this.getItems().set(2, itemstack1.copy());
+                }
+                else if (itemstack2.getItem() == itemstack1.getItem())
+                {
+                    itemstack2.grow(itemstack1.getCount());
+                }
+
+                itemstack.shrink(1);
+            }
+        }
     }
 }

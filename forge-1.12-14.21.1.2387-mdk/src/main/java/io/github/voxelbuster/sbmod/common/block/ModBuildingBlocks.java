@@ -22,6 +22,12 @@ public class ModBuildingBlocks {
         blockSet.add(new GatePortalBlock());
         blockSet.add(new ModBlock(Material.ROCK, "ancientbrick").setHardness(10f).setResistance(30f).setUnlocalizedName("ancientbrick")
                 .setRegistryName(new ResourceLocation(StarboundMod.MODID, "ancientbrick")).setCreativeTab(StarboundMod.creativeTab));
+        blockSet.add(new ModBlock(Material.IRON, "outpostpanel").setHardness(10f).setResistance(30f).setUnlocalizedName("outpostpanel")
+                .setRegistryName(new ResourceLocation(StarboundMod.MODID, "outpostpanel")).setCreativeTab(StarboundMod.creativeTab));
+        blockSet.add(new ModBlock(Material.IRON, "outpostpillar").setHardness(10f).setResistance(30f).setUnlocalizedName("outpostpillar")
+                .setRegistryName(new ResourceLocation(StarboundMod.MODID, "outpostpillar")).setCreativeTab(StarboundMod.creativeTab));
+        blockSet.add(new ModBlock(Material.IRON, "outpostsupport").setHardness(10f).setResistance(30f).setUnlocalizedName("outpostsupport")
+                .setRegistryName(new ResourceLocation(StarboundMod.MODID, "outpostsupport")).setCreativeTab(StarboundMod.creativeTab));
 
         meteoriteblock = blockSet.get(0);
         ancientstone = blockSet.get(1);

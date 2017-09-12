@@ -19,6 +19,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -43,6 +44,9 @@ public class RegisterUtil {
     public static final ItemOre violium_ore = new ItemOre(MaterialVariant.VIOLIUM);
     public static final ItemOre solarium_ore = new ItemOre(MaterialVariant.SOLARIUM);
     public static final ItemOre corefragment = new ItemOre(MaterialVariant.COREFRAGMENT);
+    public static final ItemOre uraniumore = new ItemOre(MaterialVariant.URANIUM);
+    public static final ItemOre plutoniumore = new ItemOre(MaterialVariant.PLUTONIUM);
+    public static final ItemOre platinumore = new ItemOre(MaterialVariant.PLATINUM);
 
     public static final ItemMineral copper = new ItemMineral(MaterialVariant.COPPER);
     public static final ItemMineral silver = new ItemMineral(MaterialVariant.SILVER);
@@ -54,6 +58,10 @@ public class RegisterUtil {
     public static final ItemMineral violium = new ItemMineral(MaterialVariant.VIOLIUM);
     public static final ItemMineral solarium = new ItemMineral(MaterialVariant.SOLARIUM);
     public static final ItemMineral supermatter = new ItemMineral(MaterialVariant.SUPERMATTER);
+    public static final ItemMineral uranium = new ItemMineral(MaterialVariant.URANIUM);
+    public static final ItemMineral plutonium = new ItemMineral(MaterialVariant.PLUTONIUM);
+    public static final ItemMineral platinum = new ItemMineral(MaterialVariant.PLATINUM);
+    public static final ItemMineral flawlessdia = new ItemMineral(MaterialVariant.DIAMOND);
 
     public static final BlockMineral copper_block = new BlockMineral(Material.IRON, MaterialVariant.COPPER);
     public static final BlockMineral silver_block = new BlockMineral(Material.IRON, MaterialVariant.SILVER);
@@ -64,6 +72,10 @@ public class RegisterUtil {
     public static final BlockMineral ferozium_block = new BlockMineral(Material.IRON, MaterialVariant.FEROZIUM);
     public static final BlockMineral violium_block = new BlockMineral(Material.IRON, MaterialVariant.VIOLIUM);
     public static final BlockMineral solarium_block = new BlockMineral(Material.IRON, MaterialVariant.SOLARIUM);
+    public static final BlockMineral uranium_block = new BlockMineral(Material.IRON, MaterialVariant.URANIUM);
+    public static final BlockMineral plutonium_block = new BlockMineral(Material.IRON, MaterialVariant.PLUTONIUM);
+    public static final BlockMineral platinum_block = new BlockMineral(Material.IRON, MaterialVariant.PLATINUM);
+    public static final BlockMineral flawlessdia_block = new BlockMineral(Material.IRON, MaterialVariant.DIAMOND);
 
     public static final BlockOre ore_block_copper = new BlockOre(Material.ROCK, MaterialVariant.COPPER);
     public static final BlockOre ore_block_silver = new BlockOre(Material.ROCK, MaterialVariant.SILVER);
@@ -74,6 +86,9 @@ public class RegisterUtil {
     public static final BlockOre ore_block_ferozium = new BlockOre(Material.ROCK, MaterialVariant.FEROZIUM);
     public static final BlockOre ore_block_violium = new BlockOre(Material.ROCK, MaterialVariant.VIOLIUM);
     public static final BlockOre ore_block_solarium = new BlockOre(Material.ROCK, MaterialVariant.SOLARIUM);
+    public static final BlockOre ore_block_uranium = new BlockOre(Material.ROCK, MaterialVariant.URANIUM);
+    public static final BlockOre ore_block_plutonium = new BlockOre(Material.ROCK, MaterialVariant.PLUTONIUM);
+    public static final BlockOre ore_block_platinum = new BlockOre(Material.ROCK, MaterialVariant.PLATINUM);
 
     public static final IndustrialFurnace industrialfurnace = new IndustrialFurnace();
 
@@ -105,7 +120,14 @@ public class RegisterUtil {
                 violium,
                 solarium,
                 corefragment,
-                supermatter
+                supermatter,
+                uranium,
+                platinum,
+                plutonium,
+                flawlessdia,
+                uraniumore,
+                plutoniumore,
+                platinumore
         };
         event.getRegistry().registerAll(items);
         for (ItemBlock ib : itemblocks) {
@@ -114,7 +136,7 @@ public class RegisterUtil {
         }
 
         for (Item i : items) {
-            registerItemModel((ModItem) i);
+            registerItemModel(i);
         }
 
     }
@@ -141,7 +163,14 @@ public class RegisterUtil {
                 ferozium_block,
                 violium_block,
                 solarium_block,
-                industrialfurnace
+                industrialfurnace,
+                flawlessdia_block,
+                ore_block_uranium,
+                ore_block_plutonium,
+                ore_block_platinum,
+                uranium_block,
+                plutonium_block,
+                platinum_block
         };
         for (Block b : bTemp) {
             event.getRegistry().register(b);
@@ -162,11 +191,6 @@ public class RegisterUtil {
 
     public static void init(FMLInitializationEvent event) {
         GameRegistry.registerTileEntity(IndustrialFurnace.TileEntityCustom.class, "TileEntityindustrialFurnace");
-        if (event.getSide() == Side.CLIENT) {
-            Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-                    .register(Item.getItemFromBlock(industrialfurnace), 0, new ModelResourceLocation("starboundmod:industrialfurnace", "inventory"));
-
-        }
     }
 
     public static void registerWorldGen() {
@@ -175,17 +199,5 @@ public class RegisterUtil {
         GameRegistry.registerWorldGenerator(new WorldGenOilPool(), 2);
 
         DimensionManager.registerDimension(WorldUtil.dim_outpost.getId(), WorldUtil.dim_outpost);
-    }
-
-    public static void registerFurnaceRecipes() {
-        GameRegistry.addSmelting(new ItemStack(copper_ore), new ItemStack(copper, 1), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(silver_ore), new ItemStack(silver, 1), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(tungsten_ore), new ItemStack(tungsten, 1), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(titanium_ore), new ItemStack(titanium, 1), 0.7f);
-        GameRegistry.addSmelting(new ItemStack(durasteel_ore), new ItemStack(durasteel, 1), 0.7f);
-        GameRegistry.addSmelting(new ItemStack(aegisalt_ore), new ItemStack(aegisalt, 1), 1f);
-        GameRegistry.addSmelting(new ItemStack(ferozium_ore), new ItemStack(ferozium, 1), 1f);
-        GameRegistry.addSmelting(new ItemStack(violium_ore), new ItemStack(violium, 1), 1f);
-        GameRegistry.addSmelting(new ItemStack(solarium_ore), new ItemStack(solarium, 1), 1.5f);
     }
 }
