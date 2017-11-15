@@ -1,10 +1,7 @@
 package io.github.voxelbuster.sbmod.common.util;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
-import io.github.voxelbuster.sbmod.common.block.BlockMineral;
-import io.github.voxelbuster.sbmod.common.block.BlockOre;
-import io.github.voxelbuster.sbmod.common.block.IndustrialFurnace;
-import io.github.voxelbuster.sbmod.common.block.ModBuildingBlocks;
+import io.github.voxelbuster.sbmod.common.block.*;
 import io.github.voxelbuster.sbmod.common.item.ItemMineral;
 import io.github.voxelbuster.sbmod.common.item.ItemOre;
 import io.github.voxelbuster.sbmod.common.item.ModItem;
@@ -91,6 +88,7 @@ public class RegisterUtil {
     public static final BlockOre ore_block_platinum = new BlockOre(Material.ROCK, MaterialVariant.PLATINUM);
 
     public static final IndustrialFurnace industrialfurnace = new IndustrialFurnace();
+    public static final AtomicFurnace atomicfurnace = new AtomicFurnace();
 
     private static ArrayList<ItemBlock> itemblocks = new ArrayList<>();
 
@@ -164,6 +162,7 @@ public class RegisterUtil {
                 violium_block,
                 solarium_block,
                 industrialfurnace,
+                atomicfurnace,
                 flawlessdia_block,
                 ore_block_uranium,
                 ore_block_plutonium,

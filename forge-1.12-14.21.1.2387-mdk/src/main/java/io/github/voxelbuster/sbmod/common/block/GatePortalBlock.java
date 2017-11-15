@@ -3,6 +3,7 @@ package io.github.voxelbuster.sbmod.common.block;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.util.EntityUtil;
 import io.github.voxelbuster.sbmod.common.world.WorldUtil;
+import io.github.voxelbuster.sbmod.common.world.teleporter.TeleporterHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -19,6 +20,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldProvider;
 import net.minecraftforge.fml.common.FMLLog;
 
 public class GatePortalBlock extends ModBlock {
@@ -72,8 +74,10 @@ public class GatePortalBlock extends ModBlock {
 
     @Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
-        if (entityIn instanceof EntityPlayer) {
-            entityIn.changeDimension(WorldUtil.dim_outpost.getId());
+        if (entityIn instanceof EntityPlayer && worldIn.getWorldType().getId() != WorldUtil.dim_outpost.getId()) {
+            TeleporterHandler.transferToOutpostDim(entityIn);
+        } else {
+            TeleporterHandler.transferToOverworld(entityIn);
         }
     }
 

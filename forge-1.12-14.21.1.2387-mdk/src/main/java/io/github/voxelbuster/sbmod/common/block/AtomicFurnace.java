@@ -1,8 +1,9 @@
 package io.github.voxelbuster.sbmod.common.block;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
-import io.github.voxelbuster.sbmod.common.inventory.IndustrialFurnaceGUI;
-import io.github.voxelbuster.sbmod.common.item.crafting.IndustrialFurnaceRecipes;
+import io.github.voxelbuster.sbmod.common.inventory.AtomicFurnaceGUI;
+import io.github.voxelbuster.sbmod.common.item.crafting.AtomicFurnaceRecipes;
+import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -30,14 +31,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-public class IndustrialFurnace extends Block implements ITileEntityProvider {
+public class AtomicFurnace extends Block implements ITileEntityProvider {
 
-    public IndustrialFurnace() {
+    public AtomicFurnace() {
         super(Material.IRON);
-        this.setHardness(10.0F).setResistance(30.0F).setLightLevel(0.0F).setUnlocalizedName("industrialfurnace").setLightOpacity(0)
-                .setCreativeTab(StarboundMod.creativeTab).setHarvestLevel("pickaxe", 1);
+        this.setHardness(10.0F).setResistance(30.0F).setLightLevel(0.0F).setUnlocalizedName("atomicfurnace").setLightOpacity(0)
+                .setCreativeTab(StarboundMod.creativeTab).setHarvestLevel("pickaxe", 2);
         this.setSoundType(SoundType.METAL);
-        this.setRegistryName("industrialfurnace");
+        this.setRegistryName("atomicfurnace");
     }
 
     @Override
@@ -57,7 +58,7 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
                 double d2 = (double) ((float) par4 + 0.5F) + (double) (par5Random.nextFloat() - 0.5F) * 0.5D;
                 double d3 = 0.2199999988079071D;
                 double d4 = 0.27000001072883606D;
-                par1World.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - d4, d1 + d3, d2, 0.0D, 0.0D, 0.0D);
+                par1World.spawnParticle(EnumParticleTypes.REDSTONE, d0 - d4, d1 + d3, d2, 0.0D, 0.0D, 0.0D);
             }
         }
     }
@@ -77,7 +78,7 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
-        playerIn.openGui(StarboundMod.instance, IndustrialFurnaceGUI.GUIID, worldIn, pos.getX(), pos.getY(), pos.getZ());
+        playerIn.openGui(StarboundMod.instance, AtomicFurnaceGUI.GUIID, worldIn, pos.getX(), pos.getY(), pos.getZ());
         return true;
     }
 
@@ -150,7 +151,7 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
         }
 
         public String getName() {
-            return this.hasCustomName() ? this.customName : "container.industrialFurnace";
+            return this.hasCustomName() ? this.customName : "container.atomicFurnace";
         }
 
         public void readFromNBT(NBTTagCompound compound) {
@@ -185,7 +186,7 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
         }
 
         public String getGuiID() {
-            return "minecraft:industrialFurnace";
+            return "minecraft:atomicFurnace";
         }
 
         public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
@@ -209,10 +210,8 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
         }
 
         public static int getBurnTime(ItemStack stack) {
-            if (stack.getItem() == Items.COAL) return 400;
-            else if (stack.getItem() == Item.getItemFromBlock(Blocks.COAL_BLOCK)) return 4000;
-            else if (stack.getItem() == Items.LAVA_BUCKET) return 5000;
-            else if (stack.getItem() == Items.BLAZE_ROD) return 600;
+            if (stack.getItem() == RegisterUtil.uranium) return 800;
+            else if (stack.getItem() == RegisterUtil.plutonium) return 1200;
             else return 0;
         }
 
@@ -262,12 +261,12 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
                     {
                         ++this.cookTime;
 
-                        if (totalCookTime == 0) this.totalCookTime = IndustrialFurnaceRecipes.getCookTime(this.getItems().get(0));
+                        if (totalCookTime == 0) this.totalCookTime = AtomicFurnaceRecipes.getCookTime(this.getItems().get(0));
 
                         if (this.cookTime == this.totalCookTime)
                         {
                             this.cookTime = 0;
-                            this.totalCookTime = IndustrialFurnaceRecipes.getCookTime(this.getItems().get(0));
+                            this.totalCookTime = AtomicFurnaceRecipes.getCookTime(this.getItems().get(0));
                             this.smeltItem();
                             flag1 = true;
                         }
@@ -302,7 +301,7 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
             }
             else
             {
-                ItemStack itemstack = IndustrialFurnaceRecipes.getProduct(this.getItems().get(0));
+                ItemStack itemstack = AtomicFurnaceRecipes.getProduct(this.getItems().get(0));
 
                 if (itemstack.isEmpty())
                 {
@@ -337,7 +336,7 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
             if (this.canSmelt())
             {
                 ItemStack itemstack = this.getItems().get(0);
-                ItemStack itemstack1 = IndustrialFurnaceRecipes.getProduct(itemstack);
+                ItemStack itemstack1 = AtomicFurnaceRecipes.getProduct(itemstack);
                 ItemStack itemstack2 = this.getItems().get(2);
 
                 if (itemstack2.isEmpty())

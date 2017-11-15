@@ -1,7 +1,11 @@
 package io.github.voxelbuster.sbmod.common.util;
 
+import io.github.voxelbuster.sbmod.common.block.AtomicFurnace;
+import io.github.voxelbuster.sbmod.common.block.IndustrialFurnace;
+import io.github.voxelbuster.sbmod.common.inventory.AtomicFurnaceGUI;
 import io.github.voxelbuster.sbmod.common.inventory.IndustrialFurnaceGUI;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 
@@ -14,7 +18,9 @@ public class GuiHandler implements IGuiHandler {
 
     public Object getClientGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
         if (id == IndustrialFurnaceGUI.GUIID)
-            return new IndustrialFurnaceGUI.GuiWindow(world, x, y, z, player);
+            return new IndustrialFurnaceGUI.GuiWindow(world, x, y, z, player, (IndustrialFurnace.TileEntityCustom) world.getTileEntity(new BlockPos(x, y , z)));
+        if (id == AtomicFurnaceGUI.GUIID)
+            return new AtomicFurnaceGUI.GuiWindow(world, x, y, z, player, (AtomicFurnace.TileEntityCustom) world.getTileEntity(new BlockPos(x, y , z)));
         return null;
     }
 }
