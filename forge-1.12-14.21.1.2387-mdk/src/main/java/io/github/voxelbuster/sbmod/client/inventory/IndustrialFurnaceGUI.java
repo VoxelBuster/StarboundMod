@@ -1,7 +1,7 @@
-package io.github.voxelbuster.sbmod.common.inventory;
+package io.github.voxelbuster.sbmod.client.inventory;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
-import io.github.voxelbuster.sbmod.common.block.AtomicFurnace;
+import io.github.voxelbuster.sbmod.common.block.IndustrialFurnace;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,7 +21,7 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
-public class AtomicFurnaceGUI {
+public class IndustrialFurnaceGUI {
 
     public static IInventory inherited;
 
@@ -45,7 +45,7 @@ public class AtomicFurnaceGUI {
             this.k = k;
 
             this.ent = world.getTileEntity(new BlockPos(i, j, k));
-            if (ent != null && (ent instanceof AtomicFurnace.TileEntityCustom))
+            if (ent != null && (ent instanceof IndustrialFurnace.TileEntityCustom))
                 inherited = (IInventory) ent;
             else
                 inherited = new InventoryBasic("", true, 9);
@@ -127,7 +127,7 @@ public class AtomicFurnaceGUI {
         EntityPlayer entity = null;
         private TileEntity te;
 
-        public GuiWindow(World world, int i, int j, int k, EntityPlayer entity, AtomicFurnace.TileEntityCustom parent) {
+        public GuiWindow(World world, int i, int j, int k, EntityPlayer entity, IndustrialFurnace.TileEntityCustom parent) {
             super(new GuiContainerMod(world, i, j, k, entity));
             this.i = i;
             this.j = j;
@@ -155,13 +155,13 @@ public class AtomicFurnaceGUI {
         }
 
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Atomic Furnace", (3), (3), 0x000000);
+            this.fontRenderer.drawString("Industrial Furnace", (3), (3), 0x000000);
             int posX = (this.width) / 2 - 30;
             int posY = (this.height) / 2 - 45;
             int arrowX = (this.width) / 2 - 8;
             int arrowY = (this.height) / 2 - 47;
-            int burnPx = (int) (((float) ((AtomicFurnace.TileEntityCustom)te).getCurrentItemBurnTime() / 5000) * 14);
-            int cookPx = (int) (((AtomicFurnace.TileEntityCustom) te).getCookTime() / ((AtomicFurnace.TileEntityCustom) te).getTotalCookTime() * 23);
+            int burnPx = (int) (((float) ((IndustrialFurnace.TileEntityCustom)te).getCurrentItemBurnTime() / 5000) * 14);
+            int cookPx = (int) (((IndustrialFurnace.TileEntityCustom) te).getCookTime() / ((IndustrialFurnace.TileEntityCustom) te).getTotalCookTime() * 23);
             this.drawTexturedModalRect(posX, posY + (14-burnPx), 176, 0, 13, burnPx);
             this.drawTexturedModalRect(arrowX + (23-cookPx), arrowY, 175, 14, cookPx, 16);
         }

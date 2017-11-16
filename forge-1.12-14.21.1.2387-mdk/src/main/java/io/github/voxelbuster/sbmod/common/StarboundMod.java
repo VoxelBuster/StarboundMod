@@ -1,7 +1,7 @@
 package io.github.voxelbuster.sbmod.common;
 
 import io.github.voxelbuster.sbmod.common.block.ModFluids;
-import io.github.voxelbuster.sbmod.common.util.GuiHandler;
+import io.github.voxelbuster.sbmod.client.util.GuiHandler;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
 import io.github.voxelbuster.sbmod.common.world.WorldUtil;
 import io.github.voxelbuster.sbmod.proxy.CommonProxy;

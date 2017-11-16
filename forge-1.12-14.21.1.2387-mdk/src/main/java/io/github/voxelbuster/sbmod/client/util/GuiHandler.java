@@ -1,9 +1,9 @@
-package io.github.voxelbuster.sbmod.common.util;
+package io.github.voxelbuster.sbmod.client.util;
 
 import io.github.voxelbuster.sbmod.common.block.AtomicFurnace;
 import io.github.voxelbuster.sbmod.common.block.IndustrialFurnace;
-import io.github.voxelbuster.sbmod.common.inventory.AtomicFurnaceGUI;
-import io.github.voxelbuster.sbmod.common.inventory.IndustrialFurnaceGUI;
+import io.github.voxelbuster.sbmod.client.inventory.AtomicFurnaceGUI;
+import io.github.voxelbuster.sbmod.client.inventory.IndustrialFurnaceGUI;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

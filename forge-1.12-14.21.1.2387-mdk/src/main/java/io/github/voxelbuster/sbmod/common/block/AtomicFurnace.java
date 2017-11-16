@@ -1,7 +1,7 @@
 package io.github.voxelbuster.sbmod.common.block;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
-import io.github.voxelbuster.sbmod.common.inventory.AtomicFurnaceGUI;
+import io.github.voxelbuster.sbmod.client.inventory.AtomicFurnaceGUI;
 import io.github.voxelbuster.sbmod.common.item.crafting.AtomicFurnaceRecipes;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
 import net.minecraft.block.Block;
@@ -11,8 +11,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ContainerDispenser;
 import net.minecraft.inventory.InventoryHelper;

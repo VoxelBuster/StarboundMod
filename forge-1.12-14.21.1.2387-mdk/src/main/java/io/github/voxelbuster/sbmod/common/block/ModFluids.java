@@ -33,9 +33,14 @@ public class ModFluids {
             new ResourceLocation(StarboundMod.MODID, "healingwaterstill"), new ResourceLocation(StarboundMod.MODID, "healingwaterflowing"))
             .setDensity(1600).setLuminosity(10).setViscosity(20);
 
+    public static final Fluid acid = new Fluid("acid",
+            new ResourceLocation(StarboundMod.MODID, "acidstill"), new ResourceLocation(StarboundMod.MODID, "acidflowing"))
+            .setDensity(1600).setLuminosity(0).setViscosity(1000);
+
     public static BlockFluidClassic fuelblock;
     public static BlockFluidClassic oilblock;
     public static BlockFluidClassic hwaterblock;
+    public static BlockAcid acidblock;
 
     public static void registerFluids() {
         FluidRegistry.registerFluid(erichiusfuel);
@@ -56,10 +61,13 @@ public class ModFluids {
                 .setCreativeTab(StarboundMod.creativeTab);
         hwaterblock = (BlockFluidClassic) new BlockFluidClassic(healingwater, Material.WATER).setRegistryName(StarboundMod.MODID, "healingwater").setUnlocalizedName("healingwater")
                 .setCreativeTab(StarboundMod.creativeTab);
+        acidblock = (BlockAcid) new BlockAcid(acid, Material.WATER).setRegistryName(StarboundMod.MODID, "acid").setUnlocalizedName("acid")
+                .setCreativeTab(StarboundMod.creativeTab);
 
         registry.register(fuelblock);
         registry.register(oilblock);
         registry.register(hwaterblock);
+        registry.register(acidblock);
     }
 
     @SubscribeEvent
@@ -72,10 +80,13 @@ public class ModFluids {
         oilitem.setRegistryName(StarboundMod.MODID, "oil");
         ItemBlock hwateritem = new ItemBlock(hwaterblock);
         hwateritem.setRegistryName(StarboundMod.MODID, "healingwater");
+        ItemBlock aciditem = new ItemBlock(acidblock);
+        aciditem.setRegistryName(StarboundMod.MODID, "acid");
 
         registry.register(fuelitem);
         registry.register(oilitem);
         registry.register(hwateritem);
+        registry.register(aciditem);
 
         renderFluids();
     }
@@ -85,5 +96,6 @@ public class ModFluids {
         ModelLoader.setCustomStateMapper(fuelblock, new StateMap.Builder().ignore(BlockFluidClassic.LEVEL).build());
         ModelLoader.setCustomStateMapper(oilblock, new StateMap.Builder().ignore(BlockFluidClassic.LEVEL).build());
         ModelLoader.setCustomStateMapper(hwaterblock, new StateMap.Builder().ignore(BlockFluidClassic.LEVEL).build());
+        ModelLoader.setCustomStateMapper(acidblock, new StateMap.Builder().ignore(BlockFluidClassic.LEVEL).build());
     }
 }

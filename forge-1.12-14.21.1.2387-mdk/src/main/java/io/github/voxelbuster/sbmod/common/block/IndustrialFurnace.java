@@ -1,7 +1,7 @@
 package io.github.voxelbuster.sbmod.common.block;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
-import io.github.voxelbuster.sbmod.common.inventory.IndustrialFurnaceGUI;
+import io.github.voxelbuster.sbmod.client.inventory.IndustrialFurnaceGUI;
 import io.github.voxelbuster.sbmod.common.item.crafting.IndustrialFurnaceRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
