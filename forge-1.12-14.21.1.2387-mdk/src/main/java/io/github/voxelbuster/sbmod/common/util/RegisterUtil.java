@@ -90,7 +90,8 @@ public class RegisterUtil {
     public static final IndustrialFurnace industrialfurnace = new IndustrialFurnace();
     public static final AtomicFurnace atomicfurnace = new AtomicFurnace();
 
-    private static ArrayList<ItemBlock> itemblocks = new ArrayList<>();
+    public static ArrayList<ItemBlock> itemblocks = new ArrayList<>();
+    public static ArrayList<Block> blocks = new ArrayList<>();
 
     public static void registerItemModel(Item item) {
         StarboundMod.commonProxy.registerItemRender(item, 0, item.getRegistryName().toString());
@@ -185,6 +186,7 @@ public class RegisterUtil {
             ItemBlock itemBlock = (ItemBlock) new ItemBlock(b).setRegistryName(b.getRegistryName());
             itemBlock.setCreativeTab(StarboundMod.creativeTab);
             itemblocks.add(itemBlock);
+            blocks.add(b);
         }
     }
 
