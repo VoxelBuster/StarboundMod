@@ -3,6 +3,7 @@ package io.github.voxelbuster.sbmod.common.block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -19,6 +20,8 @@ public class BlockAcid extends BlockFluidClassic {
     @Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
         super.onEntityCollidedWithBlock(worldIn, pos, state, entityIn);
-        ((EntityLiving) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(19), 3, 2));
+        if (entityIn instanceof EntityLiving) {
+            ((EntityLiving) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(19), 3, 2));
+        }
     }
 }

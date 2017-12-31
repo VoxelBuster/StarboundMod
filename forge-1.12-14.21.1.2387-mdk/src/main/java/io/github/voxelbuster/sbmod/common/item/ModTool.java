@@ -50,7 +50,7 @@ public class ModTool extends ItemTool {
         }
     }
 
-    public ModTool(ItemType type, Set<Block> effectiveBlocksIn, String toolType) {
+    public ModTool(ItemType type, String toolType) {
         super(getToolMaterial(type), ModAPI.getEffectiveBlocksForType(toolType));
         setCreativeTab(StarboundMod.creativeTab);
         if (type == ItemType.COPPER_PICKAXE) {

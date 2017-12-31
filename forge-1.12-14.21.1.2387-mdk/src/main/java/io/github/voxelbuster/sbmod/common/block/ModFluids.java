@@ -49,6 +49,8 @@ public class ModFluids {
         FluidRegistry.addBucketForFluid(oil);
         FluidRegistry.registerFluid(healingwater);
         FluidRegistry.addBucketForFluid(healingwater);
+        FluidRegistry.registerFluid(acid);
+        FluidRegistry.addBucketForFluid(acid);
     }
 
     @SubscribeEvent

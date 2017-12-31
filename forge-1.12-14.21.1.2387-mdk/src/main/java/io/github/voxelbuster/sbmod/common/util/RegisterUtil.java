@@ -2,9 +2,7 @@ package io.github.voxelbuster.sbmod.common.util;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.*;
-import io.github.voxelbuster.sbmod.common.item.ItemMineral;
-import io.github.voxelbuster.sbmod.common.item.ItemOre;
-import io.github.voxelbuster.sbmod.common.item.ModItem;
+import io.github.voxelbuster.sbmod.common.item.*;
 import io.github.voxelbuster.sbmod.common.world.ModOreGen;
 import io.github.voxelbuster.sbmod.common.world.WorldGenAncientGate;
 import io.github.voxelbuster.sbmod.common.world.WorldGenOilPool;
@@ -16,6 +14,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
@@ -87,6 +86,64 @@ public class RegisterUtil {
     public static final BlockOre ore_block_plutonium = new BlockOre(Material.ROCK, MaterialVariant.PLUTONIUM);
     public static final BlockOre ore_block_platinum = new BlockOre(Material.ROCK, MaterialVariant.PLATINUM);
 
+    public static final ModTool manipulator = new ModTool(ModTool.ItemType.MANIPULATOR, "pickaxe");
+    public static final ModTool copperpickaxe = new ModTool(ModTool.ItemType.COPPER_PICKAXE, "pickaxe");
+    public static final ModTool silverpickaxe = new ModTool(ModTool.ItemType.SILVER_PICKAXE, "pickaxe");
+    public static final ModTool platinumpickaxe = new ModTool(ModTool.ItemType.PLATINUM_PICKAXE, "pickaxe");
+    public static final ModTool chainsaw = new ModTool(ModTool.ItemType.CHAINSAW, "axe");
+    public static final ModTool copperdrill = new ModTool(ModTool.ItemType.COPPER_DRILL, "pickaxe");
+    public static final ModTool silverdrill = new ModTool(ModTool.ItemType.SILVER_DRILL, "pickaxe");
+    public static final ModTool golddrill = new ModTool(ModTool.ItemType.GOLD_DRILL, "pickaxe");
+    public static final ModTool platinumdrill = new ModTool(ModTool.ItemType.PLATINUM_DRILL, "pickaxe");
+    public static final ModTool diamonddrill = new ModTool(ModTool.ItemType.DIAMOND_DRILL, "pickaxe");
+
+    public static final ModRecord atlas_record = new ModRecord("atlas_cd", new ResourceLocation(
+            StarboundMod.MODID, "atlas"));
+    public static final ModRecord casiopeia_record = new ModRecord("casiopeia_cd", new ResourceLocation(
+            StarboundMod.MODID, "casiopeia"));
+    public static final ModRecord cygnus_x1_record = new ModRecord("cygnus_x1_cd", new ResourceLocation(
+            StarboundMod.MODID, "cygnus_x1"));
+    public static final ModRecord epsilon_indi_record = new ModRecord("epsilon_indi_cd", new ResourceLocation(
+            StarboundMod.MODID, "epsilon_indi"));
+    public static final ModRecord supervoid_record = new ModRecord("supervoid_cd", new ResourceLocation(
+            StarboundMod.MODID, "eridanus-supervoid"));
+    public static final ModRecord europa_record = new ModRecord("europa_cd", new ResourceLocation(
+            StarboundMod.MODID, "europa"));
+    public static final ModRecord glacial_horizon_record = new ModRecord("glacial_horizon_cd", new ResourceLocation(
+            StarboundMod.MODID, "glacial_horizon"));
+    public static final ModRecord haiku_record = new ModRecord("haiku_cd", new ResourceLocation(
+            StarboundMod.MODID, "haiku"));
+    public static final ModRecord nebula_record = new ModRecord("nebula_cd", new ResourceLocation(
+            StarboundMod.MODID, "horsehead_nebula"));
+    public static final ModRecord hymn_record = new ModRecord("hymn_cd", new ResourceLocation(
+            StarboundMod.MODID, "hymn"));
+    public static final ModRecord jupiter_record = new ModRecord("jupiter_cd", new ResourceLocation(
+            StarboundMod.MODID, "jupiter"));
+    public static final ModRecord kluex_record = new ModRecord("kluex_cd", new ResourceLocation(
+            StarboundMod.MODID, "kluex"));
+    public static final ModRecord magellanic_record = new ModRecord("magellanic_cd", new ResourceLocation(
+            StarboundMod.MODID, "magellanic"));
+    public static final ModRecord mercury_record = new ModRecord("mercury_cd", new ResourceLocation(
+            StarboundMod.MODID, "mercury"));
+    public static final ModRecord mira_record = new ModRecord("mira_cd", new ResourceLocation(
+            StarboundMod.MODID, "mira"));
+    public static final ModRecord procyon_record = new ModRecord("procyon_cd", new ResourceLocation(
+            StarboundMod.MODID, "procyon"));
+    public static final ModRecord psyche_record = new ModRecord("psyche_cd", new ResourceLocation(
+            StarboundMod.MODID, "psyche"));
+    public static final ModRecord stellar_record = new ModRecord("stellar_cd", new ResourceLocation(
+            StarboundMod.MODID, "stellar_formation"));
+    public static final ModRecord tranquility_record = new ModRecord("tranquility_cd", new ResourceLocation(
+            StarboundMod.MODID, "tranquility"));
+    public static final ModRecord ultramarine_record = new ModRecord("ultramarine_cd", new ResourceLocation(
+            StarboundMod.MODID, "ultramarine"));
+    public static final ModRecord vast_record = new ModRecord("vast_suns_cd", new ResourceLocation(
+            StarboundMod.MODID, "vast_suns"));
+    public static final ModRecord via_record = new ModRecord("via_cd", new ResourceLocation(
+            StarboundMod.MODID, "via_aurora"));
+
+    // TODO add music disc item models and images
+
     public static final IndustrialFurnace industrialfurnace = new IndustrialFurnace();
     public static final AtomicFurnace atomicfurnace = new AtomicFurnace();
 
@@ -126,7 +183,39 @@ public class RegisterUtil {
                 flawlessdia,
                 uraniumore,
                 plutoniumore,
-                platinumore
+                platinumore,
+                manipulator,
+                copperpickaxe,
+                silverpickaxe,
+                platinumpickaxe,
+                chainsaw,
+                copperdrill,
+                silverdrill,
+                golddrill,
+                platinumdrill,
+                diamonddrill,
+                atlas_record,
+                casiopeia_record,
+                cygnus_x1_record,
+                epsilon_indi_record,
+                supervoid_record,
+                europa_record,
+                glacial_horizon_record,
+                haiku_record,
+                nebula_record,
+                hymn_record,
+                jupiter_record,
+                kluex_record,
+                magellanic_record,
+                mercury_record,
+                mira_record,
+                procyon_record,
+                psyche_record,
+                stellar_record,
+                tranquility_record,
+                ultramarine_record,
+                vast_record,
+                via_record
         };
         event.getRegistry().registerAll(items);
         for (ItemBlock ib : itemblocks) {
@@ -186,7 +275,6 @@ public class RegisterUtil {
             ItemBlock itemBlock = (ItemBlock) new ItemBlock(b).setRegistryName(b.getRegistryName());
             itemBlock.setCreativeTab(StarboundMod.creativeTab);
             itemblocks.add(itemBlock);
-            blocks.add(b);
         }
     }
 

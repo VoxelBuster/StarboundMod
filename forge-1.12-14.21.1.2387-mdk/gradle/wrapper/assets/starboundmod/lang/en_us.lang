@@ -32,6 +32,64 @@ item.uraniumore.name=Uranium Ore
 
 item.supermatter.name=Erichius Crystal
 
+#tools
+item.chainsaw.name=Chainsaw
+item.manipulator.name=Matter Manipulator
+item.copperdrill.name=Copper Drill
+item.silverdrill.name=Silver Drill
+item.golddrill.name=Gold Drill
+item.platinumdrill.name=Platinum Drill
+item.diamonddrill.name=Diamond Drill
+item.copperpickaxe.name=Copper Pickaxe
+item.silverpickaxe.name=Silver Pickaxe
+item.platinumpickaxe.name=Platinum Pickaxe
+
+#records
+item.atlas_cd.name=Atlas
+item.atlas_cd.desc=By Curtis Schweitzer
+item.casiopeia_cd.name=Casiopeia
+item.casiopeia_cd.desc=By Curtis Schweitzer
+item.cygnus_x1_cd.name=Cygnus X1
+item.cygnus_x1_cd.desc=By Curtis Schweitzer
+item.epsilon_indi_cd.name=Epsilon Indi
+item.epsilon_indi_cd.desc=By Curtis Schweitzer
+item.supervoid_cd.name=Eridanus-Supervoid
+item.supervoid_cd.desc=By Curtis Schweitzer
+item.europa_cd.name=Europa
+item.europa_cd.desc=By Curtis Schweitzer
+item.glacial_horizon_cd.name=Glacial Horizon
+item.glacial_horizon_cd.desc=By Curtis Schweitzer
+item.haiku_cd.name=Haiku
+item.haiku_cd.desc=By Curtis Schweitzer
+item.nebula_cd.name=Horsehead Nebula
+item.nebula_cd.desc=By Curtis Schweitzer
+item.hymn_cd.name=Hymn to the Stars
+item.hymn_cd.desc=By Curtis Schweitzer
+item.jupiter_cd.name=Jupiter
+item.jupiter_cd.desc=By Curtis Schweitzer
+item.kluex_cd.name=Temple of Kluex
+item.kluex_cd.desc=By Curtis Schweitzer
+item.magellanic_cd.name=Large Magellanic Cloud
+item.magellanic_cd.desc=By Curtis Schweitzer
+item.mercury_cd.name=Mercury
+item.mercury_cd.desc=By Curtis Schweitzer
+item.mira_cd.name=Mira
+item.mira_cd.desc=By Curtis Schweitzer
+item.procyon_cd.name=Procyon
+item.procyon_cd.desc=By Curtis Schweitzer
+item.psyche_cd.name=Psyche
+item.psyche_cd.desc=By Curtis Schweitzer
+item.stellar_cd.name=Stellar Formation
+item.stellar_cd.desc=By Curtis Schweitzer
+item.tranquility_cd.name=Tranquility Base
+item.tranquility_cd.desc=By Curtis Schweitzer
+item.ultramarine_cd.name=Ultramarine
+item.ultramarine_cd.desc=By Curtis Schweitzer
+item.vast_suns_cd.name=Vast, Immortal Suns
+item.vast_suns_cd.desc=By Curtis Schweitzer
+item.via_cd.name=Via Aurora
+item.via_cd.desc=By Curtis Schweitzer
+
 #Blocks
 tile.copperblock.name=Copper Block
 tile.silverblock.name=Silver Block
@@ -42,6 +100,10 @@ tile.aegisaltblock.name=Aegisalt Block
 tile.feroziumblock.name=Ferozium Block
 tile.violiumblock.name=Violium Block
 tile.solariumblock.name=Solarium Block
+tile.uraniumblock.name=Uranium Block
+tile.plutoniumblock.name=Plutonium Block
+tile.platinumblock.name=Platinum Block
+tile.flawlessdiablock.name=Flawless Diamond Block
 
 tile.copperoreblock.name=Copper Ore
 tile.silveroreblock.name=Silver Ore
@@ -52,6 +114,9 @@ tile.aegisaltoreblock.name=Aegisalt Ore
 tile.feroziumoreblock.name=Ferozium Ore
 tile.violiumoreblock.name=Violium Ore
 tile.solariumoreblock.name=Solarium Ore
+tile.uraniumoreblock.name=Uranium Ore
+tile.plutoniumoreblock.name=Plutonium Ore
+tile.platinumoreblock.name=Platinum Ore
 
 tile.meteoriteblock.name=Meteorite Rock
 tile.ancientstone.name=Ancient Stone
@@ -65,11 +130,14 @@ tile.outpostsupport.name=Outpost Support
 tile.gateportal.name=Unstable Gate Portal Block
 
 tile.industrialfurnace.name=Industrial Furnace
+tile.atomicfurnace.name=Atomic Furnace
 
 tile.erichiusfuel.name=Erichius Fuel
 tile.oil.name=Oil
 tile.healingwater.name=Healing Water
+tile.acid.name=Acid
 
 fluid.erichiusfuel=Erichius Fuel
 fluid.oil=Oil
 fluid.healingwater=Healing Water
+fluid.acid=Acid
