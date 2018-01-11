@@ -48,7 +48,7 @@ public class ModRecord extends ItemRecord { // Add game music items
 
             ItemStack itemstack = player.getHeldItem(hand);
             ((BlockJukebox) Blocks.JUKEBOX).insertRecord(worldIn, pos, iblockstate, itemstack);
-            worldIn.playSound(player, player.getPosition(), this.getSound(), SoundCategory.RECORDS, 1, 1); // TODO fix playing sound idk why it isnt playing
+            worldIn.playRecord(pos, this.getSound()); // TODO fix playing sound idk why it isnt playing
             itemstack.shrink(1);
             player.addStat(StatList.RECORD_PLAYED);
 

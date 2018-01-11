@@ -40,7 +40,7 @@ public class StarboundMod {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        RegisterUtil.init(event);
+        RegisterUtil.init();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         RegisterUtil.registerWorldGen();
         commonProxy.init(event, this);

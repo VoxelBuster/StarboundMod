@@ -2,29 +2,25 @@ package io.github.voxelbuster.sbmod.common.util;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.*;
-import io.github.voxelbuster.sbmod.common.item.*;
+import io.github.voxelbuster.sbmod.common.item.ItemMineral;
+import io.github.voxelbuster.sbmod.common.item.ItemOre;
+import io.github.voxelbuster.sbmod.common.item.ModRecord;
+import io.github.voxelbuster.sbmod.common.item.ModTool;
 import io.github.voxelbuster.sbmod.common.world.ModOreGen;
 import io.github.voxelbuster.sbmod.common.world.WorldGenAncientGate;
 import io.github.voxelbuster.sbmod.common.world.WorldGenOilPool;
 import io.github.voxelbuster.sbmod.common.world.WorldUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(modid = StarboundMod.MODID)
@@ -53,105 +49,110 @@ public class RegisterUtil {
     public static final ItemMineral ferozium = new ItemMineral(MaterialVariant.FEROZIUM);
     public static final ItemMineral violium = new ItemMineral(MaterialVariant.VIOLIUM);
     public static final ItemMineral solarium = new ItemMineral(MaterialVariant.SOLARIUM);
-    public static final ItemMineral supermatter = new ItemMineral(MaterialVariant.SUPERMATTER);
+    private static final ItemMineral supermatter = new ItemMineral(MaterialVariant.SUPERMATTER);
     public static final ItemMineral uranium = new ItemMineral(MaterialVariant.URANIUM);
     public static final ItemMineral plutonium = new ItemMineral(MaterialVariant.PLUTONIUM);
     public static final ItemMineral platinum = new ItemMineral(MaterialVariant.PLATINUM);
-    public static final ItemMineral flawlessdia = new ItemMineral(MaterialVariant.DIAMOND);
+    private static final ItemMineral flawlessdia = new ItemMineral(MaterialVariant.DIAMOND);
 
-    public static final BlockMineral copper_block = new BlockMineral(Material.IRON, MaterialVariant.COPPER);
-    public static final BlockMineral silver_block = new BlockMineral(Material.IRON, MaterialVariant.SILVER);
-    public static final BlockMineral titanium_block = new BlockMineral(Material.IRON, MaterialVariant.TITANIUM);
-    public static final BlockMineral tungsten_block = new BlockMineral(Material.IRON, MaterialVariant.TUNGSTEN);
-    public static final BlockMineral durasteel_block = new BlockMineral(Material.IRON, MaterialVariant.DURASTEEL);
-    public static final BlockMineral aegisalt_block = new BlockMineral(Material.IRON, MaterialVariant.AEGISALT);
-    public static final BlockMineral ferozium_block = new BlockMineral(Material.IRON, MaterialVariant.FEROZIUM);
-    public static final BlockMineral violium_block = new BlockMineral(Material.IRON, MaterialVariant.VIOLIUM);
-    public static final BlockMineral solarium_block = new BlockMineral(Material.IRON, MaterialVariant.SOLARIUM);
-    public static final BlockMineral uranium_block = new BlockMineral(Material.IRON, MaterialVariant.URANIUM);
-    public static final BlockMineral plutonium_block = new BlockMineral(Material.IRON, MaterialVariant.PLUTONIUM);
-    public static final BlockMineral platinum_block = new BlockMineral(Material.IRON, MaterialVariant.PLATINUM);
-    public static final BlockMineral flawlessdia_block = new BlockMineral(Material.IRON, MaterialVariant.DIAMOND);
+    private static final BlockMineral copper_block = new BlockMineral(Material.IRON, MaterialVariant.COPPER);
+    private static final BlockMineral silver_block = new BlockMineral(Material.IRON, MaterialVariant.SILVER);
+    private static final BlockMineral titanium_block = new BlockMineral(Material.IRON, MaterialVariant.TITANIUM);
+    private static final BlockMineral tungsten_block = new BlockMineral(Material.IRON, MaterialVariant.TUNGSTEN);
+    private static final BlockMineral durasteel_block = new BlockMineral(Material.IRON, MaterialVariant.DURASTEEL);
+    private static final BlockMineral aegisalt_block = new BlockMineral(Material.IRON, MaterialVariant.AEGISALT);
+    private static final BlockMineral ferozium_block = new BlockMineral(Material.IRON, MaterialVariant.FEROZIUM);
+    private static final BlockMineral violium_block = new BlockMineral(Material.IRON, MaterialVariant.VIOLIUM);
+    private static final BlockMineral solarium_block = new BlockMineral(Material.IRON, MaterialVariant.SOLARIUM);
+    private static final BlockMineral uranium_block = new BlockMineral(Material.IRON, MaterialVariant.URANIUM);
+    private static final BlockMineral plutonium_block = new BlockMineral(Material.IRON, MaterialVariant.PLUTONIUM);
+    private static final BlockMineral platinum_block = new BlockMineral(Material.IRON, MaterialVariant.PLATINUM);
+    private static final BlockMineral flawlessdia_block = new BlockMineral(Material.IRON, MaterialVariant.DIAMOND);
 
     public static final BlockOre ore_block_copper = new BlockOre(Material.ROCK, MaterialVariant.COPPER);
     public static final BlockOre ore_block_silver = new BlockOre(Material.ROCK, MaterialVariant.SILVER);
     public static final BlockOre ore_block_titanium = new BlockOre(Material.ROCK, MaterialVariant.TITANIUM);
     public static final BlockOre ore_block_tungsten = new BlockOre(Material.ROCK, MaterialVariant.TUNGSTEN);
-    public static final BlockOre ore_block_durasteel = new BlockOre(Material.ROCK, MaterialVariant.DURASTEEL);
-    public static final BlockOre ore_block_aegisalt = new BlockOre(Material.ROCK, MaterialVariant.AEGISALT);
-    public static final BlockOre ore_block_ferozium = new BlockOre(Material.ROCK, MaterialVariant.FEROZIUM);
-    public static final BlockOre ore_block_violium = new BlockOre(Material.ROCK, MaterialVariant.VIOLIUM);
-    public static final BlockOre ore_block_solarium = new BlockOre(Material.ROCK, MaterialVariant.SOLARIUM);
+    private static final BlockOre ore_block_durasteel = new BlockOre(Material.ROCK, MaterialVariant.DURASTEEL);
+    private static final BlockOre ore_block_aegisalt = new BlockOre(Material.ROCK, MaterialVariant.AEGISALT);
+    private static final BlockOre ore_block_ferozium = new BlockOre(Material.ROCK, MaterialVariant.FEROZIUM);
+    private static final BlockOre ore_block_violium = new BlockOre(Material.ROCK, MaterialVariant.VIOLIUM);
+    private static final BlockOre ore_block_solarium = new BlockOre(Material.ROCK, MaterialVariant.SOLARIUM);
     public static final BlockOre ore_block_uranium = new BlockOre(Material.ROCK, MaterialVariant.URANIUM);
     public static final BlockOre ore_block_plutonium = new BlockOre(Material.ROCK, MaterialVariant.PLUTONIUM);
     public static final BlockOre ore_block_platinum = new BlockOre(Material.ROCK, MaterialVariant.PLATINUM);
 
-    public static final ModTool manipulator = new ModTool(ModTool.ItemType.MANIPULATOR, "pickaxe");
-    public static final ModTool copperpickaxe = new ModTool(ModTool.ItemType.COPPER_PICKAXE, "pickaxe");
-    public static final ModTool silverpickaxe = new ModTool(ModTool.ItemType.SILVER_PICKAXE, "pickaxe");
-    public static final ModTool platinumpickaxe = new ModTool(ModTool.ItemType.PLATINUM_PICKAXE, "pickaxe");
-    public static final ModTool chainsaw = new ModTool(ModTool.ItemType.CHAINSAW, "axe");
-    public static final ModTool copperdrill = new ModTool(ModTool.ItemType.COPPER_DRILL, "pickaxe");
-    public static final ModTool silverdrill = new ModTool(ModTool.ItemType.SILVER_DRILL, "pickaxe");
-    public static final ModTool golddrill = new ModTool(ModTool.ItemType.GOLD_DRILL, "pickaxe");
-    public static final ModTool platinumdrill = new ModTool(ModTool.ItemType.PLATINUM_DRILL, "pickaxe");
-    public static final ModTool diamonddrill = new ModTool(ModTool.ItemType.DIAMOND_DRILL, "pickaxe");
+    private static final ModTool manipulator = new ModTool(ModTool.ItemType.MANIPULATOR, "pickaxe");
+    private static final ModTool copperpickaxe = new ModTool(ModTool.ItemType.COPPER_PICKAXE, "pickaxe");
+    private static final ModTool silverpickaxe = new ModTool(ModTool.ItemType.SILVER_PICKAXE, "pickaxe");
+    private static final ModTool platinumpickaxe = new ModTool(ModTool.ItemType.PLATINUM_PICKAXE, "pickaxe");
+    private static final ModTool chainsaw = new ModTool(ModTool.ItemType.CHAINSAW, "axe");
+    private static final ModTool copperdrill = new ModTool(ModTool.ItemType.COPPER_DRILL, "pickaxe");
+    private static final ModTool silverdrill = new ModTool(ModTool.ItemType.SILVER_DRILL, "pickaxe");
+    private static final ModTool golddrill = new ModTool(ModTool.ItemType.GOLD_DRILL, "pickaxe");
+    private static final ModTool platinumdrill = new ModTool(ModTool.ItemType.PLATINUM_DRILL, "pickaxe");
+    private static final ModTool diamonddrill = new ModTool(ModTool.ItemType.DIAMOND_DRILL, "pickaxe");
 
-    public static final ModRecord atlas_record = new ModRecord("atlas_cd", new ResourceLocation(
-            StarboundMod.MODID, "atlas"));
-    public static final ModRecord casiopeia_record = new ModRecord("casiopeia_cd", new ResourceLocation(
-            StarboundMod.MODID, "casiopeia"));
-    public static final ModRecord cygnus_x1_record = new ModRecord("cygnus_x1_cd", new ResourceLocation(
-            StarboundMod.MODID, "cygnus_x1"));
-    public static final ModRecord epsilon_indi_record = new ModRecord("epsilon_indi_cd", new ResourceLocation(
-            StarboundMod.MODID, "epsilon_indi"));
-    public static final ModRecord supervoid_record = new ModRecord("supervoid_cd", new ResourceLocation(
-            StarboundMod.MODID, "eridanus-supervoid"));
-    public static final ModRecord europa_record = new ModRecord("europa_cd", new ResourceLocation(
-            StarboundMod.MODID, "europa"));
-    public static final ModRecord glacial_horizon_record = new ModRecord("glacial_horizon_cd", new ResourceLocation(
-            StarboundMod.MODID, "glacial_horizon"));
-    public static final ModRecord haiku_record = new ModRecord("haiku_cd", new ResourceLocation(
-            StarboundMod.MODID, "haiku"));
-    public static final ModRecord nebula_record = new ModRecord("nebula_cd", new ResourceLocation(
-            StarboundMod.MODID, "horsehead_nebula"));
-    public static final ModRecord hymn_record = new ModRecord("hymn_cd", new ResourceLocation(
-            StarboundMod.MODID, "hymn"));
-    public static final ModRecord jupiter_record = new ModRecord("jupiter_cd", new ResourceLocation(
-            StarboundMod.MODID, "jupiter"));
-    public static final ModRecord kluex_record = new ModRecord("kluex_cd", new ResourceLocation(
-            StarboundMod.MODID, "kluex"));
-    public static final ModRecord magellanic_record = new ModRecord("magellanic_cd", new ResourceLocation(
-            StarboundMod.MODID, "magellanic"));
-    public static final ModRecord mercury_record = new ModRecord("mercury_cd", new ResourceLocation(
-            StarboundMod.MODID, "mercury"));
-    public static final ModRecord mira_record = new ModRecord("mira_cd", new ResourceLocation(
-            StarboundMod.MODID, "mira"));
-    public static final ModRecord procyon_record = new ModRecord("procyon_cd", new ResourceLocation(
-            StarboundMod.MODID, "procyon"));
-    public static final ModRecord psyche_record = new ModRecord("psyche_cd", new ResourceLocation(
-            StarboundMod.MODID, "psyche"));
-    public static final ModRecord stellar_record = new ModRecord("stellar_cd", new ResourceLocation(
-            StarboundMod.MODID, "stellar_formation"));
-    public static final ModRecord tranquility_record = new ModRecord("tranquility_cd", new ResourceLocation(
-            StarboundMod.MODID, "tranquility"));
-    public static final ModRecord ultramarine_record = new ModRecord("ultramarine_cd", new ResourceLocation(
-            StarboundMod.MODID, "ultramarine"));
-    public static final ModRecord vast_record = new ModRecord("vast_suns_cd", new ResourceLocation(
-            StarboundMod.MODID, "vast_suns"));
-    public static final ModRecord via_record = new ModRecord("via_cd", new ResourceLocation(
-            StarboundMod.MODID, "via_aurora"));
+    public static final ModRecord[] records = {
+     new ModRecord("atlas_cd", new ResourceLocation(
+            StarboundMod.MODID, "atlas")),
+     new ModRecord("casiopeia_cd", new ResourceLocation(
+            StarboundMod.MODID, "casiopeia")),
+     new ModRecord("cygnus_x1_cd", new ResourceLocation(
+            StarboundMod.MODID, "cygnus_x1")),
+     new ModRecord("epsilon_indi_cd", new ResourceLocation(
+            StarboundMod.MODID, "epsilon_indi")),
+     new ModRecord("supervoid_cd", new ResourceLocation(
+            StarboundMod.MODID, "eridanus-supervoid")),
+     new ModRecord("europa_cd", new ResourceLocation(
+            StarboundMod.MODID, "europa")),
+     new ModRecord("glacial_horizon_cd", new ResourceLocation(
+            StarboundMod.MODID, "glacial_horizon")),
+     new ModRecord("haiku_cd", new ResourceLocation(
+            StarboundMod.MODID, "haiku")),
+     new ModRecord("nebula_cd", new ResourceLocation(
+            StarboundMod.MODID, "horsehead_nebula")),
+     new ModRecord("hymn_cd", new ResourceLocation(
+            StarboundMod.MODID, "hymn")),
+     new ModRecord("jupiter_cd", new ResourceLocation(
+            StarboundMod.MODID, "jupiter")),
+     new ModRecord("kluex_cd", new ResourceLocation(
+            StarboundMod.MODID, "kluex")),
+     new ModRecord("magellanic_cd", new ResourceLocation(
+            StarboundMod.MODID, "magellanic")),
+     new ModRecord("mercury_cd", new ResourceLocation(
+            StarboundMod.MODID, "mercury")),
+     new ModRecord("mira_cd", new ResourceLocation(
+            StarboundMod.MODID, "mira")),
+     new ModRecord("procyon_cd", new ResourceLocation(
+            StarboundMod.MODID, "procyon")),
+     new ModRecord("psyche_cd", new ResourceLocation(
+            StarboundMod.MODID, "psyche")),
+     new ModRecord("stellar_cd", new ResourceLocation(
+            StarboundMod.MODID, "stellar_formation")),
+     new ModRecord("tranquility_cd", new ResourceLocation(
+            StarboundMod.MODID, "tranquility")),
+     new ModRecord("ultramarine_cd", new ResourceLocation(
+            StarboundMod.MODID, "ultramarine")),
+     new ModRecord("vast_suns_cd", new ResourceLocation(
+            StarboundMod.MODID, "vast_suns")),
+     new ModRecord("via_cd", new ResourceLocation(
+            StarboundMod.MODID, "via_aurora"))};
 
     // TODO add music disc item models and images
 
-    public static final IndustrialFurnace industrialfurnace = new IndustrialFurnace();
-    public static final AtomicFurnace atomicfurnace = new AtomicFurnace();
+    private static final IndustrialFurnace industrialfurnace = new IndustrialFurnace();
+    private static final AtomicFurnace atomicfurnace = new AtomicFurnace();
 
-    public static ArrayList<ItemBlock> itemblocks = new ArrayList<>();
-    public static ArrayList<Block> blocks = new ArrayList<>();
+    private static ArrayList<ItemBlock> itemblocks = new ArrayList<>();
+    private static ArrayList<Block> blocks = new ArrayList<>();
 
-    public static void registerItemModel(Item item) {
+    private static void registerItemModel(Item item) {
         StarboundMod.commonProxy.registerItemRender(item, 0, item.getRegistryName().toString());
+    }
+
+    private static void registerRecordModel(Item item) {
+        StarboundMod.commonProxy.registerItemRender(item, 0, "disc");
     }
 
     @SubscribeEvent
@@ -194,30 +195,9 @@ public class RegisterUtil {
                 golddrill,
                 platinumdrill,
                 diamonddrill,
-                atlas_record,
-                casiopeia_record,
-                cygnus_x1_record,
-                epsilon_indi_record,
-                supervoid_record,
-                europa_record,
-                glacial_horizon_record,
-                haiku_record,
-                nebula_record,
-                hymn_record,
-                jupiter_record,
-                kluex_record,
-                magellanic_record,
-                mercury_record,
-                mira_record,
-                procyon_record,
-                psyche_record,
-                stellar_record,
-                tranquility_record,
-                ultramarine_record,
-                vast_record,
-                via_record
         };
         event.getRegistry().registerAll(items);
+        event.getRegistry().registerAll(records);
         for (ItemBlock ib : itemblocks) {
             event.getRegistry().register(ib);
             registerItemModel(ib);
@@ -225,6 +205,10 @@ public class RegisterUtil {
 
         for (Item i : items) {
             registerItemModel(i);
+        }
+
+        for (Item i : records) {
+            registerRecordModel(i);
         }
 
     }
@@ -278,7 +262,7 @@ public class RegisterUtil {
         }
     }
 
-    public static void init(FMLInitializationEvent event) {
+    public static void init() {
         GameRegistry.registerTileEntity(IndustrialFurnace.TileEntityCustom.class, "TileEntityindustrialFurnace");
     }
 
