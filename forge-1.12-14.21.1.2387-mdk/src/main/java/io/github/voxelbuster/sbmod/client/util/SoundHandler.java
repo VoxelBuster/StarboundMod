@@ -3,9 +3,14 @@ package io.github.voxelbuster.sbmod.client.util;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.ArrayList;
 
+@Mod.EventBusSubscriber
 public class SoundHandler {
 
     private static int size = 0;
@@ -37,18 +42,19 @@ public class SoundHandler {
 
     public static final ArrayList<SoundEvent> musics = new ArrayList<>();
 
-    public static void init() {
-        size = SoundEvent.REGISTRY.getKeys().size();
+    @SubscribeEvent
+    public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
+        size = 0;
+        IForgeRegistry<SoundEvent> registry = event.getRegistry();
         for (String id : music_ids) {
-            musics.add(register(id));
+            musics.add(register(id, registry));
         }
     }
 
-    public static SoundEvent register(String name) {
-        ResourceLocation location = new ResourceLocation(StarboundMod.MODID + ":" + name);
-        SoundEvent event = new SoundEvent(location);
-
-        SoundEvent.REGISTRY.register(size, location, event);
+    public static SoundEvent register(String name, IForgeRegistry<SoundEvent> registry) {
+        ResourceLocation location = new ResourceLocation(StarboundMod.MODID, name);
+        SoundEvent event = new SoundEvent(location).setRegistryName(name);
+        registry.register(event);
         size++;
         return event;
     }

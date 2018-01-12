@@ -1,0 +1,134 @@
+{
+  "atlas": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:atlas"
+    ]
+  },
+  "casiopeia": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:casiopeia"
+    ]
+  },
+  "cygnus_x1": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:cygnus_x1"
+    ]
+  },
+  "epsilon_indi": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:epsilon_indi"
+    ]
+  },
+  "eridanus-supervoid": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:eridanus-supervoid"
+    ]
+  },
+  "europa": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:europa"
+    ]
+  },
+  "glacial_horizon": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:glacial_horizon"
+    ]
+  },
+  "haiku": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:haiku"
+    ]
+  },
+  "horsehead_nebula": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:horsehead_nebula"
+    ]
+  },
+  "hymn": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:hymn"
+    ]
+  },
+  "jupiter": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:jupiter"
+    ]
+  },
+  "kluex": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:kluex"
+    ]
+  },
+  "magellanic": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:magellanic"
+    ]
+  },
+  "mercury": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:mercury"
+    ]
+  },
+  "mira": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:mira"
+    ]
+  },
+  "procyon": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:procyon"
+    ]
+  },
+  "psyche": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:psyche"
+    ]
+  },
+  "stellar_formation": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:stellar_formation"
+    ]
+  },
+  "tranquility": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:tranquility"
+    ]
+  },
+  "ultramarine": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:ultramarine"
+    ]
+  },
+  "vast_suns": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:vast_suns"
+    ]
+  },
+  "via_aurora": {
+    "category": "record",
+    "sounds": [
+        "starboundmod:via_aurora"
+    ]
+  }
+}

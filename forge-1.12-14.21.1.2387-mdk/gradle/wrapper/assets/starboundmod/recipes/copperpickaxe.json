@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    " | ",
+    " | "
+  ],
+  "key": {
+    "#": {
+      "item": "starboundmod:copper"
+    },
+    "|":{
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "starboundmod:copperpickaxe",
+    "data": 0
+  }
+}

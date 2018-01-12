@@ -3,10 +3,7 @@ package io.github.voxelbuster.sbmod.common.util;
 import io.github.voxelbuster.sbmod.client.util.SoundHandler;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.*;
-import io.github.voxelbuster.sbmod.common.item.ItemMineral;
-import io.github.voxelbuster.sbmod.common.item.ItemOre;
-import io.github.voxelbuster.sbmod.common.item.ModRecord;
-import io.github.voxelbuster.sbmod.common.item.ModTool;
+import io.github.voxelbuster.sbmod.common.item.*;
 import io.github.voxelbuster.sbmod.common.world.ModOreGen;
 import io.github.voxelbuster.sbmod.common.world.WorldGenAncientGate;
 import io.github.voxelbuster.sbmod.common.world.WorldGenOilPool;
@@ -95,7 +92,10 @@ public class RegisterUtil {
     private static final ModTool diamonddrill = new ModTool(ModTool.ItemType.DIAMOND_DRILL, "pickaxe");
 
     public static final ArrayList<ModRecord> records = new ArrayList<>();
-    // TODO add music disc item models and images
+
+    /*static {
+        preInit(); // Sounds aren't initialized yet this doesnt work
+    }*/
 
     private static final IndustrialFurnace industrialfurnace = new IndustrialFurnace();
     private static final AtomicFurnace atomicfurnace = new AtomicFurnace();
@@ -154,19 +154,19 @@ public class RegisterUtil {
         };
         event.getRegistry().registerAll(items);
         for (ModRecord record : records) {
-            event.getRegistry().registerAll(record);
+            event.getRegistry().register(record);
+            registerRecordModel(record);
+        }
+        for (Item i : ItemCrafting.itemSet) {
+            event.getRegistry().register(i);
+            registerItemModel(i);
         }
         for (ItemBlock ib : itemblocks) {
             event.getRegistry().register(ib);
             registerItemModel(ib);
         }
-
         for (Item i : items) {
             registerItemModel(i);
-        }
-
-        for (Item i : records) {
-            registerRecordModel(i);
         }
 
     }
@@ -220,8 +220,7 @@ public class RegisterUtil {
         }
     }
 
-    public static void init() {
-        GameRegistry.registerTileEntity(IndustrialFurnace.TileEntityCustom.class, "TileEntityindustrialFurnace");
+    public static void preInit() {
         records.add(new ModRecord("atlas_cd", SoundHandler.musics.get(0)));
         records.add(new ModRecord("casiopeia_cd", SoundHandler.musics.get(1)));
         records.add(new ModRecord("cygnus_x1_cd", SoundHandler.musics.get(2)));
@@ -244,6 +243,10 @@ public class RegisterUtil {
         records.add(new ModRecord("ultramarine_cd", SoundHandler.musics.get(19)));
         records.add(new ModRecord("vast_suns_cd", SoundHandler.musics.get(20)));
         records.add(new ModRecord("via_cd", SoundHandler.musics.get(21)));
+    }
+
+    public static void init() {
+        GameRegistry.registerTileEntity(IndustrialFurnace.TileEntityCustom.class, "TileEntityindustrialFurnace");
     }
 
     public static void registerWorldGen() {
