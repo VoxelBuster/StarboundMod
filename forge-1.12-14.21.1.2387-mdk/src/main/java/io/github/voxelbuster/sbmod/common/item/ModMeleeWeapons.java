@@ -10,7 +10,8 @@ public class ModMeleeWeapons extends ItemSword {
     private String name;
 
     private static ToolMaterial getToolMaterial(String name) {
-        if (name.equals("tungsten_hammer")) EnumHelper.addToolMaterial("tungsten_hammer", 1, 512, 4f, 12f, 14);
+        if (name.equals("tungsten_hammer")) return EnumHelper.addToolMaterial("tungsten_hammer", 1, 512, 4f, 12f, 14);
+        else return null;
     }
 
     public static Item[] itemSet = new Item[]{
@@ -25,10 +26,6 @@ public class ModMeleeWeapons extends ItemSword {
         this.name = s;
         this.setRegistryName(s);
         return this.setUnlocalizedName(s);
-    }
-
-    public Item setAttackSpeed(float attackSpeed) {
-
     }
 
     public ModMeleeWeapons(ToolMaterial material) {

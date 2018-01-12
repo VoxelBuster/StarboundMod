@@ -3,6 +3,8 @@ package io.github.voxelbuster.sbmod.common.item;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import net.minecraft.block.BlockJukebox;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.SoundHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumRarity;
@@ -29,35 +31,5 @@ public class ModRecord extends ItemRecord {
     @Override
     public EnumRarity getRarity(ItemStack stack) {
         return EnumRarity.RARE;
-    }
-
-    /**
-     * Method credit to MaxTheMooshroom
-     *
-     * @param player
-     * @param worldIn
-     * @param pos
-     * @param hand
-     * @param facing
-     * @param hitX
-     * @param hitY
-     * @param hitZ
-     * @return
-     */
-    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        IBlockState iblockstate = worldIn.getBlockState(pos);
-
-        if (iblockstate.getBlock() == Blocks.JUKEBOX && !((Boolean) iblockstate.getValue(BlockJukebox.HAS_RECORD)).booleanValue()) {
-
-            ItemStack itemstack = player.getHeldItem(hand);
-            ((BlockJukebox) Blocks.JUKEBOX).insertRecord(worldIn, pos, iblockstate, itemstack);
-            worldIn.playRecord(pos, sound); // TODO fix playing sound idk why it isnt playing
-            itemstack.shrink(1);
-            player.addStat(StatList.RECORD_PLAYED);
-
-            return EnumActionResult.SUCCESS;
-        } else {
-            return EnumActionResult.PASS;
-        }
     }
 }

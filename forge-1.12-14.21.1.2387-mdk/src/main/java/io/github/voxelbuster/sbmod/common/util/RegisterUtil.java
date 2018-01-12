@@ -47,7 +47,7 @@ public class RegisterUtil {
     public static final ItemMineral ferozium = new ItemMineral(MaterialVariant.FEROZIUM);
     public static final ItemMineral violium = new ItemMineral(MaterialVariant.VIOLIUM);
     public static final ItemMineral solarium = new ItemMineral(MaterialVariant.SOLARIUM);
-    private static final ItemMineral supermatter = new ItemMineral(MaterialVariant.SUPERMATTER);
+    public static final ItemMineral supermatter = new ItemMineral(MaterialVariant.SUPERMATTER);
     public static final ItemMineral uranium = new ItemMineral(MaterialVariant.URANIUM);
     public static final ItemMineral plutonium = new ItemMineral(MaterialVariant.PLUTONIUM);
     public static final ItemMineral platinum = new ItemMineral(MaterialVariant.PLATINUM);
@@ -113,6 +113,30 @@ public class RegisterUtil {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
+        SoundHandler.addSoundEvents();
+        records.add(new ModRecord("atlas_cd", SoundHandler.musics.get(0)));
+        records.add(new ModRecord("casiopeia_cd", SoundHandler.musics.get(1)));
+        records.add(new ModRecord("cygnus_x1_cd", SoundHandler.musics.get(2)));
+        records.add(new ModRecord("epsilon_indi_cd", SoundHandler.musics.get(3)));
+        records.add(new ModRecord("supervoid_cd", SoundHandler.musics.get(4)));
+        records.add(new ModRecord("europa_cd", SoundHandler.musics.get(5)));
+        records.add(new ModRecord("glacial_horizon_cd", SoundHandler.musics.get(6)));
+        records.add(new ModRecord("haiku_cd", SoundHandler.musics.get(7)));
+        records.add(new ModRecord("nebula_cd", SoundHandler.musics.get(8)));
+        records.add(new ModRecord("hymn_cd", SoundHandler.musics.get(9)));
+        records.add(new ModRecord("jupiter_cd", SoundHandler.musics.get(10)));
+        records.add(new ModRecord("kluex_cd", SoundHandler.musics.get(11)));
+        records.add(new ModRecord("magellanic_cd", SoundHandler.musics.get(12)));
+        records.add(new ModRecord("mercury_cd", SoundHandler.musics.get(13)));
+        records.add(new ModRecord("mira_cd", SoundHandler.musics.get(14)));
+        records.add(new ModRecord("procyon_cd", SoundHandler.musics.get(15)));
+        records.add(new ModRecord("psyche_cd", SoundHandler.musics.get(16)));
+        records.add(new ModRecord("stellar_cd", SoundHandler.musics.get(17)));
+        records.add(new ModRecord("tranquility_cd", SoundHandler.musics.get(18)));
+        records.add(new ModRecord("ultramarine_cd", SoundHandler.musics.get(19)));
+        records.add(new ModRecord("vast_suns_cd", SoundHandler.musics.get(20)));
+        records.add(new ModRecord("via_cd", SoundHandler.musics.get(21)));
+
         final Item[] items = {
                 copper_ore,
                 silver_ore,
@@ -221,28 +245,7 @@ public class RegisterUtil {
     }
 
     public static void preInit() {
-        records.add(new ModRecord("atlas_cd", SoundHandler.musics.get(0)));
-        records.add(new ModRecord("casiopeia_cd", SoundHandler.musics.get(1)));
-        records.add(new ModRecord("cygnus_x1_cd", SoundHandler.musics.get(2)));
-        records.add(new ModRecord("epsilon_indi_cd", SoundHandler.musics.get(3)));
-        records.add(new ModRecord("supervoid_cd", SoundHandler.musics.get(4)));
-        records.add(new ModRecord("europa_cd", SoundHandler.musics.get(5)));
-        records.add(new ModRecord("glacial_horizon_cd", SoundHandler.musics.get(6)));
-        records.add(new ModRecord("haiku_cd", SoundHandler.musics.get(7)));
-        records.add(new ModRecord("nebula_cd", SoundHandler.musics.get(8)));
-        records.add(new ModRecord("hymn_cd", SoundHandler.musics.get(9)));
-        records.add(new ModRecord("jupiter_cd", SoundHandler.musics.get(10)));
-        records.add(new ModRecord("kluex_cd", SoundHandler.musics.get(11)));
-        records.add(new ModRecord("magellanic_cd", SoundHandler.musics.get(12)));
-        records.add(new ModRecord("mercury_cd", SoundHandler.musics.get(13)));
-        records.add(new ModRecord("mira_cd", SoundHandler.musics.get(14)));
-        records.add(new ModRecord("procyon_cd", SoundHandler.musics.get(15)));
-        records.add(new ModRecord("psyche_cd", SoundHandler.musics.get(16)));
-        records.add(new ModRecord("stellar_cd", SoundHandler.musics.get(17)));
-        records.add(new ModRecord("tranquility_cd", SoundHandler.musics.get(18)));
-        records.add(new ModRecord("ultramarine_cd", SoundHandler.musics.get(19)));
-        records.add(new ModRecord("vast_suns_cd", SoundHandler.musics.get(20)));
-        records.add(new ModRecord("via_cd", SoundHandler.musics.get(21)));
+
     }
 
     public static void init() {

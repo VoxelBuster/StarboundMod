@@ -39,7 +39,7 @@ public class ModFluids {
 
     public static BlockFluidClassic fuelblock;
     public static BlockFluidClassic oilblock;
-    public static BlockFluidClassic hwaterblock;
+    public static BlockHealingWater hwaterblock;
     public static BlockAcid acidblock;
 
     public static void registerFluids() {
@@ -57,14 +57,10 @@ public class ModFluids {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
 
-        fuelblock = (BlockFluidClassic) new BlockFluidClassic(erichiusfuel, Material.WATER).setRegistryName(StarboundMod.MODID, "erichiusfuel").setUnlocalizedName("erichiusfuel")
-                .setCreativeTab(StarboundMod.creativeTab);
-        oilblock = (BlockFluidClassic) new BlockFluidClassic(oil, Material.WATER).setRegistryName(StarboundMod.MODID, "oil").setUnlocalizedName("oil")
-                .setCreativeTab(StarboundMod.creativeTab);
-        hwaterblock = (BlockFluidClassic) new BlockFluidClassic(healingwater, Material.WATER).setRegistryName(StarboundMod.MODID, "healingwater").setUnlocalizedName("healingwater")
-                .setCreativeTab(StarboundMod.creativeTab);
-        acidblock = (BlockAcid) new BlockAcid(acid, Material.WATER).setRegistryName(StarboundMod.MODID, "acid").setUnlocalizedName("acid")
-                .setCreativeTab(StarboundMod.creativeTab);
+        fuelblock = (BlockFluidClassic) new BlockFluidClassic(erichiusfuel, Material.WATER).setRegistryName(StarboundMod.MODID, "erichiusfuel").setUnlocalizedName("erichiusfuel");
+        oilblock = (BlockFluidClassic) new BlockFluidClassic(oil, Material.WATER).setRegistryName(StarboundMod.MODID, "oil").setUnlocalizedName("oil");
+        hwaterblock = (BlockHealingWater) new BlockHealingWater(healingwater, Material.WATER).setRegistryName(StarboundMod.MODID, "healingwater").setUnlocalizedName("healingwater");
+        acidblock = (BlockAcid) new BlockAcid(acid, Material.WATER).setRegistryName(StarboundMod.MODID, "acid").setUnlocalizedName("acid");
 
         registry.register(fuelblock);
         registry.register(oilblock);

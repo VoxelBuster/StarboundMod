@@ -47,7 +47,13 @@ public class SoundHandler {
         size = 0;
         IForgeRegistry<SoundEvent> registry = event.getRegistry();
         for (String id : music_ids) {
-            musics.add(register(id, registry));
+            register(id, registry);
+        }
+    }
+
+    public static void addSoundEvents() {
+        for (String id : music_ids) {
+            musics.add(new SoundEvent(new ResourceLocation(StarboundMod.MODID, id)));
         }
     }
 

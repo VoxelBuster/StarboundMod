@@ -11,8 +11,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
-public class BlockAcid extends BlockFluidClassic {
-    public BlockAcid(Fluid fluid, Material material) {
+public class BlockHealingWater extends BlockFluidClassic {
+    public BlockHealingWater(Fluid fluid, Material material) {
         super(fluid, material);
     }
 
@@ -20,8 +20,8 @@ public class BlockAcid extends BlockFluidClassic {
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
         if (entityIn instanceof EntityLivingBase) {
             EntityLivingBase ent = (EntityLivingBase) entityIn;
-            if (!ent.isPotionActive(Potion.getPotionById(19))) {
-                ent.addPotionEffect(new PotionEffect(Potion.getPotionById(19), 90, 1));
+            if (!ent.isPotionActive(Potion.getPotionById(10))) {
+                ent.addPotionEffect(new PotionEffect(Potion.getPotionById(10), 90, 1));
             }
         }
     }
