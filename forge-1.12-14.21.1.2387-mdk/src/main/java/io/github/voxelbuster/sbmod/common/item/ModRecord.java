@@ -13,9 +13,12 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ModRecord extends ItemRecord { // Add game music items
-    public ModRecord(String name, ResourceLocation soundResource) {
-        super(name, new SoundEvent(soundResource));
+public class ModRecord extends ItemRecord {
+    private final SoundEvent sound; // Add game music items
+
+    public ModRecord(String name, SoundEvent sound) {
+        super(name, sound);
+        this.sound = sound;
         this.setCreativeTab(StarboundMod.creativeTab);
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
@@ -48,7 +51,7 @@ public class ModRecord extends ItemRecord { // Add game music items
 
             ItemStack itemstack = player.getHeldItem(hand);
             ((BlockJukebox) Blocks.JUKEBOX).insertRecord(worldIn, pos, iblockstate, itemstack);
-            worldIn.playRecord(pos, this.getSound()); // TODO fix playing sound idk why it isnt playing
+            worldIn.playRecord(pos, sound); // TODO fix playing sound idk why it isnt playing
             itemstack.shrink(1);
             player.addStat(StatList.RECORD_PLAYED);
 

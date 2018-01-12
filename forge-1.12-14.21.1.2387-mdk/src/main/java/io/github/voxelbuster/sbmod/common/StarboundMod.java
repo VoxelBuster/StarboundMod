@@ -1,5 +1,6 @@
 package io.github.voxelbuster.sbmod.common;
 
+import io.github.voxelbuster.sbmod.client.util.SoundHandler;
 import io.github.voxelbuster.sbmod.common.block.ModFluids;
 import io.github.voxelbuster.sbmod.client.util.GuiHandler;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
@@ -40,6 +41,7 @@ public class StarboundMod {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        SoundHandler.init();
         RegisterUtil.init();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         RegisterUtil.registerWorldGen();

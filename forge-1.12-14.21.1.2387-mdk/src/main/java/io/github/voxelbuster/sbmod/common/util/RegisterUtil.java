@@ -1,5 +1,6 @@
 package io.github.voxelbuster.sbmod.common.util;
 
+import io.github.voxelbuster.sbmod.client.util.SoundHandler;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.*;
 import io.github.voxelbuster.sbmod.common.item.ItemMineral;
@@ -14,7 +15,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,8 +24,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(modid = StarboundMod.MODID)
-@GameRegistry.ObjectHolder(StarboundMod.MODID)
+//@GameRegistry.ObjectHolder(StarboundMod.MODID) why did i need this?
 public class RegisterUtil {
+
     public static final ItemOre copper_ore = new ItemOre(MaterialVariant.COPPER);
     public static final ItemOre silver_ore = new ItemOre(MaterialVariant.SILVER);
     public static final ItemOre titanium_ore = new ItemOre(MaterialVariant.TITANIUM);
@@ -93,52 +94,7 @@ public class RegisterUtil {
     private static final ModTool platinumdrill = new ModTool(ModTool.ItemType.PLATINUM_DRILL, "pickaxe");
     private static final ModTool diamonddrill = new ModTool(ModTool.ItemType.DIAMOND_DRILL, "pickaxe");
 
-    public static final ModRecord[] records = {
-     new ModRecord("atlas_cd", new ResourceLocation(
-            StarboundMod.MODID, "atlas")),
-     new ModRecord("casiopeia_cd", new ResourceLocation(
-            StarboundMod.MODID, "casiopeia")),
-     new ModRecord("cygnus_x1_cd", new ResourceLocation(
-            StarboundMod.MODID, "cygnus_x1")),
-     new ModRecord("epsilon_indi_cd", new ResourceLocation(
-            StarboundMod.MODID, "epsilon_indi")),
-     new ModRecord("supervoid_cd", new ResourceLocation(
-            StarboundMod.MODID, "eridanus-supervoid")),
-     new ModRecord("europa_cd", new ResourceLocation(
-            StarboundMod.MODID, "europa")),
-     new ModRecord("glacial_horizon_cd", new ResourceLocation(
-            StarboundMod.MODID, "glacial_horizon")),
-     new ModRecord("haiku_cd", new ResourceLocation(
-            StarboundMod.MODID, "haiku")),
-     new ModRecord("nebula_cd", new ResourceLocation(
-            StarboundMod.MODID, "horsehead_nebula")),
-     new ModRecord("hymn_cd", new ResourceLocation(
-            StarboundMod.MODID, "hymn")),
-     new ModRecord("jupiter_cd", new ResourceLocation(
-            StarboundMod.MODID, "jupiter")),
-     new ModRecord("kluex_cd", new ResourceLocation(
-            StarboundMod.MODID, "kluex")),
-     new ModRecord("magellanic_cd", new ResourceLocation(
-            StarboundMod.MODID, "magellanic")),
-     new ModRecord("mercury_cd", new ResourceLocation(
-            StarboundMod.MODID, "mercury")),
-     new ModRecord("mira_cd", new ResourceLocation(
-            StarboundMod.MODID, "mira")),
-     new ModRecord("procyon_cd", new ResourceLocation(
-            StarboundMod.MODID, "procyon")),
-     new ModRecord("psyche_cd", new ResourceLocation(
-            StarboundMod.MODID, "psyche")),
-     new ModRecord("stellar_cd", new ResourceLocation(
-            StarboundMod.MODID, "stellar_formation")),
-     new ModRecord("tranquility_cd", new ResourceLocation(
-            StarboundMod.MODID, "tranquility")),
-     new ModRecord("ultramarine_cd", new ResourceLocation(
-            StarboundMod.MODID, "ultramarine")),
-     new ModRecord("vast_suns_cd", new ResourceLocation(
-            StarboundMod.MODID, "vast_suns")),
-     new ModRecord("via_cd", new ResourceLocation(
-            StarboundMod.MODID, "via_aurora"))};
-
+    public static final ArrayList<ModRecord> records = new ArrayList<>();
     // TODO add music disc item models and images
 
     private static final IndustrialFurnace industrialfurnace = new IndustrialFurnace();
@@ -152,7 +108,7 @@ public class RegisterUtil {
     }
 
     private static void registerRecordModel(Item item) {
-        StarboundMod.commonProxy.registerItemRender(item, 0, "disc");
+        StarboundMod.commonProxy.registerItemRender(item, 0, StarboundMod.MODID + ":disc");
     }
 
     @SubscribeEvent
@@ -197,7 +153,9 @@ public class RegisterUtil {
                 diamonddrill,
         };
         event.getRegistry().registerAll(items);
-        event.getRegistry().registerAll(records);
+        for (ModRecord record : records) {
+            event.getRegistry().registerAll(record);
+        }
         for (ItemBlock ib : itemblocks) {
             event.getRegistry().register(ib);
             registerItemModel(ib);
@@ -264,6 +222,28 @@ public class RegisterUtil {
 
     public static void init() {
         GameRegistry.registerTileEntity(IndustrialFurnace.TileEntityCustom.class, "TileEntityindustrialFurnace");
+        records.add(new ModRecord("atlas_cd", SoundHandler.musics.get(0)));
+        records.add(new ModRecord("casiopeia_cd", SoundHandler.musics.get(1)));
+        records.add(new ModRecord("cygnus_x1_cd", SoundHandler.musics.get(2)));
+        records.add(new ModRecord("epsilon_indi_cd", SoundHandler.musics.get(3)));
+        records.add(new ModRecord("supervoid_cd", SoundHandler.musics.get(4)));
+        records.add(new ModRecord("europa_cd", SoundHandler.musics.get(5)));
+        records.add(new ModRecord("glacial_horizon_cd", SoundHandler.musics.get(6)));
+        records.add(new ModRecord("haiku_cd", SoundHandler.musics.get(7)));
+        records.add(new ModRecord("nebula_cd", SoundHandler.musics.get(8)));
+        records.add(new ModRecord("hymn_cd", SoundHandler.musics.get(9)));
+        records.add(new ModRecord("jupiter_cd", SoundHandler.musics.get(10)));
+        records.add(new ModRecord("kluex_cd", SoundHandler.musics.get(11)));
+        records.add(new ModRecord("magellanic_cd", SoundHandler.musics.get(12)));
+        records.add(new ModRecord("mercury_cd", SoundHandler.musics.get(13)));
+        records.add(new ModRecord("mira_cd", SoundHandler.musics.get(14)));
+        records.add(new ModRecord("procyon_cd", SoundHandler.musics.get(15)));
+        records.add(new ModRecord("psyche_cd", SoundHandler.musics.get(16)));
+        records.add(new ModRecord("stellar_cd", SoundHandler.musics.get(17)));
+        records.add(new ModRecord("tranquility_cd", SoundHandler.musics.get(18)));
+        records.add(new ModRecord("ultramarine_cd", SoundHandler.musics.get(19)));
+        records.add(new ModRecord("vast_suns_cd", SoundHandler.musics.get(20)));
+        records.add(new ModRecord("via_cd", SoundHandler.musics.get(21)));
     }
 
     public static void registerWorldGen() {
