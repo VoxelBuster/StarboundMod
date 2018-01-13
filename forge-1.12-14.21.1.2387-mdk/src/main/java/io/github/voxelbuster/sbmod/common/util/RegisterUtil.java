@@ -181,6 +181,10 @@ public class RegisterUtil {
             event.getRegistry().register(record);
             registerRecordModel(record);
         }
+        for (Item i : ModMeleeWeapons.itemSet) {
+            event.getRegistry().register(i);
+            registerItemModel(i);
+        }
         for (Item i : ItemCrafting.itemSet) {
             event.getRegistry().register(i);
             registerItemModel(i);

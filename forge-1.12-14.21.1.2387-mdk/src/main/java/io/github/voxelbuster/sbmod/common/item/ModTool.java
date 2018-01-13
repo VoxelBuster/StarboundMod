@@ -47,10 +47,14 @@ public class ModTool extends ItemTool {
             case MANIPULATOR:
                 return EnumHelper.addToolMaterial("manipulator", 4, -1, 10f, 0f, 0);
             case TUNGSTEN_AXE:
-                return EnumHelper.addToolMaterial("tungsten_axe", 2, 512, 15f, 9f, 14);
+                return EnumHelper.addToolMaterial("tungsten_axe", 2, 512, 15f, 7.5f, 14);
             default:
                 return null;
         }
+    }
+
+    public void setAttackSpeed(float attackSpeed) {
+        this.attackSpeed = attackSpeed - 4f;
     }
 
     public ModTool(ItemType type, String toolType) {
@@ -61,65 +65,65 @@ public class ModTool extends ItemTool {
             this.setRegistryName("copperpickaxe");
             this.setMaxStackSize(1);
             this.setHarvestLevel("pickaxe", 2);
-            this.attackSpeed = 1f;
+            this.setAttackSpeed(1f);
         } else if (type == ItemType.SILVER_PICKAXE) {
             this.setUnlocalizedName("silverpickaxe");
             this.setRegistryName("silverpickaxe");
             this.setMaxStackSize(1);
             this.setHarvestLevel("pickaxe", 2);
-            this.attackSpeed = 1f;
+            this.setAttackSpeed(1f);
         } else if (type == ItemType.PLATINUM_PICKAXE) {
             this.setUnlocalizedName("platinumpickaxe");
             this.setRegistryName("platinumpickaxe");
             this.setMaxStackSize(1);
             this.setHarvestLevel("pickaxe", 3);
-            this.attackSpeed = 1f;
+            this.setAttackSpeed(1f);
         } else if (type == ItemType.COPPER_DRILL) {
             this.setUnlocalizedName("copperdrill");
             this.setRegistryName("copperdrill");
             this.setMaxStackSize(1);
             this.setHarvestLevel("pickaxe", 2);
-            this.damageVsEntity = 1f;
+            this.setAttackSpeed(4f);
         } else if (type == ItemType.SILVER_DRILL) {
             this.setUnlocalizedName("silverdrill");
             this.setRegistryName("silverdrill");
             this.setMaxStackSize(1);
             this.setHarvestLevel("pickaxe", 2);
-            this.attackSpeed = 4f;
+            this.setAttackSpeed(4f);
         } else if (type == ItemType.GOLD_DRILL) {
             this.setUnlocalizedName("golddrill");
             this.setRegistryName("golddrill");
             this.setMaxStackSize(1);
             this.setHarvestLevel("pickaxe", 2);
-            this.attackSpeed = 4f;
+            this.setAttackSpeed(4f);
         } else if (type == ItemType.PLATINUM_DRILL) {
             this.setUnlocalizedName("platinumdrill");
             this.setRegistryName("platinumdrill");
             this.setMaxStackSize(1);
             this.setHarvestLevel("pickaxe", 3);
-            this.attackSpeed = 4f;
+            this.setAttackSpeed(4f);
         } else if (type == ItemType.DIAMOND_DRILL) {
             this.setUnlocalizedName("diamonddrill");
             this.setRegistryName("diamonddrill");
             this.setMaxStackSize(1);
             this.setHarvestLevel("pickaxe", 4);
-            this.attackSpeed = 4f;
+            this.setAttackSpeed(4f);
         } else if (type == ItemType.CHAINSAW) {
             this.setUnlocalizedName("chainsaw");
             this.setRegistryName("chainsaw");
             this.setMaxStackSize(1);
             this.setHarvestLevel("axe", 3);
-            this.attackSpeed = 4f;
+            this.setAttackSpeed(4f);
         } else if (type == ItemType.MANIPULATOR) {
             this.setUnlocalizedName("manipulator");
             this.setRegistryName("manipulator");
             this.setMaxStackSize(1);
-            this.attackSpeed = 0.5f;
+            this.setAttackSpeed(0.5f);
         } else if (type == ItemType.TUNGSTEN_AXE) {
             this.setUnlocalizedName("tungsten_axe");
             this.setRegistryName("tungsten_axe");
             this.setMaxStackSize(1);
-            this.attackSpeed = 1f;
+            this.setAttackSpeed(1f);
         }
     }
 }
