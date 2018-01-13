@@ -1,21 +1,21 @@
 package io.github.voxelbuster.sbmod.common;
 
-import com.sun.org.apache.regexp.internal.RE;
+import io.github.voxelbuster.sbmod.client.inventory.PixelsInventoryOverlay;
+import io.github.voxelbuster.sbmod.client.util.GuiHandler;
 import io.github.voxelbuster.sbmod.client.util.SoundHandler;
 import io.github.voxelbuster.sbmod.common.block.ModFluids;
-import io.github.voxelbuster.sbmod.client.util.GuiHandler;
+import io.github.voxelbuster.sbmod.common.util.EntityEventHandler;
+import io.github.voxelbuster.sbmod.common.util.PlayerEventHandler;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
 import io.github.voxelbuster.sbmod.common.world.WorldUtil;
 import io.github.voxelbuster.sbmod.proxy.CommonProxy;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
-import org.apache.logging.log4j.Logger;
 
 @Mod(modid = StarboundMod.MODID, version = StarboundMod.VERSION)
 public class StarboundMod {
@@ -36,11 +36,14 @@ public class StarboundMod {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        ModFluids.registerFluids();
         MinecraftForge.EVENT_BUS.register(ModFluids.class);
         MinecraftForge.EVENT_BUS.register(RegisterUtil.class);
         MinecraftForge.TERRAIN_GEN_BUS.register(WorldUtil.class);
         MinecraftForge.EVENT_BUS.register(SoundHandler.class);
-        ModFluids.registerFluids();
+        MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
+        MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
+        MinecraftForge.EVENT_BUS.register(new PixelsInventoryOverlay());
     }
 
     @Mod.EventHandler

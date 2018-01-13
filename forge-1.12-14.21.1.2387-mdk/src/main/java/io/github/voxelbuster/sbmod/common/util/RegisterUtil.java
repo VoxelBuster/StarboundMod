@@ -24,6 +24,8 @@ import java.util.ArrayList;
 //@GameRegistry.ObjectHolder(StarboundMod.MODID) why did i need this?
 public class RegisterUtil {
 
+    public static final ItemPixel pixel = new ItemPixel();
+
     public static final ItemOre copper_ore = new ItemOre(MaterialVariant.COPPER);
     public static final ItemOre silver_ore = new ItemOre(MaterialVariant.SILVER);
     public static final ItemOre titanium_ore = new ItemOre(MaterialVariant.TITANIUM);
@@ -138,6 +140,7 @@ public class RegisterUtil {
         records.add(new ModRecord("via_cd", SoundHandler.musics.get(21)));
 
         final Item[] items = {
+                pixel,
                 copper_ore,
                 silver_ore,
                 titanium_ore,

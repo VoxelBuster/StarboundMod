@@ -2,6 +2,8 @@
 itemGroup.starboundmod=Starbound Mod
 
 #Items
+item.pixel.name=Pixel
+
 item.copper.name=Copper Bar
 item.silver.name=Silver Bar
 item.titanium.name=Titanium Bar
