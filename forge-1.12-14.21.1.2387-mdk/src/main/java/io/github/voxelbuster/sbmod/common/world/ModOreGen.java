@@ -20,6 +20,7 @@ public class ModOreGen implements IWorldGenerator {
     private WorldGenerator genUraniumOre;
     private WorldGenerator genPlutoniumOre;
     private WorldGenerator genPlatinumOre;
+    private WorldGenerator genCoreFragment;
 
     public ModOreGen() {
         this.genCopperOre = new WorldGenMinable(RegisterUtil.ore_block_copper.getDefaultState(), 12);
@@ -29,6 +30,7 @@ public class ModOreGen implements IWorldGenerator {
         this.genUraniumOre = new WorldGenMinable(RegisterUtil.ore_block_uranium.getDefaultState(), 12);
         this.genPlutoniumOre = new WorldGenMinable(RegisterUtil.ore_block_plutonium.getDefaultState(), 12);
         this.genPlatinumOre = new WorldGenMinable(RegisterUtil.ore_block_platinum.getDefaultState(), 8);
+        this.genCoreFragment = new WorldGenMinable(RegisterUtil.ore_block_corefragment.getDefaultState(), 24);
     }
 
     @Override
@@ -42,6 +44,7 @@ public class ModOreGen implements IWorldGenerator {
                 this.runGenerator(random, genUraniumOre, world, chunkX, chunkZ, 2, 0, 40);
                 this.runGenerator(random, genPlutoniumOre, world, chunkX, chunkZ, 2, 0, 30);
                 this.runGenerator(random, genPlatinumOre, world, chunkX, chunkZ, 1, 5, 20);
+                this.runGenerator(random, genCoreFragment, world, chunkX, chunkZ, 1, 0, 12);
                 break;
             case -1: //Nether
 

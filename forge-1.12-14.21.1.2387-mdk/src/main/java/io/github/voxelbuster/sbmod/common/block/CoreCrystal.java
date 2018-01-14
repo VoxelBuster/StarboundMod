@@ -11,6 +11,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
 public class CoreCrystal extends ModBlock {
@@ -76,6 +77,7 @@ public class CoreCrystal extends ModBlock {
                                                                                                 if (player.inventory.hasItemStack(new ItemStack(RegisterUtil.corefragment, 20)) || player.isCreative()) {
                                                                                                     if (!player.isCreative()) player.inventory.decrStackSize(player.inventory.getSlotFor(new ItemStack(RegisterUtil.corefragment, 20)), 20);
                                                                                                 } else {
+                                                                                                    player.sendMessage(new TextComponentString("You need 20 core fragments to activate the gate."));
                                                                                                     return false;
                                                                                                 }
                                                                                                 for(int i = 0; i < 5; i++) {

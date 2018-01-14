@@ -102,6 +102,13 @@ public class BlockOre extends Block {
             this.setHardness(10.0f);
             this.setResistance(15.0f);
             this.dropItem = RegisterUtil.platinumore;
+        } else if (variant == MaterialVariant.COREFRAGMENT) {
+            this.setRegistryName(StarboundMod.MODID, "corefragmentoreblock");
+            this.setUnlocalizedName("corefragmentoreblock");
+            this.setHarvestLevel("pickaxe", 2);
+            this.setHardness(15.0f);
+            this.setResistance(15.0f);
+            this.dropItem = RegisterUtil.corefragment;
         } else {
             this.setRegistryName(StarboundMod.MODID, "genericblockore");
         }

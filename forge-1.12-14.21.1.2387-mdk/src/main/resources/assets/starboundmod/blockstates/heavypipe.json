@@ -1,0 +1,48 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all"
+  },
+  "variants": {
+    "variant": {
+      "0": {
+        "textures": {
+          "all": "starboundmod:blocks/heavypipe"
+        }
+      },
+      "1": {
+        "textures": {
+          "all": "starboundmod:blocks/heavypipecorner"
+        }
+      },
+      "2": {
+        "textures": {
+          "all": "starboundmod:blocks/heavypipeT"
+        }
+      },
+      "3": {
+        "textures": {
+          "all": "starboundmod:blocks/heavypipequad"
+        }
+      }
+    },
+    "facing": {
+      "down": {
+        "x": 90
+      },
+      "up": {
+        "x": 270
+      },
+      "north": {},
+      "south": {
+        "y": 180
+      },
+      "east": {
+        "y": 90
+      },
+      "west": {
+        "y": 270
+      }
+    }
+  }
+}

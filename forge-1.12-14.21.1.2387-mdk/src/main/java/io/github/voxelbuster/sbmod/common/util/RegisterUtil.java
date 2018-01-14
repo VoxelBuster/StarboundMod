@@ -12,6 +12,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemMultiTexture;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -25,6 +26,8 @@ import java.util.ArrayList;
 public class RegisterUtil {
 
     public static final ItemPixel pixel = new ItemPixel();
+
+    public static final HeavyPipe heavypipe = new HeavyPipe();
 
     public static final ItemOre copper_ore = new ItemOre(MaterialVariant.COPPER);
     public static final ItemOre silver_ore = new ItemOre(MaterialVariant.SILVER);
@@ -81,6 +84,7 @@ public class RegisterUtil {
     public static final BlockOre ore_block_uranium = new BlockOre(Material.ROCK, MaterialVariant.URANIUM);
     public static final BlockOre ore_block_plutonium = new BlockOre(Material.ROCK, MaterialVariant.PLUTONIUM);
     public static final BlockOre ore_block_platinum = new BlockOre(Material.ROCK, MaterialVariant.PLATINUM);
+    public static final BlockOre ore_block_corefragment = new BlockOre(Material.ROCK, MaterialVariant.COREFRAGMENT);
 
     private static final ModTool manipulator = new ModTool(ModTool.ItemType.MANIPULATOR, "pickaxe");
     private static final ModTool copperpickaxe = new ModTool(ModTool.ItemType.COPPER_PICKAXE, "pickaxe");
@@ -215,6 +219,8 @@ public class RegisterUtil {
                 ore_block_ferozium,
                 ore_block_violium,
                 ore_block_solarium,
+                ore_block_corefragment,
+                heavypipe,
                 copper_block,
                 silver_block,
                 titanium_block,
