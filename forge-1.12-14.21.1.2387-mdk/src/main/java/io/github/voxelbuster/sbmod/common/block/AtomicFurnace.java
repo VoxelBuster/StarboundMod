@@ -86,6 +86,16 @@ public class AtomicFurnace extends Block implements ITileEntityProvider {
     }
 
     @Override
+    public boolean isFullCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
     public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
         int i = pos.getX();
         int j = pos.getY();

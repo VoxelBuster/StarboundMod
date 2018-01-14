@@ -13,13 +13,15 @@ public class GuiHandler implements IGuiHandler {
     public Object getServerGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
         if (id == IndustrialFurnaceGUI.GUIID)
             return new IndustrialFurnaceGUI.GuiContainerMod(world, x, y, z, player);
+        else if (id == AtomicFurnaceGUI.GUIID)
+            return new AtomicFurnaceGUI.GuiContainerMod(world, x, y, z, player);
         return null;
     }
 
     public Object getClientGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
         if (id == IndustrialFurnaceGUI.GUIID)
             return new IndustrialFurnaceGUI.GuiWindow(world, x, y, z, player, (IndustrialFurnace.TileEntityCustom) world.getTileEntity(new BlockPos(x, y , z)));
-        if (id == AtomicFurnaceGUI.GUIID)
+        else if (id == AtomicFurnaceGUI.GUIID)
             return new AtomicFurnaceGUI.GuiWindow(world, x, y, z, player, (AtomicFurnace.TileEntityCustom) world.getTileEntity(new BlockPos(x, y , z)));
         return null;
     }

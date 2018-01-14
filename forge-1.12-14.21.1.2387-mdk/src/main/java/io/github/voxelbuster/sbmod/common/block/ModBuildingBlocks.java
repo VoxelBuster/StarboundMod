@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 public class ModBuildingBlocks {
     public static ArrayList<Block> blockSet = new ArrayList<>();
-    public static Block ancientstone, gateportal, meteoriteblock, ancientbrick;
-    public static CoreCrystal corecrystal;
+    public static Block ancientstone, gateportal;
 
     public static void addAll() {
         blockSet.add(new ModBlock(Material.ROCK, "metoriteblock").setHardness(10f).setResistance(30f).setUnlocalizedName("meteoriteblock")
@@ -28,11 +27,9 @@ public class ModBuildingBlocks {
                 .setRegistryName(new ResourceLocation(StarboundMod.MODID, "outpostpillar")).setCreativeTab(StarboundMod.creativeTab));
         blockSet.add(new ModBlock(Material.IRON, "outpostsupport").setHardness(10f).setResistance(30f).setUnlocalizedName("outpostsupport")
                 .setRegistryName(new ResourceLocation(StarboundMod.MODID, "outpostsupport")).setCreativeTab(StarboundMod.creativeTab));
+        blockSet.add(new OutpostLamp());
 
-        meteoriteblock = blockSet.get(0);
         ancientstone = blockSet.get(1);
-        corecrystal = (CoreCrystal) blockSet.get(2);
         gateportal = blockSet.get(3);
-        ancientbrick = blockSet.get(4);
     }
 }

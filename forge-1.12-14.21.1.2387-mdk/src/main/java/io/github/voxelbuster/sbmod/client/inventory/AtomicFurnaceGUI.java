@@ -25,7 +25,7 @@ public class AtomicFurnaceGUI {
 
     public static IInventory inherited;
 
-    public static int GUIID = 1;
+    public static int GUIID = 2;
 
     public static class GuiContainerMod extends Container {
 

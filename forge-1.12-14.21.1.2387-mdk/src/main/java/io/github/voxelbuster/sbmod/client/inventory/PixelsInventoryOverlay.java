@@ -17,7 +17,7 @@ public class PixelsInventoryOverlay extends GuiScreen {
         Minecraft mc = Minecraft.getMinecraft();
         if (mc.player != null) {
             this.drawString(mc.fontRenderer, "Pixels: " + pixels,
-                    0, 10, 0x777700);
+                    0, 5, 0x777700);
         }
     }
 
