@@ -37,6 +37,10 @@ public class ModBuildingBlocks {
             blockSet.add(new ModStairs(blockSet.get(7).getDefaultState(), variant));
         }
 
+        for (ModDoor.DoorVariant variant : ModDoor.DoorVariant.values()) {
+            blockSet.add(new ModDoor(Material.IRON, variant));
+        }
+
         ancientstone = blockSet.get(1);
         gateportal = blockSet.get(3);
     }
