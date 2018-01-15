@@ -1,27 +1,20 @@
 package io.github.voxelbuster.sbmod.common.block;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
-import io.github.voxelbuster.sbmod.common.util.EntityUtil;
 import io.github.voxelbuster.sbmod.common.world.WorldUtil;
 import io.github.voxelbuster.sbmod.common.world.teleporter.TeleporterHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldProvider;
-import net.minecraftforge.fml.common.FMLLog;
 
 public class GatePortalBlock extends ModBlock {
     public static boolean freezeEvent = false;
@@ -39,8 +32,10 @@ public class GatePortalBlock extends ModBlock {
 
     @Override
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos neighbor) {
-        if (freezeEvent) {return;}
-        if(world.getBlockState(pos.down()) != ModBuildingBlocks.ancientstone.getDefaultState() && world.getBlockState(pos.down()) != this.getDefaultState()) {
+        if (freezeEvent) {
+            return;
+        }
+        if (world.getBlockState(pos.down()) != ModBuildingBlocks.ancientstone.getDefaultState() && world.getBlockState(pos.down()) != this.getDefaultState()) {
             world.setBlockState(pos, Blocks.AIR.getDefaultState());
         }
 
@@ -61,14 +56,12 @@ public class GatePortalBlock extends ModBlock {
     }
 
     @Override
-    public boolean isOpaqueCube(IBlockState state)
-    {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
     @Override
-    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-    {
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
         return NULL_AABB;
     }
 

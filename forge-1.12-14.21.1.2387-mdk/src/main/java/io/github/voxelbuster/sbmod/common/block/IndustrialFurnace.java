@@ -1,7 +1,7 @@
 package io.github.voxelbuster.sbmod.common.block;
 
-import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.client.inventory.IndustrialFurnaceGUI;
+import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.item.crafting.IndustrialFurnaceRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
@@ -123,7 +123,7 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
 
     public static class TileEntityCustom extends TileEntityLockableLoot implements ITickable {
 
-        private NonNullList<ItemStack> stacks = NonNullList.<ItemStack> withSize(3, ItemStack.EMPTY);
+        private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
         private int furnaceBurnTime;
         private int currentItemBurnTime;
         private int cookTime;
@@ -165,7 +165,7 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
 
         public void readFromNBT(NBTTagCompound compound) {
             super.readFromNBT(compound);
-            this.stacks = NonNullList.<ItemStack> withSize(this.getSizeInventory(), ItemStack.EMPTY);
+            this.stacks = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 
             if (!this.checkLootAndRead(compound)) {
                 ItemStackHelper.loadAllItems(compound, this.stacks);
@@ -234,33 +234,26 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
         public void update() {
             boolean flag1 = false;
 
-            if (this.isBurning())
-            {
+            if (this.isBurning()) {
                 --this.furnaceBurnTime;
             }
 
-            if (!this.world.isRemote)
-            {
+            if (!this.world.isRemote) {
                 ItemStack itemstack = this.getItems().get(1);
 
-                if (this.isBurning() || !itemstack.isEmpty() && !(this.getItems().get(0)).isEmpty())
-                {
-                    if (!this.isBurning() && this.canSmelt())
-                    {
+                if (this.isBurning() || !itemstack.isEmpty() && !(this.getItems().get(0)).isEmpty()) {
+                    if (!this.isBurning() && this.canSmelt()) {
                         this.furnaceBurnTime = getBurnTime(itemstack);
                         this.currentItemBurnTime = this.furnaceBurnTime;
 
-                        if (this.isBurning())
-                        {
+                        if (this.isBurning()) {
                             flag1 = true;
 
-                            if (!itemstack.isEmpty())
-                            {
+                            if (!itemstack.isEmpty()) {
                                 Item item = itemstack.getItem();
                                 itemstack.shrink(1);
 
-                                if (itemstack.isEmpty())
-                                {
+                                if (itemstack.isEmpty()) {
                                     ItemStack item1 = item.getContainerItem(itemstack);
                                     this.getItems().set(1, item1);
                                 }
@@ -268,94 +261,69 @@ public class IndustrialFurnace extends Block implements ITileEntityProvider {
                         }
                     }
 
-                    if (this.isBurning() && this.canSmelt())
-                    {
+                    if (this.isBurning() && this.canSmelt()) {
                         ++this.cookTime;
 
-                        if (totalCookTime == 0) this.totalCookTime = IndustrialFurnaceRecipes.getCookTime(this.getItems().get(0));
+                        if (totalCookTime == 0)
+                            this.totalCookTime = IndustrialFurnaceRecipes.getCookTime(this.getItems().get(0));
 
-                        if (this.cookTime == this.totalCookTime)
-                        {
+                        if (this.cookTime == this.totalCookTime) {
                             this.cookTime = 0;
                             this.totalCookTime = IndustrialFurnaceRecipes.getCookTime(this.getItems().get(0));
                             this.smeltItem();
                             flag1 = true;
                         }
-                    }
-                    else
-                    {
+                    } else {
                         this.cookTime = 0;
                     }
-                }
-                else if (!this.isBurning() && this.cookTime > 0)
-                {
+                } else if (!this.isBurning() && this.cookTime > 0) {
                     this.cookTime = (int) MathHelper.clamp(this.cookTime - 2, 0, this.totalCookTime);
                 }
             }
 
-            if (flag1)
-            {
+            if (flag1) {
                 this.markDirty();
             }
         }
 
-        public boolean isBurning()
-        {
+        public boolean isBurning() {
             return this.furnaceBurnTime > 0;
         }
 
-        private boolean canSmelt()
-        {
-            if ((this.getItems().get(0)).isEmpty())
-            {
+        private boolean canSmelt() {
+            if ((this.getItems().get(0)).isEmpty()) {
                 return false;
-            }
-            else
-            {
+            } else {
                 ItemStack itemstack = IndustrialFurnaceRecipes.getProduct(this.getItems().get(0));
 
-                if (itemstack.isEmpty())
-                {
+                if (itemstack.isEmpty()) {
                     return false;
-                }
-                else
-                {
+                } else {
                     ItemStack itemstack1 = this.getItems().get(2);
 
-                    if (itemstack1.isEmpty())
-                    {
+                    if (itemstack1.isEmpty()) {
                         return true;
-                    }
-                    else if (!itemstack1.isItemEqual(itemstack))
-                    {
+                    } else if (!itemstack1.isItemEqual(itemstack)) {
                         return false;
-                    }
-                    else if (itemstack1.getCount() + itemstack.getCount() <= this.getInventoryStackLimit() && itemstack1.getCount() + itemstack.getCount() <= itemstack1.getMaxStackSize())  // Forge fix: make furnace respect stack sizes in furnace recipes
+                    } else if (itemstack1.getCount() + itemstack.getCount() <= this.getInventoryStackLimit() && itemstack1.getCount() + itemstack.getCount() <= itemstack1.getMaxStackSize())  // Forge fix: make furnace respect stack sizes in furnace recipes
                     {
                         return true;
-                    }
-                    else
-                    {
+                    } else {
                         return itemstack1.getCount() + itemstack.getCount() <= itemstack.getMaxStackSize(); // Forge fix: make furnace respect stack sizes in furnace recipes
                     }
                 }
             }
         }
 
-        public void smeltItem()
-        {
-            if (this.canSmelt())
-            {
+        public void smeltItem() {
+            if (this.canSmelt()) {
                 ItemStack itemstack = this.getItems().get(0);
                 ItemStack itemstack1 = IndustrialFurnaceRecipes.getProduct(itemstack);
                 ItemStack itemstack2 = this.getItems().get(2);
 
-                if (itemstack2.isEmpty())
-                {
+                if (itemstack2.isEmpty()) {
                     this.getItems().set(2, itemstack1.copy());
-                }
-                else if (itemstack2.getItem() == itemstack1.getItem())
-                {
+                } else if (itemstack2.getItem() == itemstack1.getItem()) {
                     itemstack2.grow(itemstack1.getCount());
                 }
 

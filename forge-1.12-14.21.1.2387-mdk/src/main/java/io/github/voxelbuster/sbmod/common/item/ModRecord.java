@@ -1,19 +1,10 @@
 package io.github.voxelbuster.sbmod.common.item;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
-import net.minecraft.block.BlockJukebox;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.SoundHandler;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemRecord;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.StatList;
-import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.util.SoundEvent;
 
 public class ModRecord extends ItemRecord {
     private final SoundEvent sound; // Add game music items

@@ -31,19 +31,25 @@ public class AtomicFurnaceRecipes {
 
     public static ItemStack getProduct(ItemStack stackInSlot) {
         if (stackInSlot.getItem() == Item.getItemFromBlock(Blocks.IRON_ORE)) return new ItemStack(Items.IRON_INGOT);
-        else if (stackInSlot.getItem() == Item.getItemFromBlock(Blocks.GOLD_ORE)) return new ItemStack(Items.GOLD_INGOT);
+        else if (stackInSlot.getItem() == Item.getItemFromBlock(Blocks.GOLD_ORE))
+            return new ItemStack(Items.GOLD_INGOT);
         else if (stackInSlot.getItem() == RegisterUtil.copper_ore) return new ItemStack(RegisterUtil.copper);
         else if (stackInSlot.getItem() == RegisterUtil.silver_ore) return new ItemStack(RegisterUtil.silver);
         else if (stackInSlot.getItem() == RegisterUtil.platinumore) return new ItemStack(RegisterUtil.platinum);
         else if (stackInSlot.getItem() == RegisterUtil.tungsten_ore) return new ItemStack(RegisterUtil.tungsten);
         else if (stackInSlot.getItem() == RegisterUtil.uraniumore) return new ItemStack(RegisterUtil.uranium);
-        else if (stackInSlot.getItem() == RegisterUtil.plutoniumore && stackInSlot.getCount() >= 2) return new ItemStack(RegisterUtil.plutonium);
+        else if (stackInSlot.getItem() == RegisterUtil.plutoniumore && stackInSlot.getCount() >= 2)
+            return new ItemStack(RegisterUtil.plutonium);
         else if (stackInSlot.getItem() == RegisterUtil.titanium_ore) return new ItemStack(RegisterUtil.titanium);
         else if (stackInSlot.getItem() == RegisterUtil.durasteel_ore) return new ItemStack(RegisterUtil.durasteel);
-        else if (stackInSlot.getItem() == RegisterUtil.aegisalt_ore && stackInSlot.getCount() >= 2) return new ItemStack(RegisterUtil.aegisalt);
-        else if (stackInSlot.getItem() == RegisterUtil.ferozium_ore && stackInSlot.getCount() >= 2) return new ItemStack(RegisterUtil.ferozium);
-        else if (stackInSlot.getItem() == RegisterUtil.violium_ore && stackInSlot.getCount() >= 2) return new ItemStack(RegisterUtil.violium);
-        else if (stackInSlot.getItem() == RegisterUtil.solarium_ore && stackInSlot.getCount() >= 2) return new ItemStack(RegisterUtil.solarium);
+        else if (stackInSlot.getItem() == RegisterUtil.aegisalt_ore && stackInSlot.getCount() >= 2)
+            return new ItemStack(RegisterUtil.aegisalt);
+        else if (stackInSlot.getItem() == RegisterUtil.ferozium_ore && stackInSlot.getCount() >= 2)
+            return new ItemStack(RegisterUtil.ferozium);
+        else if (stackInSlot.getItem() == RegisterUtil.violium_ore && stackInSlot.getCount() >= 2)
+            return new ItemStack(RegisterUtil.violium);
+        else if (stackInSlot.getItem() == RegisterUtil.solarium_ore && stackInSlot.getCount() >= 2)
+            return new ItemStack(RegisterUtil.solarium);
         else return null;
     }
 }

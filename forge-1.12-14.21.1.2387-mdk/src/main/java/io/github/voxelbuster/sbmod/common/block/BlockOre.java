@@ -25,8 +25,7 @@ public class BlockOre extends Block {
             this.setHardness(10.0f);
             this.setResistance(15.0f);
             this.dropItem = RegisterUtil.copper_ore;
-        }
-        else if (variant == MaterialVariant.SOLARIUM) {
+        } else if (variant == MaterialVariant.SOLARIUM) {
             this.setRegistryName(StarboundMod.MODID, "solariumoreblock");
             this.setUnlocalizedName("solariumoreblock");
             this.setHarvestLevel("pickaxe", 3);

@@ -1,13 +1,8 @@
 package io.github.voxelbuster.sbmod.common.world;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BiomeAncientGarden extends Biome {
 

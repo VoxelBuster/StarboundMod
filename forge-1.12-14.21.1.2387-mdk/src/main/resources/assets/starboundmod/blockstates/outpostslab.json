@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": { "model": "starboundmod:outpostslab_bottom" },
+    "half=bottom": { "model": "starboundmod:outpostslab_bottom" },
+    "half=top": { "model": "starboundmod:outpostslab_top" }
+  }
+}

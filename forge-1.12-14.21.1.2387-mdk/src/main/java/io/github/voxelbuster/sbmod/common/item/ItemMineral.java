@@ -2,8 +2,6 @@ package io.github.voxelbuster.sbmod.common.item;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.util.MaterialVariant;
-import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
-import net.minecraft.item.Item;
 
 public class ItemMineral extends ModItem {
     private String name;
@@ -18,8 +16,7 @@ public class ItemMineral extends ModItem {
             this.setRegistryName(StarboundMod.MODID, "copper");
             this.setUnlocalizedName("copper");
             this.name = "copper";
-        }
-        else if (variant == MaterialVariant.SOLARIUM) {
+        } else if (variant == MaterialVariant.SOLARIUM) {
             this.setRegistryName(StarboundMod.MODID, "solarium");
             this.setUnlocalizedName("solarium");
             this.name = "solarium";

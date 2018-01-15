@@ -26,13 +26,13 @@ public class HeavyPipe extends ModBlock {
 
     @Override
     protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, variant);
+        return new BlockStateContainer(this, variant, facing);
     }
 
     @SuppressWarnings("deprecation")
     @Override
     public IBlockState getStateFromMeta(final int meta) {
-        return getDefaultState().withProperty(variant, meta);
+        return getDefaultState().withProperty(variant, meta).withProperty(facing, EnumFacing.NORTH);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class HeavyPipe extends ModBlock {
 
     @Override
     public void getSubBlocks(final CreativeTabs tab, final NonNullList<ItemStack> list) {
-        for (int i=0;i<=3;i++) {
+        for (int i = 0; i <= 3; i++) {
             list.add(new ItemStack(this, 1, i));
         }
     }

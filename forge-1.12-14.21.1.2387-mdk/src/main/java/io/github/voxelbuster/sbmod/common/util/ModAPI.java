@@ -3,7 +3,6 @@ package io.github.voxelbuster.sbmod.common.util;
 import net.minecraft.block.Block;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.util.HashSet;
@@ -26,11 +25,13 @@ public class ModAPI {
             deltaz = 1;
         } else if (pos1.getZ() > neighbor.getZ()) {
             deltaz = -1;
-        } if (pos1.getX() < neighbor.getX()) {
+        }
+        if (pos1.getX() < neighbor.getX()) {
             deltax = 1;
         } else if (pos1.getX() > neighbor.getX()) {
             deltax = -1;
-        } if (pos1.getY() < neighbor.getY()) {
+        }
+        if (pos1.getY() < neighbor.getY()) {
             deltay = 1;
         } else if (pos1.getY() > pos1.getY()) {
             deltay = -1;

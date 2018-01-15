@@ -4,7 +4,6 @@ package io.github.voxelbuster.sbmod.common;
 import io.github.voxelbuster.sbmod.common.block.ModFluids;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fluids.UniversalBucket;

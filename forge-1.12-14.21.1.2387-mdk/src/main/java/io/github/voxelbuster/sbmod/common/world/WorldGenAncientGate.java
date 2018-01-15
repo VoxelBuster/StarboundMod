@@ -19,7 +19,8 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 import java.util.Random;
 
 public class WorldGenAncientGate implements IWorldGenerator {
-    public WorldGenAncientGate(){} // This doesn't do anything yet
+    public WorldGenAncientGate() {
+    } // This doesn't do anything yet
 
     public boolean generate(World world, Random rand, BlockPos pos) {
         boolean facingNS = rand.nextBoolean();
@@ -28,7 +29,7 @@ public class WorldGenAncientGate implements IWorldGenerator {
         else facing = Rotation.CLOCKWISE_90;
         WorldServer worldServer = (WorldServer) world;
         TemplateManager templateManager = worldServer.getStructureTemplateManager();
-        Template gate = templateManager.get(world.getMinecraftServer(), new ResourceLocation(StarboundMod.MODID,"ancientgate"));
+        Template gate = templateManager.get(world.getMinecraftServer(), new ResourceLocation(StarboundMod.MODID, "ancientgate"));
         if (gate != null) {
             IBlockState iblockstate = world.getBlockState(pos);
             world.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);

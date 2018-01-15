@@ -12,7 +12,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemMultiTexture;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -27,7 +26,7 @@ public class RegisterUtil {
 
     public static final ItemPixel pixel = new ItemPixel();
 
-    public static final HeavyPipe heavypipe = new HeavyPipe();
+    //public static final HeavyPipe heavypipe = new HeavyPipe();
 
     public static final ItemOre copper_ore = new ItemOre(MaterialVariant.COPPER);
     public static final ItemOre silver_ore = new ItemOre(MaterialVariant.SILVER);
@@ -220,7 +219,7 @@ public class RegisterUtil {
                 ore_block_violium,
                 ore_block_solarium,
                 ore_block_corefragment,
-                heavypipe,
+                //heavypipe,
                 copper_block,
                 silver_block,
                 titanium_block,
@@ -250,7 +249,7 @@ public class RegisterUtil {
             blocks.add(b);
         }
 
-        for (Block b: blocks) {
+        for (Block b : blocks) {
             ItemBlock itemBlock = (ItemBlock) new ItemBlock(b).setRegistryName(b.getRegistryName());
             itemBlock.setCreativeTab(StarboundMod.creativeTab);
             itemblocks.add(itemBlock);

@@ -42,8 +42,7 @@ public class ChunkProviderVoid implements IChunkGenerator, IChunkProvider {
         Chunk chunk = new Chunk(this.worldObj, chunkprimer, x, z);
         byte[] abyte = chunk.getBiomeArray();
 
-        for (int l = 0; l < abyte.length; ++l)
-        {
+        for (int l = 0; l < abyte.length; ++l) {
             abyte[l] = (byte) Biome.getIdForBiome(Biomes.PLAINS);
         }
 
@@ -105,12 +104,11 @@ public class ChunkProviderVoid implements IChunkGenerator, IChunkProvider {
 
             try {
                 chunk = generateChunk(x, z);
-            }
-            catch (Throwable throwable) {
+            } catch (Throwable throwable) {
                 CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Exception generating new chunk");
                 CrashReportCategory crashreportcategory = crashreport.makeCategory("Chunk to be generated");
                 crashreportcategory.addCrashSection("Location",
-                        String.format("%d,%d", new Object[] { Integer.valueOf(x), Integer.valueOf(z) }));
+                        String.format("%d,%d", new Object[]{Integer.valueOf(x), Integer.valueOf(z)}));
                 crashreportcategory.addCrashSection("Position hash", Long.valueOf(i));
                 crashreportcategory.addCrashSection("Generator", this);
                 throw new ReportedException(crashreport);

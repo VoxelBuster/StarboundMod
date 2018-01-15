@@ -16,8 +16,7 @@ public class ItemOre extends ModItem {
             this.setRegistryName(StarboundMod.MODID, "copperore");
             this.setUnlocalizedName("copperore");
             this.name = "copperore";
-        }
-        else if (variant == MaterialVariant.SOLARIUM) {
+        } else if (variant == MaterialVariant.SOLARIUM) {
             this.setRegistryName(StarboundMod.MODID, "solariumore");
             this.setUnlocalizedName("solariumore");
             this.name = "solariumore";

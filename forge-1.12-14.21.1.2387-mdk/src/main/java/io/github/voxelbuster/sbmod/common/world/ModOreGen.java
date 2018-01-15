@@ -3,7 +3,6 @@ package io.github.voxelbuster.sbmod.common.world;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -60,11 +59,11 @@ public class ModOreGen implements IWorldGenerator {
             throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");
 
         int heightDiff = maxHeight - minHeight + 1;
-        for (int i = 0; i < chancesToSpawn; i ++) {
+        for (int i = 0; i < chancesToSpawn; i++) {
             int x = chunk_X * 16 + random.nextInt(16);
             int y = minHeight + random.nextInt(heightDiff);
             int z = chunk_Z * 16 + random.nextInt(16);
-            generator.generate(world, random, new BlockPos(x,y,z));
+            generator.generate(world, random, new BlockPos(x, y, z));
         }
     }
 }

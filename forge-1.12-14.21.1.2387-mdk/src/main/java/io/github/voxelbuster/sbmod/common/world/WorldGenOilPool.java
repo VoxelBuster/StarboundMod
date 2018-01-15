@@ -24,7 +24,7 @@ public class WorldGenOilPool implements IWorldGenerator {
             throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");
 
         int heightDiff = maxHeight - minHeight + 1;
-        for (int i = 0; i < chancesToSpawn; i ++) {
+        for (int i = 0; i < chancesToSpawn; i++) {
             if (random.nextInt(15) != 8) return;
             if (world.getBiome(new BlockPos(chunk_X * 16, 64, chunk_Z * 16)) == Biomes.DESERT ||
                     world.getBiome(new BlockPos(chunk_X * 16, 64, chunk_Z * 16)) == Biomes.JUNGLE ||

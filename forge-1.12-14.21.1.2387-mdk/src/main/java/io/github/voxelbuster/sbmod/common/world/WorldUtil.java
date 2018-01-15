@@ -14,7 +14,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber(modid = StarboundMod.MODID)
 public class WorldUtil {
     public static final BiomeAncientGarden ancientGarden = new BiomeAncientGarden();
-    public static DimensionType dim_outpost = DimensionType.register("outpost","_dim", 111117116, WorldProviderOutpost.class, false);
+    public static DimensionType dim_outpost = DimensionType.register("outpost", "_dim", 111117116, WorldProviderOutpost.class, false);
 
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event) {

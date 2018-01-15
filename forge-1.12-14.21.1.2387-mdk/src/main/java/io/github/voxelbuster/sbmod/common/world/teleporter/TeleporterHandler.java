@@ -11,7 +11,8 @@ import net.minecraftforge.common.util.FakePlayer;
 public final class TeleporterHandler {
     private static final TeleporterHandler INSTANCE = new TeleporterHandler();
 
-    private TeleporterHandler() {}
+    private TeleporterHandler() {
+    }
 
     public static void transferToOverworld(Entity entity) {
         INSTANCE.transferEntity(entity, 0);

@@ -20,29 +20,25 @@ public class WorldProviderOutpost extends WorldProvider {
     }
 
     @Override
-    public IChunkGenerator createChunkGenerator()
-    {
+    public IChunkGenerator createChunkGenerator() {
         return new ChunkProviderVoid(this.world);
     }
 
     @Override
-    public float calculateCelestialAngle(long worldTime, float partialTicks)
-    {
+    public float calculateCelestialAngle(long worldTime, float partialTicks) {
         return 0.0F;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public float[] calcSunriseSunsetColors(float celestialAngle, float partialTicks)
-    {
+    public float[] calcSunriseSunsetColors(float celestialAngle, float partialTicks) {
         return null;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public Vec3d getFogColor(float p_76562_1_, float p_76562_2_)
-    {
-        float f = MathHelper.cos(p_76562_1_ * ((float)Math.PI * 2F)) * 2.0F + 0.5F;
+    public Vec3d getFogColor(float p_76562_1_, float p_76562_2_) {
+        float f = MathHelper.cos(p_76562_1_ * ((float) Math.PI * 2F)) * 2.0F + 0.5F;
         f = MathHelper.clamp(f, 0.0F, 1.0F);
         float f1 = 0.627451F;
         float f2 = 0.5019608F;
@@ -50,51 +46,44 @@ public class WorldProviderOutpost extends WorldProvider {
         f1 = f1 * (f * 0.0F + 0.15F);
         f2 = f2 * (f * 0.0F + 0.15F);
         f3 = f3 * (f * 0.0F + 0.15F);
-        return new Vec3d((double)f1, (double)f2, (double)f3);
+        return new Vec3d((double) f1, (double) f2, (double) f3);
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public boolean isSkyColored()
-    {
+    public boolean isSkyColored() {
         return false;
     }
 
     @Override
-    public boolean canRespawnHere()
-    {
+    public boolean canRespawnHere() {
         return false;
     }
 
     @Override
-    public boolean isSurfaceWorld()
-    {
+    public boolean isSurfaceWorld() {
         return false;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public float getCloudHeight()
-    {
+    public float getCloudHeight() {
         return 8.0F;
     }
 
     @Override
-    public boolean canCoordinateBeSpawn(int x, int z)
-    {
+    public boolean canCoordinateBeSpawn(int x, int z) {
         return false;
     }
 
     @Override
-    public int getAverageGroundLevel()
-    {
+    public int getAverageGroundLevel() {
         return 0;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public boolean doesXZShowFog(int x, int z)
-    {
+    public boolean doesXZShowFog(int x, int z) {
         return false;
     }
 
@@ -114,14 +103,12 @@ public class WorldProviderOutpost extends WorldProvider {
     }
 
     @Override
-    public int getHeight()
-    {
+    public int getHeight() {
         return 256;
     }
 
     @Override
-    public int getActualHeight()
-    {
+    public int getActualHeight() {
         return 0;
     }
 

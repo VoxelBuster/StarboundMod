@@ -2,11 +2,8 @@ package io.github.voxelbuster.sbmod.common.item;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.util.ModAPI;
-import net.minecraft.block.Block;
 import net.minecraft.item.ItemTool;
 import net.minecraftforge.common.util.EnumHelper;
-
-import java.util.Set;
 
 public class ModTool extends ItemTool {
 

@@ -17,8 +17,7 @@ public class BlockMineral extends Block {
             this.name = "copperblock";
             this.setHardness(10.0f);
             this.setResistance(15.0f);
-        }
-        else if (variant == MaterialVariant.SOLARIUM) {
+        } else if (variant == MaterialVariant.SOLARIUM) {
             this.setRegistryName(StarboundMod.MODID, "solariumblock");
             this.setUnlocalizedName("solariumblock");
             this.name = "solariumblock";

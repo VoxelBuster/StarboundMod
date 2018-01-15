@@ -26,17 +26,17 @@ public class OutpostDimension extends World {
     }
 
     @Override
-     public void onEntityAdded(Entity entity) {
+    public void onEntityAdded(Entity entity) {
         if (entity instanceof EntityPlayer) {
             ((EntityPlayer) entity).setGameType(GameType.ADVENTURE);
             entity.move(null, 0, 10, 0);
         }
-     }
+    }
 
-     @Override
+    @Override
     public void onEntityRemoved(Entity entity) {
         if (entity instanceof EntityPlayer) {
             ((EntityPlayer) entity).setGameType(GameType.SURVIVAL);
         }
-     }
+    }
 }

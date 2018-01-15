@@ -26,7 +26,8 @@ public class IndustrialFurnaceRecipes {
 
     public static ItemStack getProduct(ItemStack stackInSlot) {
         if (stackInSlot.getItem() == Item.getItemFromBlock(Blocks.IRON_ORE)) return new ItemStack(Items.IRON_INGOT);
-        else if (stackInSlot.getItem() == Item.getItemFromBlock(Blocks.GOLD_ORE)) return new ItemStack(Items.GOLD_INGOT);
+        else if (stackInSlot.getItem() == Item.getItemFromBlock(Blocks.GOLD_ORE))
+            return new ItemStack(Items.GOLD_INGOT);
         else if (stackInSlot.getItem() == RegisterUtil.copper_ore) return new ItemStack(RegisterUtil.copper);
         else if (stackInSlot.getItem() == RegisterUtil.silver_ore) return new ItemStack(RegisterUtil.silver);
         else if (stackInSlot.getItem() == RegisterUtil.platinumore) return new ItemStack(RegisterUtil.platinum);

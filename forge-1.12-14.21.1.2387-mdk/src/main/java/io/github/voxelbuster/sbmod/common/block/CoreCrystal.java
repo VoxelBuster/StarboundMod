@@ -19,7 +19,7 @@ public class CoreCrystal extends ModBlock {
         super(Material.ROCK, "corecrystal");
         this.setUnlocalizedName(this.getName());
         this.setResistance(30f);
-        this.setLightLevel((float) 10/15);
+        this.setLightLevel((float) 10 / 15);
         this.setCreativeTab(StarboundMod.creativeTab);
         this.setHardness(10f);
         this.setHarvestLevel("pickaxe", 1);
@@ -75,27 +75,33 @@ public class CoreCrystal extends ModBlock {
                                                                                             if (world.getBlockState(currentPos) == Blocks.OBSIDIAN.getDefaultState() &&
                                                                                                     world.getBlockState(pos.offset(initialDirection.getOpposite(), 4)) == this.getDefaultState()) {
                                                                                                 if (player.inventory.hasItemStack(new ItemStack(RegisterUtil.corefragment, 20)) || player.isCreative()) {
-                                                                                                    if (!player.isCreative()) player.inventory.decrStackSize(player.inventory.getSlotFor(new ItemStack(RegisterUtil.corefragment, 20)), 20);
+                                                                                                    if (!player.isCreative())
+                                                                                                        player.inventory.decrStackSize(player.inventory.getSlotFor(new ItemStack(RegisterUtil.corefragment, 20)), 20);
                                                                                                 } else {
                                                                                                     player.sendMessage(new TextComponentString("You need 20 core fragments to activate the gate."));
                                                                                                     return false;
                                                                                                 }
-                                                                                                for(int i = 0; i < 5; i++) {
+                                                                                                for (int i = 0; i < 5; i++) {
                                                                                                     GatePortalBlock.freezeEvent = true;
-                                                                                                    world.setBlockState(pos.down().offset(initialDirection.getOpposite(),i), ModBuildingBlocks.gateportal.getDefaultState());
-                                                                                                } for (int i = 0; i < 7; i++) {
+                                                                                                    world.setBlockState(pos.down().offset(initialDirection.getOpposite(), i), ModBuildingBlocks.gateportal.getDefaultState());
+                                                                                                }
+                                                                                                for (int i = 0; i < 7; i++) {
                                                                                                     GatePortalBlock.freezeEvent = true;
-                                                                                                    world.setBlockState(pos.down(2).offset(initialDirection.getOpposite(),i-1), ModBuildingBlocks.gateportal.getDefaultState());
-                                                                                                } for (int i = 0; i < 9; i++) {
+                                                                                                    world.setBlockState(pos.down(2).offset(initialDirection.getOpposite(), i - 1), ModBuildingBlocks.gateportal.getDefaultState());
+                                                                                                }
+                                                                                                for (int i = 0; i < 9; i++) {
                                                                                                     GatePortalBlock.freezeEvent = true;
-                                                                                                    world.setBlockState(pos.down(3).offset(initialDirection.getOpposite(),i-2), ModBuildingBlocks.gateportal.getDefaultState());
-                                                                                                } for (int i = 0; i < 9; i++) {
+                                                                                                    world.setBlockState(pos.down(3).offset(initialDirection.getOpposite(), i - 2), ModBuildingBlocks.gateportal.getDefaultState());
+                                                                                                }
+                                                                                                for (int i = 0; i < 9; i++) {
                                                                                                     GatePortalBlock.freezeEvent = true;
-                                                                                                    world.setBlockState(pos.down(4).offset(initialDirection.getOpposite(),i-2), ModBuildingBlocks.gateportal.getDefaultState());
-                                                                                                } for (int i = 0; i < 9; i++) {
+                                                                                                    world.setBlockState(pos.down(4).offset(initialDirection.getOpposite(), i - 2), ModBuildingBlocks.gateportal.getDefaultState());
+                                                                                                }
+                                                                                                for (int i = 0; i < 9; i++) {
                                                                                                     GatePortalBlock.freezeEvent = true;
-                                                                                                    world.setBlockState(pos.down(5).offset(initialDirection.getOpposite(),i-2), ModBuildingBlocks.gateportal.getDefaultState());
-                                                                                                } for (int i = 0; i < 9; i++) {
+                                                                                                    world.setBlockState(pos.down(5).offset(initialDirection.getOpposite(), i - 2), ModBuildingBlocks.gateportal.getDefaultState());
+                                                                                                }
+                                                                                                for (int i = 0; i < 9; i++) {
                                                                                                     GatePortalBlock.freezeEvent = true;
                                                                                                     world.setBlockState(pos.down(6).offset(initialDirection.getOpposite(), i - 2), ModBuildingBlocks.gateportal.getDefaultState());
                                                                                                 }

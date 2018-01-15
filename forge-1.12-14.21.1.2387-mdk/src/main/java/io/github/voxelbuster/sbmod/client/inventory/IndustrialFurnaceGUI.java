@@ -160,10 +160,10 @@ public class IndustrialFurnaceGUI {
             int posY = (this.height) / 2 - 45;
             int arrowX = (this.width) / 2 - 8;
             int arrowY = (this.height) / 2 - 47;
-            int burnPx = (int) (((float) ((IndustrialFurnace.TileEntityCustom)te).getCurrentItemBurnTime() / 5000) * 14);
+            int burnPx = (int) (((float) ((IndustrialFurnace.TileEntityCustom) te).getCurrentItemBurnTime() / 5000) * 14);
             int cookPx = (int) (((IndustrialFurnace.TileEntityCustom) te).getCookTime() / ((IndustrialFurnace.TileEntityCustom) te).getTotalCookTime() * 23);
-            this.drawTexturedModalRect(posX, posY + (14-burnPx), 176, 0, 13, burnPx);
-            this.drawTexturedModalRect(arrowX + (23-cookPx), arrowY, 175, 14, cookPx, 16);
+            this.drawTexturedModalRect(posX, posY + (14 - burnPx), 176, 0, 13, burnPx);
+            this.drawTexturedModalRect(arrowX + (23 - cookPx), arrowY, 175, 14, cookPx, 16);
         }
 
         public void onGuiClosed() {

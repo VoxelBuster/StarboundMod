@@ -1,0 +1,13 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "all": "starboundmod:blocks/outpostsupport"
+    }
+  },
+  "variants": {
+    "half=top": { "model": "cube_all" },
+    "half=bottom": { "model": "cube_all" }
+  }
+
+}
