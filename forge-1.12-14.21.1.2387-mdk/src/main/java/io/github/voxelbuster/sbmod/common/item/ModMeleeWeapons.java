@@ -20,30 +20,30 @@ public class ModMeleeWeapons extends ItemSword {
     private float attackSpeed;
 
     private static ToolMaterial getToolMaterial(String name) {
-        if (name.equals("tungsten_hammer")) return EnumHelper.addToolMaterial("tungsten_hammer", 1, 512, 4f, 12f, 14);
-        else if (name.equals("titanium_dagger"))
-            return EnumHelper.addToolMaterial("titanium_dagger", 1, 768, 5f, 7f, 14);
-        else if (name.equals("titanium_spear"))
-            return EnumHelper.addToolMaterial("titanium_spear", 1, 768, 5f, 10.5f, 14);
-        else if (name.equals("durasteel_shortsword"))
-            return EnumHelper.addToolMaterial("durasteel_shortsword", 1, 1024, 5f, 9f, 14);
-        else if (name.equals("durasteel_broadsword"))
-            return EnumHelper.addToolMaterial("durasteel_broadsword", 1, 1024, 5f, 12f, 14);
-        else if (name.equals("violium_shortsword"))
-            return EnumHelper.addToolMaterial("violium_shortsword", 1, 2048, 5f, 11f, 14);
-        else if (name.equals("violium_broadsword"))
-            return EnumHelper.addToolMaterial("violium_broadsword", 1, 2048, 5f, 15f, 14);
+        if (name.equals("tungstenhammer")) return EnumHelper.addToolMaterial("tungstenhammer", 1, 512, 4f, 12f, 14);
+        else if (name.equals("titaniumdagger"))
+            return EnumHelper.addToolMaterial("titaniumdagger", 1, 768, 5f, 7f, 14);
+        else if (name.equals("titaniumspear"))
+            return EnumHelper.addToolMaterial("titaniumspear", 1, 768, 5f, 10.5f, 14);
+        else if (name.equals("durasteelshortsword"))
+            return EnumHelper.addToolMaterial("durasteelshortsword", 1, 1024, 5f, 9f, 14);
+        else if (name.equals("durasteelbroadsword"))
+            return EnumHelper.addToolMaterial("durasteelbroadsword", 1, 1024, 5f, 12f, 14);
+        else if (name.equals("violiumshortsword"))
+            return EnumHelper.addToolMaterial("violiumshortsword", 1, 2048, 5f, 11f, 14);
+        else if (name.equals("violiumbroadsword"))
+            return EnumHelper.addToolMaterial("violiumbroadsword", 1, 2048, 5f, 15f, 14);
         else return null;
     }
 
     public static ModMeleeWeapons[] itemSet = new ModMeleeWeapons[]{
-            new ModMeleeWeapons(getToolMaterial("tungsten_hammer")).setName("tungsten_hammer").setAttackSpeed(0.5f),
-            new ModMeleeWeapons(getToolMaterial("titanium_dagger")).setName("titanium_dagger").setAttackSpeed(2f),
-            new ModMeleeWeapons(getToolMaterial("titanium_spear")).setName("titanium_spear").setAttackSpeed(1.2f),
-            new ModMeleeWeapons(getToolMaterial("durasteel_shortsword")).setName("durasteel_shortsword").setAttackSpeed(1.8f),
-            new ModMeleeWeapons(getToolMaterial("durasteel_broadsword")).setName("durasteel_broadsword").setAttackSpeed(1.6f),
-            new ModMeleeWeapons(getToolMaterial("violium_shortsword")).setName("violium_shortsword").setAttackSpeed(1.8f),
-            new ModMeleeWeapons(getToolMaterial("violium_broadsword")).setName("violium_broadsword").setAttackSpeed(1.6f)
+            new ModMeleeWeapons(getToolMaterial("tungstenhammer")).setName("tungstenhammer").setAttackSpeed(0.5f),
+            new ModMeleeWeapons(getToolMaterial("titaniumdagger")).setName("titaniumdagger").setAttackSpeed(2f),
+            new ModMeleeWeapons(getToolMaterial("titaniumspear")).setName("titaniumspear").setAttackSpeed(1.2f),
+            new ModMeleeWeapons(getToolMaterial("durasteelshortsword")).setName("durasteelshortsword").setAttackSpeed(1.8f),
+            new ModMeleeWeapons(getToolMaterial("durasteelbroadsword")).setName("durasteelbroadsword").setAttackSpeed(1.6f),
+            new ModMeleeWeapons(getToolMaterial("violiumshortsword")).setName("violiumshortsword").setAttackSpeed(1.8f),
+            new ModMeleeWeapons(getToolMaterial("violiumbroadsword")).setName("violiumbroadsword").setAttackSpeed(1.6f)
     };
 
     public String getName() {
