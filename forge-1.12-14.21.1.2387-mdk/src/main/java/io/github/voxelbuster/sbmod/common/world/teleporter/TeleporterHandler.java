@@ -22,6 +22,10 @@ public final class TeleporterHandler {
         INSTANCE.transferEntity(entity, WorldUtil.dim_outpost.getId());
     }
 
+    public static void transferToShipDim(Entity entity) {
+        INSTANCE.transferEntity(entity, WorldUtil.dim_ship.getId());
+    }
+
     private void transferEntity(Entity entity, int dimensionId) {
         World world = entity.world;
         if (!world.isRemote && !entity.isDead && !(entity instanceof FakePlayer)) {

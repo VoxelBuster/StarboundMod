@@ -15,6 +15,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class WorldUtil {
     public static final BiomeAncientGarden ancientGarden = new BiomeAncientGarden();
     public static DimensionType dim_outpost = DimensionType.register("outpost", "_dim", 111117116, WorldProviderOutpost.class, false);
+    public static DimensionType dim_ship = DimensionType.register("player_ships", "_dim", 111117115, WorldProviderShipWorld.class, false);
 
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event) {

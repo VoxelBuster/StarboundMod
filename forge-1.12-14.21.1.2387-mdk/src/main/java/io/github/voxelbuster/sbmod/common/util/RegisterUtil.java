@@ -21,12 +21,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(modid = StarboundMod.MODID)
-//@GameRegistry.ObjectHolder(StarboundMod.MODID) why did i need this?
 public class RegisterUtil {
 
     public static final ItemPixel pixel = new ItemPixel();
-
-    //public static final HeavyPipe heavypipe = new HeavyPipe();
 
     public static final ItemOre copper_ore = new ItemOre(MaterialVariant.COPPER);
     public static final ItemOre silver_ore = new ItemOre(MaterialVariant.SILVER);
@@ -84,6 +81,8 @@ public class RegisterUtil {
     public static final BlockOre ore_block_plutonium = new BlockOre(Material.ROCK, MaterialVariant.PLUTONIUM);
     public static final BlockOre ore_block_platinum = new BlockOre(Material.ROCK, MaterialVariant.PLATINUM);
     public static final BlockOre ore_block_corefragment = new BlockOre(Material.ROCK, MaterialVariant.COREFRAGMENT);
+
+    public static final OutpostCrate outpostcratesmall = new OutpostCrate();
 
     private static final ModTool manipulator = new ModTool(ModTool.ItemType.MANIPULATOR, "pickaxe");
     private static final ModTool copperpickaxe = new ModTool(ModTool.ItemType.COPPER_PICKAXE, "pickaxe");
@@ -275,5 +274,6 @@ public class RegisterUtil {
         GameRegistry.registerWorldGenerator(new WorldGenOilPool(), 2);
 
         DimensionManager.registerDimension(WorldUtil.dim_outpost.getId(), WorldUtil.dim_outpost);
+        DimensionManager.registerDimension(WorldUtil.dim_ship.getId(), WorldUtil.dim_ship);
     }
 }
