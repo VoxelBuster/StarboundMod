@@ -9,6 +9,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ModAPI {
+    public class PotionIds {
+        public static final int SPEED = 1, SLOWNESS = 2, HASTE = 3, MINING_FATUGUE = 4, STRENGTH = 5, HEALING = 6,
+                DAMAGE = 7, JUMP_BOOST = 8, NAUSEA = 9, REGENERATION = 10, RESISTANCE = 11, FIRE_RESIST = 12,
+                WATER_BREATHING = 13, INVISIBLITY = 14, BLINDNESS = 15, NIGHT_VISION = 16, HUNGER = 17, WEAKNESS = 18,
+                POISON = 19, WITHER = 20, HEALTH_BOOST = 21, ABSORPTION = 22, SATURATION = 23, GLOWING = 24,
+                LEVITATION = 25, LUCK = 26, BAD_LUCK = 27;
+    }
+
     public static Set<Block> getEffectiveBlocksForType(String toolType) {
         HashSet<Block> effectiveBlocks = new HashSet<>();
         for (Block b : ForgeRegistries.BLOCKS.getValues()) {

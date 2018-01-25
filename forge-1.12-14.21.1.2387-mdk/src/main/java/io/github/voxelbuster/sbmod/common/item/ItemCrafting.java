@@ -3,7 +3,7 @@ package io.github.voxelbuster.sbmod.common.item;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import net.minecraft.item.Item;
 
-public class ItemCrafting extends ModItem {
+public class ItemCrafting extends Item {
     public static Item[] itemSet = {
             new ItemCrafting().setName("upgrade_kit"),
             new ItemCrafting().setName("manipulator_upgrade"),

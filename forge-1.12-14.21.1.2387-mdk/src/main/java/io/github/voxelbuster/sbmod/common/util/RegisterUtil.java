@@ -96,11 +96,12 @@ public class RegisterUtil {
     private static final ModTool platinumdrill = new ModTool(ModTool.ItemType.PLATINUM_DRILL, "pickaxe");
     private static final ModTool diamonddrill = new ModTool(ModTool.ItemType.DIAMOND_DRILL, "pickaxe");
 
-    public static final ArrayList<ModRecord> records = new ArrayList<>();
+    private static final ItemStimPack stimpack_red = new ItemStimPack(0);
+    private static final ItemStimPack stimpack_green = new ItemStimPack(1);
+    private static final ItemStimPack stimpack_blue = new ItemStimPack(2);
+    private static final ItemStimPack stimpack_yellow = new ItemStimPack(3);
 
-    /*static {
-        preInit(); // Sounds aren't initialized yet this doesnt work
-    }*/
+    public static final ArrayList<ModRecord> records = new ArrayList<>();
 
     private static final IndustrialFurnace industrialfurnace = new IndustrialFurnace();
     private static final AtomicFurnace atomicfurnace = new AtomicFurnace();
@@ -181,6 +182,10 @@ public class RegisterUtil {
                 golddrill,
                 platinumdrill,
                 diamonddrill,
+                stimpack_red,
+                stimpack_blue,
+                stimpack_green,
+                stimpack_yellow
         };
         event.getRegistry().registerAll(items);
         for (ModRecord record : records) {
