@@ -17,7 +17,6 @@ public class ModTool extends ItemTool {
         PLATINUM_DRILL,
         DIAMOND_DRILL,
         CHAINSAW,
-        MANIPULATOR,
         TUNGSTEN_AXE
     }
 
@@ -41,8 +40,6 @@ public class ModTool extends ItemTool {
                 return EnumHelper.addToolMaterial("platinumdrill", 3, 1024, 15f, 1f, 14);
             case DIAMOND_DRILL:
                 return EnumHelper.addToolMaterial("diamonddrill", 4, 2048, 18f, 1f, 16);
-            case MANIPULATOR:
-                return EnumHelper.addToolMaterial("manipulator", 4, -1, 10f, 0f, 0);
             case TUNGSTEN_AXE:
                 return EnumHelper.addToolMaterial("tungsten_axe", 2, 512, 15f, 7.5f, 14);
             default:
@@ -111,11 +108,6 @@ public class ModTool extends ItemTool {
             this.setMaxStackSize(1);
             this.setHarvestLevel("axe", 3);
             this.setAttackSpeed(4f);
-        } else if (type == ItemType.MANIPULATOR) {
-            this.setUnlocalizedName("manipulator");
-            this.setRegistryName("manipulator");
-            this.setMaxStackSize(1);
-            this.setAttackSpeed(0.5f);
         } else if (type == ItemType.TUNGSTEN_AXE) {
             this.setUnlocalizedName("tungsten_axe");
             this.setRegistryName("tungsten_axe");

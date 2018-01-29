@@ -17,13 +17,11 @@ import net.minecraft.world.World;
 public class CoreCrystal extends ModBlock {
     public CoreCrystal() {
         super(Material.ROCK, "corecrystal");
-        this.setUnlocalizedName(this.getName());
         this.setResistance(30f);
         this.setLightLevel((float) 10 / 15);
         this.setCreativeTab(StarboundMod.creativeTab);
         this.setHardness(10f);
         this.setHarvestLevel("pickaxe", 1);
-        this.setRegistryName(new ResourceLocation(StarboundMod.MODID, this.getName()));
     }
 
     @Override

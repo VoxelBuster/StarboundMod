@@ -14,6 +14,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
+import org.lwjgl.Sys;
 
 import javax.annotation.Nullable;
 import java.util.HashSet;
@@ -32,11 +33,11 @@ public class ItemManipulator extends ItemTool {
         effectiveBlocks.add(Blocks.LEAVES);
     }
 
-    protected ItemManipulator(Set<Block> effectiveBlocksIn) {
+    public ItemManipulator() {
         super(0, 1f,
                 EnumHelper.addToolMaterial("manipulator", 1, -1, 5f, 0f, 0),
                 effectiveBlocks);
-        this.setCreativeTab(StarboundMod.creativeTab).setRegistryName("manipulator").setUnlocalizedName("mainpulator");
+        this.setCreativeTab(StarboundMod.creativeTab).setRegistryName("manipulator").setUnlocalizedName("manipulator");
         this.setMaxStackSize(1);
     }
 
@@ -57,14 +58,24 @@ public class ItemManipulator extends ItemTool {
     @Override
     public NBTTagCompound getNBTShareTag(ItemStack stack) {
         NBTTagCompound nbt = super.getNBTShareTag(stack);
-        nbt.setInteger("level", 0);
-        return super.getNBTShareTag(stack);
+        if (nbt == null) {
+            nbt = new NBTTagCompound();
+        }
+        System.out.println(stack);
+        System.out.println(nbt);
+        if (!nbt.hasKey("level")) {
+            nbt.setInteger("level", 0);
+        }
+        updateItemStackNBT(nbt);
+        stack.setTagCompound(nbt);
+        return nbt;
     }
 
     public void upgrade(ItemStack stack) {
         NBTTagCompound nbt = stack.getItem().getNBTShareTag(stack);
         nbt.setInteger("level", nbt.getInteger("level") + 1);
         level++;
-        stack.getItem().updateItemStackNBT(nbt);
+        updateItemStackNBT(nbt);
+        stack.setTagCompound(nbt);
     }
 }

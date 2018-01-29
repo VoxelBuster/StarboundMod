@@ -17,9 +17,7 @@ import javax.annotation.Nullable;
 public class OutpostLamp extends ModBlock {
     public OutpostLamp() {
         super(Material.GLASS, "outpostlamp");
-        this.setHardness(10f).setResistance(30f).setUnlocalizedName("outpostlamp")
-                .setRegistryName(new ResourceLocation(StarboundMod.MODID, "outpostlamp"))
-                .setCreativeTab(StarboundMod.creativeTab).setLightLevel(1f);
+        this.setHardness(10f).setResistance(30f).setCreativeTab(StarboundMod.creativeTab).setLightLevel(1f);
     }
 
     @Override

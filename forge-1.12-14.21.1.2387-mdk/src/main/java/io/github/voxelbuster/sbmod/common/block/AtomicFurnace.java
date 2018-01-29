@@ -107,7 +107,7 @@ public class AtomicFurnace extends Block implements ITileEntityProvider {
     @SideOnly(Side.CLIENT)
     @Override
     public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.SOLID;
+        return BlockRenderLayer.CUTOUT;
     }
 
     @Override

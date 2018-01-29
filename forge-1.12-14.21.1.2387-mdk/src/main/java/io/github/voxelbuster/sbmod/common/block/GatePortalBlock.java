@@ -21,13 +21,11 @@ public class GatePortalBlock extends ModBlock {
 
     public GatePortalBlock() {
         super(Material.PORTAL, "gateportal");
-        this.setUnlocalizedName(this.getName());
         this.setCreativeTab(StarboundMod.creativeTab);
         this.setHardness(-1f);
         this.setResistance(1f);
         this.setLightLevel(1f);
         this.setHarvestLevel("sword", 127);
-        this.setRegistryName(new ResourceLocation(StarboundMod.MODID, "gateportal"));
     }
 
     @Override

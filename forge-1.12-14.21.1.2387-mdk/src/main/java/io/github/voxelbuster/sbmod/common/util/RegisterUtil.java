@@ -84,7 +84,8 @@ public class RegisterUtil {
 
     public static final OutpostCrate outpostcratesmall = new OutpostCrate();
 
-    private static final ModTool manipulator = new ModTool(ModTool.ItemType.MANIPULATOR, "pickaxe");
+    public static final ItemManipulator manipulator = new ItemManipulator();
+
     private static final ModTool copperpickaxe = new ModTool(ModTool.ItemType.COPPER_PICKAXE, "pickaxe");
     private static final ModTool silverpickaxe = new ModTool(ModTool.ItemType.SILVER_PICKAXE, "pickaxe");
     private static final ModTool platinumpickaxe = new ModTool(ModTool.ItemType.PLATINUM_PICKAXE, "pickaxe");
