@@ -2,6 +2,7 @@ package io.github.voxelbuster.sbmod.common.item;
 
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.util.RegisterUtil;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,6 +13,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.Sys;
 
 public class ItemCrafting extends Item {
     public static Item[] itemSet = {
@@ -38,11 +43,11 @@ public class ItemCrafting extends Item {
 
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        if (getName().equals("manipulator_upgrade")) {
+        if (getName().equals("manipulator_upgrade") && !worldIn.isRemote) {
             if (player.inventory.hasItemStack(new ItemStack(RegisterUtil.manipulator))) {
                 int slot = -1;
                 for (int i=0; i<player.inventory.getSizeInventory(); i++) {
-                    if (player.getHeldItemMainhand().getItem().getUnlocalizedName().equals("manipulator")) {
+                    if (player.inventory.getStackInSlot(i).getItem().getUnlocalizedName().equals("item.manipulator")) {
                         slot = i;
                         break;
                     }
@@ -53,9 +58,26 @@ public class ItemCrafting extends Item {
                 ItemStack istack = player.inventory.getStackInSlot(slot);
                 ItemManipulator item = (ItemManipulator) istack.getItem();
                 int needed = ItemManipulator.modulesNeededForUpgrade(istack);
-                if (player.inventory.getStackInSlot(player.inventory.getSlotFor(new ItemStack(this))).getCount() >= needed) {
+                int total = 0;
+                for (int i=0; i<player.inventory.getSizeInventory(); i++) {
+                    if (player.inventory.getStackInSlot(i).getItem().getUnlocalizedName().equals("item.manipulator_upgrade")) {
+                        total += player.inventory.getStackInSlot(i).getCount(); // Calculate total available upgrades
+                    }
+                }
+                if (total >= needed) {
                     item.upgrade(istack);
-                    player.inventory.decrStackSize(player.inventory.getSlotFor(new ItemStack(this)), needed);
+                    for (int i=0; i<player.inventory.getSizeInventory(); i++) {
+                        if (player.inventory.getStackInSlot(i).getItem().getUnlocalizedName().equals("item.manipulator_upgrade")) {
+                            if (needed >= 64) {
+                                player.inventory.decrStackSize(i, 64); // Deduct needed upgrades
+                                needed -= 64;
+                            } else if (needed > 0 && needed < 64) {
+                                player.inventory.decrStackSize(i, needed);
+                            } else {
+                                break;
+                            }
+                        }
+                    }
                     return EnumActionResult.SUCCESS;
                 } else {
                     player.sendMessage(new TextComponentString("You need " + needed + " modules to upgrade."));

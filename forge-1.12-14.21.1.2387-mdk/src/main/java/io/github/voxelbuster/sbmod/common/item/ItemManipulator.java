@@ -41,15 +41,6 @@ public class ItemManipulator extends ItemTool {
         this.setMaxStackSize(1);
     }
 
-    @Override
-    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        this.setHarvestLevel("pickaxe", level + 1);
-        this.setHarvestLevel("axe", level + 1);
-        this.setHarvestLevel("spade", level + 1);
-        this.efficiencyOnProperMaterial = 5f * (level + 1f);
-        return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
-    }
-
     public static int modulesNeededForUpgrade(ItemStack stack) {
         return (int) (8 * Math.pow(2, stack.getItem().getNBTShareTag(stack).getInteger("level")));
     }
@@ -74,8 +65,16 @@ public class ItemManipulator extends ItemTool {
     public void upgrade(ItemStack stack) {
         NBTTagCompound nbt = stack.getItem().getNBTShareTag(stack);
         nbt.setInteger("level", nbt.getInteger("level") + 1);
+        NBTTagCompound displayTag = new NBTTagCompound();
+        displayTag.setString("Name", "Matter Manipulator - Level " + level);
+        displayTag.setString("color","#27CFEB");
+        nbt.setTag("display", displayTag);
         level++;
         updateItemStackNBT(nbt);
         stack.setTagCompound(nbt);
+        this.setHarvestLevel("pickaxe", level + 1);
+        this.setHarvestLevel("axe", level + 1);
+        this.setHarvestLevel("spade", level + 1);
+        this.efficiencyOnProperMaterial = 5f * (level + 1f);
     }
 }

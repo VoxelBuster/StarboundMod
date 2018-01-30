@@ -242,7 +242,8 @@ public class RegisterUtil {
                 ore_block_platinum,
                 uranium_block,
                 plutonium_block,
-                platinum_block
+                platinum_block,
+                outpostcratesmall
         };
         for (Block b : bTemp) {
             event.getRegistry().register(b);
