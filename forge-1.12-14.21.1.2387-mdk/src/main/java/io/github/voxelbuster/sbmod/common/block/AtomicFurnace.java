@@ -101,7 +101,6 @@ public class AtomicFurnace extends Block implements ITileEntityProvider {
         int j = pos.getY();
         int k = pos.getZ();
         world.scheduleUpdate(new BlockPos(i, j, k), this, this.tickRate(world));
-
     }
 
     @SideOnly(Side.CLIENT)

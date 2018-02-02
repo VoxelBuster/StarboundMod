@@ -2,8 +2,10 @@ package io.github.voxelbuster.sbmod.client.util;
 
 import io.github.voxelbuster.sbmod.client.inventory.AtomicFurnaceGUI;
 import io.github.voxelbuster.sbmod.client.inventory.IndustrialFurnaceGUI;
+import io.github.voxelbuster.sbmod.client.inventory.SmallCrateGUI;
 import io.github.voxelbuster.sbmod.common.block.AtomicFurnace;
 import io.github.voxelbuster.sbmod.common.block.IndustrialFurnace;
+import io.github.voxelbuster.sbmod.common.tileentity.TileEntitySmallCrate;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -23,6 +25,8 @@ public class GuiHandler implements IGuiHandler {
             return new IndustrialFurnaceGUI.GuiWindow(world, x, y, z, player, (IndustrialFurnace.TileEntityCustom) world.getTileEntity(new BlockPos(x, y, z)));
         else if (id == AtomicFurnaceGUI.GUIID)
             return new AtomicFurnaceGUI.GuiWindow(world, x, y, z, player, (AtomicFurnace.TileEntityCustom) world.getTileEntity(new BlockPos(x, y, z)));
+        else if (id == SmallCrateGUI.GUIID)
+            return new SmallCrateGUI.GuiWindow(world, x, y, z, player, (TileEntitySmallCrate) world.getTileEntity(new BlockPos(x, y, z)));
         return null;
     }
 }

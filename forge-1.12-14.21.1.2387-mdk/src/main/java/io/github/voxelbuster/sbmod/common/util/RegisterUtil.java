@@ -4,6 +4,7 @@ import io.github.voxelbuster.sbmod.client.util.SoundHandler;
 import io.github.voxelbuster.sbmod.common.StarboundMod;
 import io.github.voxelbuster.sbmod.common.block.*;
 import io.github.voxelbuster.sbmod.common.item.*;
+import io.github.voxelbuster.sbmod.common.tileentity.TileEntitySmallCrate;
 import io.github.voxelbuster.sbmod.common.world.ModOreGen;
 import io.github.voxelbuster.sbmod.common.world.WorldGenAncientGate;
 import io.github.voxelbuster.sbmod.common.world.WorldGenOilPool;
@@ -268,6 +269,7 @@ public class RegisterUtil {
 
     public static void init() {
         GameRegistry.registerTileEntity(IndustrialFurnace.TileEntityCustom.class, "TileEntityindustrialFurnace");
+        GameRegistry.registerTileEntity(TileEntitySmallCrate.class, "TileEntitySmallCrate");
     }
 
     public static void registerWorldGen() {
